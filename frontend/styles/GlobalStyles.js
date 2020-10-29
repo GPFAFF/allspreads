@@ -1,13 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 import bg from '../assets/images/bg.svg';
-// import stripes from '../assets/images/stripes.svg';
-// background-image: url(${bg});
-// background-image: url(${stripes});
 
 const GlobalStyles = createGlobalStyle`
   :root {
     --black: #2E2E2E;
-    --green: #ffc600;
+    --green: #39b54a;
     --white: #fff;
     --grey: #efefef;
   }

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Logo from './Logo';
 
 const NavStyles = styled.nav`
-  background: green;
+  background: var(--green);
   margin-bottom: 3rem;
 
   ul {
