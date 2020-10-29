@@ -1,5 +1,12 @@
-/*/node_modules
+node_modules/
 
-/*/.cache
+.eslintcache
+
+.cache/
 
 public
+
+yarn-error.log
+
+.DS_Store
+
