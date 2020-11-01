@@ -1,10 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
+import font from '../assets/fonts/Empirez.otf';
 
 const Typography = createGlobalStyle`
   @font-face {
+    font-family: Empirez;
+    src: url(${font});
   }
   html {
-    font-family: FrenchFries, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Empirez, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--black);
   }
   p, li {
