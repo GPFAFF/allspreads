@@ -3,14 +3,7 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
-const SportsStyles = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 4rem;
-  grid-auto-rows: auto;
-`;
-
-const SportsCardStyles = styled.div`
+const CardStyles = styled.div`
   display: grid;
   @supports not (grid-template-rows: subgrid) {
     --rows: auto 1fr;
@@ -23,19 +16,8 @@ const SportsCardStyles = styled.div`
   }
 `;
 
-const SportsList = ({ sports }) => (
-  <SportsStyles>
-    {sports.map((sport) => (
-      <SportsCard
-        key={sport.id}
-        sport={sport}
-      />
-    ))}
-  </SportsStyles>
-);
-
-const SportsCard = ({ sport }) => {
-  const { name, image, slug } = sport;
+const Card = ({ item }) => {
+  const { name, image, slug } = item;
   const {
     asset: {
       fluid,
@@ -43,15 +25,15 @@ const SportsCard = ({ sport }) => {
   } = image;
 
   return (
-    <SportsCardStyles>
+    <CardStyles>
       <Link
         to={`/sports/${slug.current}`}
       >
         <h2>{name}</h2>
       </Link>
       <Img fluid={fluid} alt={name} />
-    </SportsCardStyles>
+    </CardStyles>
   );
 };
 
-export default SportsList;
+export default Card;

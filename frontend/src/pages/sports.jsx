@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import SportsList from '../components/SportsList';
+import List from '../components/List';
 
 const SportsPage = ({ data }) => {
   const sports = data.sports.nodes;
@@ -9,9 +8,9 @@ const SportsPage = ({ data }) => {
   return (
     <>
       <h2>
-        List of all the sports
+        Choose your sport below
       </h2>
-      <SportsList sports={sports} />
+      <List data={sports} />
     </>
   );
 };

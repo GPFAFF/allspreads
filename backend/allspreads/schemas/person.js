@@ -1,4 +1,4 @@
-import { MdPersonAdd as icon} from 'react-icons/Md';
+import { MdPersonAdd as icon } from 'react-icons/md';
 
 export default {
   name: 'person',
@@ -10,7 +10,7 @@ export default {
       name: 'name',
       title: 'Handicapper',
       type: 'string',
-      description: 'name of the handicapper'
+      description: 'name of the handicapper',
     },
     {
       name: 'slug',
@@ -19,13 +19,13 @@ export default {
       options: {
         source: 'name',
         maxLength: 100,
-      }
+      },
     },
     {
       name: 'description',
       title: 'Description',
       type: 'text',
-      description: 'Tell us a little bit about this handicapper'
+      description: 'Tell us a little bit about this handicapper',
     },
     {
       name: 'image',
@@ -33,7 +33,7 @@ export default {
       type: 'image',
       options: {
         hotspot: true,
-      }
-    }
-  ]
-}
+      },
+    },
+  ],
+};
