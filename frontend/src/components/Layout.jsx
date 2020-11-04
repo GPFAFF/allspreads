@@ -32,10 +32,10 @@ const Layout = ({ children }) => (
       <ContentStyles>
         <Nav />
         <Header />
-        { children }
-        <Footer />
+        {children}
       </ContentStyles>
     </SiteBorderStyles>
+    <Footer />
   </>
 );
 

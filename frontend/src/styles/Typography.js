@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import font from '../assets/fonts/Empirez.ttf';
+import font from '../assets/fonts/Empirez.woff';
 
 const Typography = createGlobalStyle`
   @font-face {
