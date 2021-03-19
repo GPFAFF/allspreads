@@ -1,4 +1,4 @@
-import { FcSportsMode as icon} from 'react-icons/Fc';
+import { FcSportsMode as icon } from 'react-icons/Fc';
 
 export default {
   name: 'sports',

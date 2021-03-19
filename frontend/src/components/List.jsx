@@ -32,6 +32,8 @@ const Card = ({ item }) => {
     },
   } = image;
 
+  console.log(" ia m erere", name)
+
   return (
     <CardStyles>
       <Link
