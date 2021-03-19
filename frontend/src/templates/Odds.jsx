@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import styled from 'styled-components';
+
 import OddsCard from '../components/OddsCard';
 import { uuidv4 } from '../helpers';
 
@@ -17,22 +17,18 @@ const OddsCardStyles = styled.section`
 `;
 
 const Odds = ({ data }) => {
-  const { sports, odds } = data;
+  const {
+    sports,
+    // odds
+  } = data;
   const {
     name,
-    image,
     slug: {
       current,
     },
     id,
   } = sports;
-  const { data: oddsData } = odds.nodes[0];
-
-  const {
-    asset: {
-      fluid,
-    },
-  } = image;
+  // const { data: oddsData } = odds.nodes[0];
 
   return (
     <OddsStyles>
@@ -43,15 +39,15 @@ const Odds = ({ data }) => {
         Odds
       </h2>
       <OddsCardStyles>
-        {oddsData.map((sportsData) => (
+        {/* {oddsData.map((sportsData) => (
           <Link
-            to={`/sports/${current}/odds/current-odds${id}`}
+            to={`/sports/${current}/odds/current-odds-${id}`}
             // GLOBAL STATE?
             state={{ odds: sportsData }}
           >
             <OddsCard key={uuidv4()} data={sportsData} />
           </Link>
-        ))}
+        ))} */}
       </OddsCardStyles>
     </OddsStyles>
   );
@@ -59,36 +55,30 @@ const Odds = ({ data }) => {
 
 export const query = graphql`
   query($slug: String!) {
-      sports: sanitySports(slug: {current: {eq: $slug }}) {
+    sports: sanitySports(slug: {current: {eq: $slug }}) {
       name
       slug {
         current
       }
       id
-      image {
-          asset {
-          fluid(maxWidth: 800) {
-          ...GatsbySanityImageFluid
-        }}
-      }
     }
-    odds:
-      allOdds {
-        totalCount
-        nodes {
-          data {
-          commence_time
-          sport_nice
-          home_team
-          teams
-          sites {
-            odds {
-              h2h
-            }
-          }
-        }
-      }
-    }
+    # odds:
+    #   allOdds {
+    #     totalCount
+    #     nodes {
+    #       data {
+    #       commence_time
+    #       sport_nice
+    #       home_team
+    #       teams
+    #       sites {
+    #         odds {
+    #           h2h
+    #         }
+    #       }
+    #     }
+    #   }
+    # }
   }`;
 
 export default Odds;

@@ -61,6 +61,7 @@ const fantasy = async ({ graphql, actions }) => {
     });
   });
 };
+
 const singleOdds = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const template = path.resolve('./src/pages/single-odds.jsx');
@@ -69,22 +70,25 @@ const singleOdds = async ({ graphql, actions }) => {
       sports: allSanitySports {
         nodes {
           name
-          id
           slug {
             current
           }
         }
       }
+      odds: allOdds {
+        nodes {
+          id
+        }
+      }
     }
   `);
 
-  data.sports.nodes.forEach((element) => {
+  data.odds.nodes.forEach((element) => {
     createPage({
-      path: `sports/${element.slug.current}/odds/current-odds${element.id}`,
+      path: `odds/current-odds/${element.id}`,
       component: template,
       context: {
         title: element.name,
-        slug: element.slug.current,
       },
     });
   });
@@ -135,30 +139,34 @@ const odds = async ({ graphql, actions }) => {
 exports.createPages = async (params) => {
   await Promise.all([
     pages(params),
-    odds(params),
     fantasy(params),
+    odds(params),
     singleOdds(params),
   ]);
 };
 
-async function fetchOdds({
+async function fetchUpcomingOdds({
   actions,
   createNodeId,
   createContentDigest,
 }) {
-  // const response = await fetch(`https://api.the-odds-api.com/v3/odds/?sport=upcoming&region=us&mkt=h2h&apiKey=${process.env.ODDS_TOKEN}`);
+  // const response = await fetch(`https://api.the-odds-api.com/v3/odds/?sport=upcoming&region=us&mkt=spreads&apiKey=${process.env.ODDS_TOKEN}`);
   // const oddsResponse = await response.json();
-  // const copiedResponse = [...oddsResponse];
-  const copiedResponse = [testData];
 
-  for (const item of copiedResponse) {
+  // console.log(oddsResponse);
+  //  const copiedResponse = [...oddsResponse];
+
+  // const { data } = oddsResponse;
+  const { data } = testData;
+
+  for (const item of data) {
     const nodeMeta = {
-      id: createNodeId(`odds-${item.sport_nice}`),
+      id: createNodeId(`odds-${item.id}`),
       parent: null,
       children: [],
       internal: {
         type: 'Odds',
-        mediaType: 'application/json',
+        content: JSON.stringify(item),
         contentDigest: createContentDigest(item),
       },
     };
@@ -168,53 +176,67 @@ async function fetchOdds({
       ...nodeMeta,
     });
   }
-};
-// async function fetchOdds({
+}
+
+// async function fetchSportSpecificOdds({
 //   actions,
 //   createNodeId,
 //   createContentDigest,
-//   graphql,
 // }) {
-//   const { data } = await graphql(`
-//     query {
-//       sports: allSanitySports {
-//         nodes {
-//           name
-//           slug {
-//             current
+
+
+//   sportNames.forEach(name => {
+
+//   })
+//   const { data } = await client.query({
+//     query: gql`
+//       query {
+//         sports: allSanitySports {
+//           nodes {
+//             name
+//             slug {
+//               current
+//             }
 //           }
 //         }
 //       }
-//     }
-//   `);
-//   console.log(data);
-//   // const response = await fetch(`https://api.the-odds-api.com/v3/odds/?sport=upcoming&region=us&mkt=h2h&apiKey=${process.env.ODDS_TOKEN}`);
-//   // const oddsResponse = await response.json();
-//   // const copiedResponse = [...oddsResponse];
-//   const copiedResponse = [testData];
+//     `,
+//   });
 
-//   for (const item of copiedResponse) {
-//     const nodeMeta = {
-//       id: createNodeId(`odds-${item.sport_nice}`),
-//       parent: null,
-//       children: [],
-//       internal: {
-//         type: 'Odds',
-//         mediaType: 'application/json',
-//         contentDigest: createContentDigest(item),
-//       },
-//     };
+// console.log('THE DATA', data);
 
-//     actions.createNode({
-//       ...item,
-//       ...nodeMeta,
-//     });
-//   }
+
+// const response = await fetch(`https://api.the-odds-api.com/v3/odds/?sport=upcoming&region=us&mkt=h2h&apiKey=${process.env.ODDS_TOKEN}`);
+// const oddsResponse = await response.json();
+
+// console.log(oddsResponse);
+//  const copiedResponse = [...oddsResponse];
+
+// const { data } = testData;
+
+// for (const item of data) {
+//   const nodeMeta = {
+//     id: createNodeId(`odds-${item.id}`),
+//     parent: null,
+//     children: [],
+//     internal: {
+//       type: 'Odds',
+//       content: JSON.stringify(item),
+//       contentDigest: createContentDigest(item),
+//     },
+//  };
+
+// actions.createNode({
+//   ...item,
+//   ...nodeMeta,
+// });
+// }
 // }
 
 exports.sourceNodes = async (params) => {
   // fetch odds
   await Promise.all([
-    fetchOdds(params),
+    fetchUpcomingOdds(params),
+    // fetchSportSpecificOdds(params),
   ]);
 };

@@ -23,7 +23,7 @@ const OddsCard = ({ data }) => {
     sites,
   } = data;
 
-  console.log(sites);
+  console.log(data, sites);
 
   return (
     <CardStyles>
