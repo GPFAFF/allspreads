@@ -56,7 +56,7 @@ const Nav = () => (
         </Link>
       </li>
       <li>
-        <Link to="/odds">Odds</Link>
+        <Link to="/odds/1">Odds</Link>
       </li>
       <li>
         <Link to="/picks">Picks</Link>

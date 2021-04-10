@@ -4,13 +4,15 @@ import List from '../components/List';
 
 const SportsPage = ({ data }) => {
   const sports = data.sports.nodes;
-
   return (
     <>
       <h2>
         Choose your sport below
       </h2>
-      <List data={sports} />
+      <List
+        path
+        data={sports}
+      />
     </>
   );
 };

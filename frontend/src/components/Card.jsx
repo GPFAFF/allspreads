@@ -30,8 +30,8 @@ const Card = ({ item }) => {
         to={`/sports/${slug.current}`}
       >
         <h2>{name}</h2>
+        <Img fluid={fluid} alt={name} />
       </Link>
-      <Img fluid={fluid} alt={name} />
     </CardStyles>
   );
 };

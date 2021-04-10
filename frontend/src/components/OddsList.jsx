@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import OddsCard from './OddsCard';
+import { uuidv4 } from '../helpers';
 
 const OddsStyles = styled.div`
   display: grid;
@@ -30,6 +31,7 @@ const Odds = ({ data }) => {
       <OddsCardStyles>
         {nodes.map((sportsData) => (
           <StyledLink
+            key={uuidv4()}
             to={`/odds/current-odds/${sportsData.id}`}
             // GLOBAL STATE?
             state={{ odds: sportsData }}

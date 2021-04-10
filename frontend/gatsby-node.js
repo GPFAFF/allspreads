@@ -62,6 +62,75 @@ const fantasy = async ({ graphql, actions }) => {
   });
 };
 
+async function createOdds({ graphql, actions }) {
+  // 1. Query all odds
+  const { data } = await graphql(`
+   query {
+     allSanitySports {
+        nodes {
+          name
+          slug {
+            current
+          }
+        }
+      }
+      allOdds {
+        nodes {
+          commence_time
+          home_team
+          id
+          sites {
+            odds {
+              spreads {
+                points
+              }
+            }
+            last_update
+            site_nice
+          }
+          sites_count
+          sport_nice
+          sport_key
+          teams
+        }
+        totalCount
+      }
+    }
+  `);
+  // TODO: 2. Turn each slicemaster into their own page (TODO)
+  // data.allSanitySports.nodes.forEach((sports) => {
+  //   actions.createPage({
+  //     component: path.resolve('./src/pages/single-odds.jsx'),
+  //     path: `/odds/${sports.slug.current}`,
+  //     context: {
+  //       name: sports.name,
+  //       slug: sports.slug.current,
+  //     },
+  //   });
+  // });
+
+  const pageSize = Number(process.env.GATSBY_PAGE_SIZE);
+  const pageCount = Math.ceil(data.allOdds.totalCount / pageSize);
+  console.log(
+    `There are ${data.allOdds.totalCount} total odds.
+    And we have ${pageCount} pages with ${pageSize} per page`,
+  );
+  // 4. Loop from 1 to n and create the pages for them
+  Array.from({ length: pageCount }).forEach((_, i) => {
+    console.log(`Creating page ${i}`);
+    actions.createPage({
+      path: `/odds/${i + 1}`,
+      component: path.resolve('./src/pages/odds.jsx'),
+      // This data is pass to the template when we create it
+      context: {
+        skip: i * pageSize,
+        currentPage: i + 1,
+        pageSize,
+      },
+    });
+  });
+}
+
 const singleOdds = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const template = path.resolve('./src/pages/single-odds.jsx');
@@ -142,6 +211,7 @@ exports.createPages = async (params) => {
     fantasy(params),
     odds(params),
     singleOdds(params),
+    createOdds(params),
   ]);
 };
 
@@ -152,9 +222,6 @@ async function fetchUpcomingOdds({
 }) {
   // const response = await fetch(`https://api.the-odds-api.com/v3/odds/?sport=upcoming&region=us&mkt=spreads&apiKey=${process.env.ODDS_TOKEN}`);
   // const oddsResponse = await response.json();
-
-  // console.log(oddsResponse);
-  //  const copiedResponse = [...oddsResponse];
 
   // const { data } = oddsResponse;
   const { data } = testData;
@@ -178,65 +245,41 @@ async function fetchUpcomingOdds({
   }
 }
 
-// async function fetchSportSpecificOdds({
-//   actions,
-//   createNodeId,
-//   createContentDigest,
-// }) {
+async function fetchBasketballOdds({
+  actions,
+  createNodeId,
+  createContentDigest,
+}) {
+  // const response = await fetch(`https://api.the-odds-api.com/v3/odds/?sport=basketball_ncaab&region=us&mkt=spreads&apiKey=${process.env.ODDS_TOKEN}`);
+  // const oddsResponse = await response.json();
 
+  // const { data } = oddsResponse;
+  const { data } = testData;
 
-//   sportNames.forEach(name => {
+  for (const item of data) {
+    const nodeMeta = {
+      id: createNodeId(`odds-${item.id}`),
+      parent: null,
+      children: [],
+      internal: {
+        type: 'SingleOdds',
+        content: JSON.stringify(item),
+        contentDigest: createContentDigest(item),
+      },
+    };
 
-//   })
-//   const { data } = await client.query({
-//     query: gql`
-//       query {
-//         sports: allSanitySports {
-//           nodes {
-//             name
-//             slug {
-//               current
-//             }
-//           }
-//         }
-//       }
-//     `,
-//   });
-
-// console.log('THE DATA', data);
-
-
-// const response = await fetch(`https://api.the-odds-api.com/v3/odds/?sport=upcoming&region=us&mkt=h2h&apiKey=${process.env.ODDS_TOKEN}`);
-// const oddsResponse = await response.json();
-
-// console.log(oddsResponse);
-//  const copiedResponse = [...oddsResponse];
-
-// const { data } = testData;
-
-// for (const item of data) {
-//   const nodeMeta = {
-//     id: createNodeId(`odds-${item.id}`),
-//     parent: null,
-//     children: [],
-//     internal: {
-//       type: 'Odds',
-//       content: JSON.stringify(item),
-//       contentDigest: createContentDigest(item),
-//     },
-//  };
-
-// actions.createNode({
-//   ...item,
-//   ...nodeMeta,
-// });
-// }
-// }
+    actions.createNode({
+      ...item,
+      ...nodeMeta,
+    });
+  }
+}
 
 exports.sourceNodes = async (params) => {
   // fetch odds
   await Promise.all([
     fetchUpcomingOdds(params),
+    fetchBasketballOdds(params),
     // fetchSportSpecificOdds(params),
   ]);
 };

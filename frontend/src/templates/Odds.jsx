@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
+import fetch from 'isomorphic-fetch';
 
 import OddsCard from '../components/OddsCard';
-import { uuidv4 } from '../helpers';
+import { uuidv4, returnKey } from '../helpers';
 
 const OddsStyles = styled.div`
   display: grid;
@@ -19,16 +20,26 @@ const OddsCardStyles = styled.section`
 const Odds = ({ data }) => {
   const {
     sports,
-    // odds
+    allOdds: {
+      nodes,
+    },
   } = data;
   const {
     name,
     slug: {
       current,
     },
-    id,
   } = sports;
-  // const { data: oddsData } = odds.nodes[0];
+
+  console.log('o', data.allOdds.totalCount);
+  // const key = returnKey(name);
+  // const [sportsData, setSportsData] = useState([]);
+
+  // useEffect(() => {
+  //   fetch(`https://api.the-odds-api.com/v3/odds/?sport=${key}&region=us&mkt=spreads&apiKey=fa695612eb739783c35e3792c855f50a`)
+  //     .then((response) => response.json())
+  //     .then((results) => setSportsData(results.data));
+  // }, []);
 
   return (
     <OddsStyles>
@@ -39,15 +50,16 @@ const Odds = ({ data }) => {
         Odds
       </h2>
       <OddsCardStyles>
-        {/* {oddsData.map((sportsData) => (
+        {nodes.map((node) => (
           <Link
-            to={`/sports/${current}/odds/current-odds-${id}`}
+            key={uuidv4()}
+            to={`/sports/${current}/odds/current-odds-${node.id}`}
             // GLOBAL STATE?
-            state={{ odds: sportsData }}
+            state={{ odds: node }}
           >
-            <OddsCard key={uuidv4()} data={sportsData} />
+            <OddsCard data={node} />
           </Link>
-        ))} */}
+        ))}
       </OddsCardStyles>
     </OddsStyles>
   );
@@ -62,23 +74,25 @@ export const query = graphql`
       }
       id
     }
-    # odds:
-    #   allOdds {
-    #     totalCount
-    #     nodes {
-    #       data {
-    #       commence_time
-    #       sport_nice
-    #       home_team
-    #       teams
-    #       sites {
-    #         odds {
-    #           h2h
-    #         }
-    #       }
-    #     }
-    #   }
-    # }
+    allOdds {
+      totalCount
+      nodes {
+        commence_time
+        home_team
+        id
+        sites {
+          odds {
+            spreads {
+              points
+            }
+          }
+          site_nice
+        }
+        sport_key
+        sport_nice
+        teams
+      }
+    }
   }`;
 
 export default Odds;

@@ -20,9 +20,31 @@ function returnTarget(array, target) {
   return array.filter((item) => item !== target);
 }
 
+function returnKey(name) {
+  switch (name) {
+    case 'NCAA Football':
+      return 'americanfootball_ncaaf';
+    case 'Football':
+      return '';
+    case 'Baseball':
+      return 'baseball_mlb';
+    case 'Basketball':
+      return 'basketball_nba';
+    case 'NCAA Basketball':
+      return 'basketball_ncaab';
+    case 'Hockey':
+      return 'icehockey_nhl';
+    case 'Golf':
+      return 'golf';
+    default:
+      throw new Error('key not found');
+  }
+}
+
 module.exports = {
   convertTime,
   convertOdds,
   returnTarget,
+  returnKey,
   uuidv4,
 };

@@ -20,10 +20,8 @@ const OddsCard = ({ data }) => {
     sport_nice: league,
     home_team: homeTeam,
     teams,
-    sites,
+    // sites,
   } = data;
-
-  console.log(data, sites);
 
   return (
     <CardStyles>
