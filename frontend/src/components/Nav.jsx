@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import styled from 'styled-components';
-import Logo from './Logo';
+import React from "react";
+import { Link } from "gatsby";
+import styled from "styled-components";
+import Logo from "./Logo";
 
 const NavStyles = styled.nav`
   background: var(--green);
@@ -9,7 +9,8 @@ const NavStyles = styled.nav`
 
   ul {
     display: grid;
-    grid-template-columns: 1fr 1fr auto 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr auto 1fr 1fr; */
+    justify-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -45,21 +46,9 @@ const Nav = () => (
   <NavStyles>
     <ul>
       <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/sports">Sports</Link>
-      </li>
-      <li>
         <Link to="/">
           <Logo />
         </Link>
-      </li>
-      <li>
-        <Link to="/odds/1">Odds</Link>
-      </li>
-      <li>
-        <Link to="/picks">Picks</Link>
       </li>
     </ul>
   </NavStyles>

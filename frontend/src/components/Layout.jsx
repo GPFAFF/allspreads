@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import Footer from './Footer';
-import Header from './Header';
-import Nav from './Nav';
-import GlobalStyles from '../styles/GlobalStyles';
-import Typography from '../styles/Typography';
+import React from "react";
+import styled from "styled-components";
+import Footer from "./Footer";
+import Header from "./Header";
+import Nav from "./Nav";
+import GlobalStyles from "../styles/GlobalStyles";
+import Typography from "../styles/Typography";
 
-import 'normalize.css';
+import "normalize.css";
 
 const SiteBorderStyles = styled.div`
   max-width: 95vw;
@@ -20,8 +20,7 @@ const SiteBorderStyles = styled.div`
 
 const ContentStyles = styled.div`
   padding: 2rem;
-  background-color: white;
-  ;
+  background-color: white; ;
 `;
 
 const Layout = ({ children }) => (
