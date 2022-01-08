@@ -209,9 +209,6 @@ exports.createPages = async (params) => {
   await Promise.all([
     pages(params),
     fantasy(params),
-    odds(params),
-    singleOdds(params),
-    createOdds(params),
   ]);
 };
 
