@@ -4,10 +4,10 @@ import Layout from "../../../components/layout";
 import { fetchOdds } from "../../../hooks";
 import { useRouter } from "next/router";
 import Link from "next/link";
-// import data from "../upcoming.json";
 import Image from "next/image";
 import styled from "styled-components";
-import { data, getPath, toBase64, shimmer } from "../../../helpers";
+import { getPath, toBase64, shimmer } from "../../../helpers";
+import { server } from "../../../config";
 
 const SportStyles = styled.div`
   display: grid;
@@ -23,36 +23,25 @@ const SportStyles = styled.div`
   }
 `;
 
-export default function SingleSport() {
-  const router = useRouter();
-  const { sport } = router.query;
-
-  const sports = data?.find((item) => item.slug.toLowerCase() === sport);
-
-  console.log('data', data, sport)
-
-  console.log('sports', sports)
-
+export default function SingleSport({ data }) {
   return (
     <>
       <SportStyles>
         <Image
-          style={{
-            objectFit: "cover",
-          }}
-          alt={sport}
-          src={sports?.src}
+          alt={data?.slug}
+          src={data?.src}
           placeholder="blur"
-          blurDataURL={`${sports?.src},${toBase64(shimmer(700, 475))}`}
+          blurDataURL={`${data?.src},${toBase64(shimmer(700, 475))}`}
           height={300}
           width={300}
+          layout="responsive"
         />
         <div>
-          <h2>{sport}</h2>
-          <Link href={`/sports/${sports?.slug}/scores`}>
+          <h2>{data?.name}</h2>
+          <Link href={`/sports/${data?.slug}/scores`}>
             <h2>Scores</h2>
           </Link>
-          <Link href={`/sports/${sports?.slug}/odds`}>
+          <Link href={`/sports/${data?.slug}/odds`}>
             <h2>Odds</h2>
           </Link>
         </div>
@@ -61,22 +50,22 @@ export default function SingleSport() {
   );
 }
 
-// export async function getStaticProps(context) {
-//   const urlPath = context.params.name;
-//   return {
-//     props: {
-//       urlPath,
-//     },
-//   };
-// }
 
-// export async function getStaticPaths() {
-//   const paths = data.map((name) => ({
-//     params: { name: name.slug },
-//   }));
-//   // dont get paths for cms posts, instead, let fallback handle it
-//   return { paths, fallback: true };
-// }
+export async function getStaticProps(context) {
+  const urlPath = context.params.sport;
+  const res = await fetch(`${server}/api/sports/${urlPath}`)
+  const data = await res.json()
+
+  return {
+    props: {
+      data
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  return { paths: ['/sports/[sport]'], fallback: true };
+}
 
 SingleSport.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>

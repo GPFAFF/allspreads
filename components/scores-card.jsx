@@ -6,7 +6,8 @@ const ScoreCardStyles = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   list-style-type: none;
-  background-color: var(--green);
+  background-color: var(--grey);
+  border: 4px solid var(--green);
   border-radius: 8px;
   text-align: center;
   padding: 14px 0;
@@ -23,6 +24,10 @@ const ScoreCardStyles = styled.div`
     transition: 0.5s;
     transform: scale(1.01);
   }
+
+  > p {
+    font-family: monospace;
+  }
 `;
 
 export default function ScoresCard({ item }) {
@@ -31,7 +36,7 @@ export default function ScoresCard({ item }) {
       <h3>
         {item.away_team} @ {item.home_team}
       </h3>
-      <p>{new Date(item.commence_time).toLocaleDateString()}</p>
+      <p>Gameday: {new Date(item.commence_time).toLocaleDateString()}</p>
       {item.completed ? <p>Score: {item.scores}</p> : <p>Score: 0 - 0</p>}
     </ScoreCardStyles>
   );

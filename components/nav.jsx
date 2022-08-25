@@ -46,24 +46,18 @@ export default function Nav() {
     <NavStyles>
       <ul>
         <li>
-          {" "}
           <Link href="/">Home</Link>
         </li>
         <li>
-          {" "}
           <Link href="/sports">Sports</Link>
         </li>
         <li>
-          <Link href="/">
-            <Logo />
-          </Link>
+          <Logo />
         </li>
         <li>
-          {" "}
           <Link href="/odds">Odds</Link>
         </li>
         <li>
-          {" "}
           <Link href="/picks">Picks</Link>
         </li>
       </ul>

@@ -35,7 +35,8 @@ const OddsContainer = styled.div`
 const OddsCardStyles = styled.ul`
   display: grid;
   list-style-type: none;
-  background-color: var(--green);
+  background-color: var(--grey);
+  border: 4px solid var(--green);
   border-radius: 8px;
   text-align: center;
   padding: 14px 0;
@@ -46,6 +47,10 @@ const OddsCardStyles = styled.ul`
 
   > h3 {
     margin-bottom: 20px;
+  }
+
+  > li {
+    font-family: monospace;
   }
 
   &:hover {
@@ -64,6 +69,10 @@ const BookmakersStyles = styled.div`
 const OddsGrid = styled.div`
   display: grid;
   gap: 12px;
+
+  > li {
+    font-family: monospace;
+  }
 `;
 
 export default function OddsCard({ item }) {
