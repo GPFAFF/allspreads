@@ -34,7 +34,8 @@ export default function SingleSport() {
   return (
     <>
       <SportStyles>
-        <Image
+        <img src={sports?.src} />
+        {/* <Image
           style={{
             objectFit: "cover",
           }}
@@ -44,7 +45,7 @@ export default function SingleSport() {
           blurDataURL={`${sports?.src},${toBase64(shimmer(700, 475))}`}
           height={300}
           width={300}
-        />
+        /> */}
         <div>
           <h2>{sport}</h2>
           <Link href={`/sports/${sports?.slug}/scores`}>
