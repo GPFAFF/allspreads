@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Card from "./Card";
+import Card from "./card";
 
 const ListStyles = styled.div`
   display: grid;
