@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import bg from "/images/bg.svg";
 import "normalize.css";
 
 const GlobalStyles = createGlobalStyle`
@@ -10,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
     --grey: #efefef;
   }
   html {
-    background-image: url(${bg.src});
+    background-image: url('/bg.svg');
     background-size: 450px;
     background-attachment: fixed;
     font-size: 10px;
@@ -73,7 +72,7 @@ const GlobalStyles = createGlobalStyle`
   }
   @font-face {
     font-family: 'Empirez';
-    src: url('/fonts/Empirez.woff') format('woff');
+    src: url('/Empirez.woff') format('woff');
     font-weight: 400;
   }
   p,

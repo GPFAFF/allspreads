@@ -1,11 +1,3 @@
-import Football from "/public/images/football.webp";
-import Hockey from "/public/images/hockey.webp";
-import Basketball from "/public/images/basketball.webp";
-import Golf from "/public/images/golf.webp";
-import Soccer from "/public/images/soccer.webp";
-import Baseball from "/public/images/baseball.webp";
-import CollegeFootball from "/public/images/cfb.webp";
-import CollegeBasketball from "/public/images/ncaabb.webp";
 import footballData from "../football.json";
 
 export function getPath(path) {
@@ -52,50 +44,50 @@ export const data = [
     id: "1",
     name: "Football",
     slug: "football",
-    src: Football.src,
+    src: "/football.webp",
     odds: footballData,
   },
   {
     id: "2",
     name: "Baseball",
     slug: "baseball",
-    src: Baseball.src,
+    src: "/baseball.webp",
   },
   {
     id: "3",
     name: "Hockey",
     slug: "hockey",
-    src: Hockey.src,
+    src: "/hockey.webp",
   },
   {
     id: "4",
     name: "Basketball",
     slug: "basketball",
-    src: Basketball.src,
+    src: "/basketball.webp",
   },
   {
     id: "5",
     name: "College Football",
     slug: "college-football",
-    src: CollegeFootball.src,
+    src: "/cfb.webp",
   },
   {
     id: "6",
     name: "College Basketball",
     slug: "college-basketball",
-    src: CollegeBasketball.src,
+    src: "/ncaabb.webp",
   },
   {
     id: "7",
     name: "Golf",
     slug: "golf",
-    src: Golf.src,
+    src: "/golf.webp",
   },
   {
     id: "8",
     name: "Soccer",
     slug: "soccer",
-    src: Soccer.src,
+    src: "/soccer.webp",
   },
 ];
 

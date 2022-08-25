@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "/images/logo.svg";
 import Image from "next/image";
 
 const LogoStyles = styled.div`
@@ -12,7 +11,7 @@ const LogoStyles = styled.div`
 export default function Logo() {
   return (
     <LogoStyles>
-      <Image src={logo.src} alt="All Spreads" width={150} height={150} />
+      <Image src="/logo.svg" alt="All Spreads" width={150} height={150} />
     </LogoStyles>
   );
 }
