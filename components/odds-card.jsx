@@ -79,7 +79,7 @@ export default function OddsCard({ item }) {
           <BookmakersStyles>
             {item.bookmakers.map((bookmaker) => {
               return (
-                <OddsCardStyles>
+                <OddsCardStyles key={bookmaker.title}>
                   <>
                     <h3>{bookmaker.title}</h3>
                     <OddsGrid>
@@ -146,7 +146,7 @@ export default function OddsCard({ item }) {
           <BookmakersStyles>
             {item.bookmakers.map((bookmaker) => {
               return (
-                <OddsCardStyles>
+                <OddsCardStyles key={bookmaker.title}>
                   <>
                     <h3>{bookmaker.title}</h3>
                     <OddsGrid>

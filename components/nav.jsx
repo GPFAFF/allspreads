@@ -54,9 +54,9 @@ export default function Nav() {
           <Link href="/sports">Sports</Link>
         </li>
         <li>
-          <a href="/">
+          <Link href="/">
             <Logo />
-          </a>
+          </Link>
         </li>
         <li>
           {" "}
