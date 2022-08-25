@@ -20,5 +20,5 @@ export async function getStaticProps(context) {
 }
 
 Odds.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
+  return <Layout>{page}</Layout>
 };

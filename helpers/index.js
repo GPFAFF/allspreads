@@ -14,6 +14,8 @@ export function getPath(path) {
       return "baseball_mlb";
     case "hockey":
       return "icehockey_nhl";
+    case "soccer":
+      return "soccer";
     default:
       break;
   }

@@ -27,9 +27,11 @@ export default function SingleSport() {
   const router = useRouter();
   const { sport } = router.query;
 
-  debugger;
+  const sports = data?.find((item) => item.slug.toLowerCase() === sport);
 
-  const sports = data?.find((item) => item.name.toLowerCase() === sport);
+  console.log('data', data, sport)
+
+  console.log('sports', sports)
 
   return (
     <>
@@ -77,5 +79,5 @@ export default function SingleSport() {
 // }
 
 SingleSport.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
+  return <Layout>{page}</Layout>
 };

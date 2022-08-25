@@ -23,7 +23,7 @@ export default function Picks() {
 }
 
 Picks.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
+  return <Layout>{page}</Layout>
 };
 
 // pages/posts.jsx

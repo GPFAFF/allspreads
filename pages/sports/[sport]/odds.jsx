@@ -19,7 +19,7 @@ export default function SingleOdds() {
   const router = useRouter();
 
   const key = getPath(router.query.sport);
-  console.log("data", key);
+
   const { data, status, isLoading } = useQuery(
     ["odds", key],
     () => fetchOdds(key),
@@ -77,5 +77,5 @@ export default function SingleOdds() {
 // }
 
 SingleOdds.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
+  return <Layout>{page}</Layout>
 };
