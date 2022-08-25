@@ -11,8 +11,7 @@ const LogoStyles = styled.div`
 export default function Logo() {
   return (
     <LogoStyles>
-      <img src="/logo.svg" />
-      {/* <Image src="/logo.svg" alt="All Spreads" width={150} height={150} /> */}
+      <Image src="/logo.svg" alt="All Spreads" width={150} height={150} />
     </LogoStyles>
   );
 }

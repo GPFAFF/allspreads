@@ -24,7 +24,6 @@ var next_link = __webpack_require__(1664);
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 // EXTERNAL MODULE: ./node_modules/next/image.js
 var next_image = __webpack_require__(5675);
-var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
 ;// CONCATENATED MODULE: ./components/logo.jsx
 
 
@@ -37,11 +36,8 @@ const LogoStyles = (external_styled_components_default()).div`
 `;
 function Logo() {
     return /*#__PURE__*/ jsx_runtime_.jsx(LogoStyles, {
-        children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
-            src: "/logo.svg",
-            alt: "All Spreads",
-            width: 150,
-            height: 150
+        children: /*#__PURE__*/ jsx_runtime_.jsx("img", {
+            src: "/logo.svg"
         })
     });
 };
@@ -112,7 +108,7 @@ function Nav() {
                     ]
                 }),
                 /*#__PURE__*/ jsx_runtime_.jsx("li", {
-                    children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                    children: /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                         href: "/",
                         children: /*#__PURE__*/ jsx_runtime_.jsx(Logo, {})
                     })

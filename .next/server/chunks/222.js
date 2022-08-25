@@ -21,7 +21,6 @@ var external_styled_components_ = __webpack_require__(7518);
 var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
 // EXTERNAL MODULE: ./node_modules/next/image.js
 var next_image = __webpack_require__(5675);
-var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__(1664);
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
@@ -55,16 +54,8 @@ function Card({ item  }) {
             }),
             /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                 href: `/sports/${slug}`,
-                children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
-                    style: {
-                        objectFit: "cover"
-                    },
-                    alt: name,
-                    src: src,
-                    placeholder: "blur",
-                    blurDataURL: `${src},${(0,helpers/* toBase64 */.s3)((0,helpers/* shimmer */.f8)(700, 475))}`,
-                    height: 300,
-                    width: 300
+                children: /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                    src: src
                 })
             })
         ]

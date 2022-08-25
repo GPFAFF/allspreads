@@ -24,8 +24,7 @@ export default function Card({ item }) {
     <CardStyles>
       <h2>{name}</h2>
       <Link href={`/sports/${slug}`}>
-        <img src={src} />
-        {/* <Image
+        <Image
           style={{
             objectFit: "cover",
           }}
@@ -35,7 +34,7 @@ export default function Card({ item }) {
           blurDataURL={`${src},${toBase64(shimmer(700, 475))}`}
           height={300}
           width={300}
-        /> */}
+        />
       </Link>
     </CardStyles>
   );
