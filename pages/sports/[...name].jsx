@@ -73,7 +73,7 @@ export async function getStaticPaths() {
       // Object variant:
       // { params: { slug: "second-post" } },
     ],
-    fallback: true,
+    fallback: false,
   };
 }
 
