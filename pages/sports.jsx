@@ -1,5 +1,5 @@
 import React from "react";
-import List from "../components/List";
+import List from "../components/list";
 import Layout from "../components/layout";
 import { data } from "../helpers/index";
 
