@@ -1,0 +1,2693 @@
+[
+  {
+    "id": "89b99f4c6087ad1f93a34774406d15ad",
+    "sport_key": "soccer_poland_ekstraklasa",
+    "sport_title": "Ekstraklasa - Poland",
+    "commence_time": "2022-08-19T16:00:00Z",
+    "home_team": "Jagiellonia Białystok",
+    "away_team": "Miedź Legnica",
+    "bookmakers": [
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-19T16:00:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Jagiellonia Białystok",
+                "price": -105
+              },
+              {
+                "name": "Miedź Legnica",
+                "price": 245
+              },
+              {
+                "name": "Draw",
+                "price": 255
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2022-08-19T16:00:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Jagiellonia Białystok",
+                "price": 106
+              },
+              {
+                "name": "Miedź Legnica",
+                "price": 245
+              },
+              {
+                "name": "Draw",
+                "price": 240
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2022-08-19T16:01:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Jagiellonia Białystok",
+                "price": 105
+              },
+              {
+                "name": "Miedź Legnica",
+                "price": 240
+              },
+              {
+                "name": "Draw",
+                "price": 250
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2022-08-19T16:01:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Jagiellonia Białystok",
+                "price": 100
+              },
+              {
+                "name": "Miedź Legnica",
+                "price": 260
+              },
+              {
+                "name": "Draw",
+                "price": 230
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2022-08-19T15:51:57Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Jagiellonia Białystok",
+                "price": -112
+              },
+              {
+                "name": "Miedź Legnica",
+                "price": 270
+              },
+              {
+                "name": "Draw",
+                "price": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sugarhouse",
+        "title": "SugarHouse",
+        "last_update": "2022-08-19T15:51:58Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Jagiellonia Białystok",
+                "price": -112
+              },
+              {
+                "name": "Miedź Legnica",
+                "price": 270
+              },
+              {
+                "name": "Draw",
+                "price": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2022-08-19T16:01:02Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Jagiellonia Białystok",
+                "price": 100
+              },
+              {
+                "name": "Miedź Legnica",
+                "price": 250
+              },
+              {
+                "name": "Draw",
+                "price": 240
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2022-08-19T16:01:03Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Jagiellonia Białystok",
+                "price": -106
+              },
+              {
+                "name": "Miedź Legnica",
+                "price": 245
+              },
+              {
+                "name": "Draw",
+                "price": 255
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2022-08-19T16:01:04Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Jagiellonia Białystok",
+                "price": 104
+              },
+              {
+                "name": "Miedź Legnica",
+                "price": 240
+              },
+              {
+                "name": "Draw",
+                "price": 245
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "mybookieag",
+        "title": "MyBookie.ag",
+        "last_update": "2022-08-19T15:57:57Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Jagiellonia Białystok",
+                "price": -123
+              },
+              {
+                "name": "Miedź Legnica",
+                "price": 320
+              },
+              {
+                "name": "Draw",
+                "price": 275
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-19T16:00:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Jagiellonia Białystok",
+                "price": 112
+              },
+              {
+                "name": "Miedź Legnica",
+                "price": 275
+              },
+              {
+                "name": "Draw",
+                "price": 255
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "Jagiellonia Białystok",
+                "price": 122
+              },
+              {
+                "name": "Miedź Legnica",
+                "price": 295
+              },
+              {
+                "name": "Draw",
+                "price": 265
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "630aa2b42aa037eb9b2d6bdfba8013a2",
+    "sport_key": "soccer_germany_bundesliga2",
+    "sport_title": "Bundesliga 2 - Germany",
+    "commence_time": "2022-08-19T16:30:00Z",
+    "home_team": "1. FC Magdeburg",
+    "away_team": "Hannover 96",
+    "bookmakers": [
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2022-08-19T16:02:17Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 150
+              },
+              {
+                "name": "Hannover 96",
+                "price": 155
+              },
+              {
+                "name": "Draw",
+                "price": 255
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2022-08-19T16:02:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 155
+              },
+              {
+                "name": "Hannover 96",
+                "price": 160
+              },
+              {
+                "name": "Draw",
+                "price": 270
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "mybookieag",
+        "title": "MyBookie.ag",
+        "last_update": "2022-08-19T16:00:49Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 163
+              },
+              {
+                "name": "Hannover 96",
+                "price": 132
+              },
+              {
+                "name": "Draw",
+                "price": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2022-08-19T16:02:19Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 140
+              },
+              {
+                "name": "Hannover 96",
+                "price": 160
+              },
+              {
+                "name": "Draw",
+                "price": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2022-08-19T16:02:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 140
+              },
+              {
+                "name": "Hannover 96",
+                "price": 160
+              },
+              {
+                "name": "Draw",
+                "price": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2022-08-19T16:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 150
+              },
+              {
+                "name": "Hannover 96",
+                "price": 160
+              },
+              {
+                "name": "Draw",
+                "price": 275
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2022-08-19T16:02:20Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 150
+              },
+              {
+                "name": "Hannover 96",
+                "price": 160
+              },
+              {
+                "name": "Draw",
+                "price": 255
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-19T16:02:13Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 160
+              },
+              {
+                "name": "Hannover 96",
+                "price": 176
+              },
+              {
+                "name": "Draw",
+                "price": 285
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 162
+              },
+              {
+                "name": "Hannover 96",
+                "price": 178
+              },
+              {
+                "name": "Draw",
+                "price": 295
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2022-08-19T16:02:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 145
+              },
+              {
+                "name": "Hannover 96",
+                "price": 155
+              },
+              {
+                "name": "Draw",
+                "price": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "intertops",
+        "title": "Intertops",
+        "last_update": "2022-08-19T16:00:52Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 140
+              },
+              {
+                "name": "Hannover 96",
+                "price": 160
+              },
+              {
+                "name": "Draw",
+                "price": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2022-08-19T16:02:20Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 170
+              },
+              {
+                "name": "Hannover 96",
+                "price": 140
+              },
+              {
+                "name": "Draw",
+                "price": 270
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2022-08-19T16:02:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 150
+              },
+              {
+                "name": "Hannover 96",
+                "price": 160
+              },
+              {
+                "name": "Draw",
+                "price": 255
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-19T16:02:14Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 150
+              },
+              {
+                "name": "Hannover 96",
+                "price": 160
+              },
+              {
+                "name": "Draw",
+                "price": 255
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2022-08-19T16:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 150
+              },
+              {
+                "name": "Hannover 96",
+                "price": 160
+              },
+              {
+                "name": "Draw",
+                "price": 255
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2022-08-19T16:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 150
+              },
+              {
+                "name": "Hannover 96",
+                "price": 160
+              },
+              {
+                "name": "Draw",
+                "price": 255
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sugarhouse",
+        "title": "SugarHouse",
+        "last_update": "2022-08-19T16:02:20Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "1. FC Magdeburg",
+                "price": 150
+              },
+              {
+                "name": "Hannover 96",
+                "price": 160
+              },
+              {
+                "name": "Draw",
+                "price": 255
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "5c2f8963505a0423a88ac6aa2129bea0",
+    "sport_key": "soccer_germany_bundesliga2",
+    "sport_title": "Bundesliga 2 - Germany",
+    "commence_time": "2022-08-19T16:30:00Z",
+    "home_team": "Hamburger SV",
+    "away_team": "Darmstadt 98",
+    "bookmakers": [
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2022-08-19T16:02:17Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 205
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 116
+              },
+              {
+                "name": "Draw",
+                "price": 255
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2022-08-19T16:02:19Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 200
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 115
+              },
+              {
+                "name": "Draw",
+                "price": 270
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2022-08-19T16:02:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 215
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 115
+              },
+              {
+                "name": "Draw",
+                "price": 265
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "mybookieag",
+        "title": "MyBookie.ag",
+        "last_update": "2022-08-19T16:00:49Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 199
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 110
+              },
+              {
+                "name": "Draw",
+                "price": 255
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2022-08-19T16:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 215
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 115
+              },
+              {
+                "name": "Draw",
+                "price": 270
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2022-08-19T16:02:20Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 210
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 115
+              },
+              {
+                "name": "Draw",
+                "price": 255
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2022-08-19T16:02:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 210
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 110
+              },
+              {
+                "name": "Draw",
+                "price": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-19T16:02:13Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 230
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 124
+              },
+              {
+                "name": "Draw",
+                "price": 285
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 235
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 126
+              },
+              {
+                "name": "Draw",
+                "price": 290
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2022-08-19T16:02:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 200
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 115
+              },
+              {
+                "name": "Draw",
+                "price": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "intertops",
+        "title": "Intertops",
+        "last_update": "2022-08-19T16:00:52Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 205
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 115
+              },
+              {
+                "name": "Draw",
+                "price": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2022-08-19T16:02:20Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 210
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 115
+              },
+              {
+                "name": "Draw",
+                "price": 270
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2022-08-19T16:02:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 215
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 112
+              },
+              {
+                "name": "Draw",
+                "price": 265
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-19T16:02:14Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 215
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 112
+              },
+              {
+                "name": "Draw",
+                "price": 265
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2022-08-19T16:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 215
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 112
+              },
+              {
+                "name": "Draw",
+                "price": 265
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2022-08-19T16:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 215
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 112
+              },
+              {
+                "name": "Draw",
+                "price": 265
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sugarhouse",
+        "title": "SugarHouse",
+        "last_update": "2022-08-19T16:02:20Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Darmstadt 98",
+                "price": 215
+              },
+              {
+                "name": "Hamburger SV",
+                "price": 112
+              },
+              {
+                "name": "Draw",
+                "price": 265
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ef3c9e7a34c0c4658f8d26bbd014c957",
+    "sport_key": "soccer_denmark_superliga",
+    "sport_title": "Denmark Superliga",
+    "commence_time": "2022-08-19T17:00:00Z",
+    "home_team": "Lyngby",
+    "away_team": "FC Copenhagen",
+    "bookmakers": [
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-19T16:01:57Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -122
+              },
+              {
+                "name": "Lyngby",
+                "price": 280
+              },
+              {
+                "name": "Draw",
+                "price": 280
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2022-08-19T16:02:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -118
+              },
+              {
+                "name": "Lyngby",
+                "price": 285
+              },
+              {
+                "name": "Draw",
+                "price": 285
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2022-08-19T16:02:02Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -118
+              },
+              {
+                "name": "Lyngby",
+                "price": 285
+              },
+              {
+                "name": "Draw",
+                "price": 285
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2022-08-19T16:02:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -118
+              },
+              {
+                "name": "Lyngby",
+                "price": 285
+              },
+              {
+                "name": "Draw",
+                "price": 285
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sugarhouse",
+        "title": "SugarHouse",
+        "last_update": "2022-08-19T16:02:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -118
+              },
+              {
+                "name": "Lyngby",
+                "price": 285
+              },
+              {
+                "name": "Draw",
+                "price": 285
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2022-08-19T16:02:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -120
+              },
+              {
+                "name": "Lyngby",
+                "price": 320
+              },
+              {
+                "name": "Draw",
+                "price": 280
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2022-08-19T16:01:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -128
+              },
+              {
+                "name": "Lyngby",
+                "price": 320
+              },
+              {
+                "name": "Draw",
+                "price": 265
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2022-08-19T16:02:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -125
+              },
+              {
+                "name": "Lyngby",
+                "price": 330
+              },
+              {
+                "name": "Draw",
+                "price": 275
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2022-08-19T16:01:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -133
+              },
+              {
+                "name": "Lyngby",
+                "price": 270
+              },
+              {
+                "name": "Draw",
+                "price": 235
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2022-08-19T16:01:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -140
+              },
+              {
+                "name": "Lyngby",
+                "price": 320
+              },
+              {
+                "name": "Draw",
+                "price": 270
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-19T16:01:56Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -118
+              },
+              {
+                "name": "Lyngby",
+                "price": 350
+              },
+              {
+                "name": "Draw",
+                "price": 300
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -115
+              },
+              {
+                "name": "Lyngby",
+                "price": 370
+              },
+              {
+                "name": "Draw",
+                "price": 320
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "gtbets",
+        "title": "GTbets",
+        "last_update": "2022-08-19T16:02:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -125
+              },
+              {
+                "name": "Lyngby",
+                "price": 300
+              },
+              {
+                "name": "Draw",
+                "price": 292
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "intertops",
+        "title": "Intertops",
+        "last_update": "2022-08-19T16:00:32Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -133
+              },
+              {
+                "name": "Lyngby",
+                "price": 300
+              },
+              {
+                "name": "Draw",
+                "price": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2022-08-19T16:02:02Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -130
+              },
+              {
+                "name": "Lyngby",
+                "price": 330
+              },
+              {
+                "name": "Draw",
+                "price": 285
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2022-08-19T16:00:30Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -135
+              },
+              {
+                "name": "Lyngby",
+                "price": 345
+              },
+              {
+                "name": "Draw",
+                "price": 285
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2022-08-19T16:01:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -120
+              },
+              {
+                "name": "Lyngby",
+                "price": 340
+              },
+              {
+                "name": "Draw",
+                "price": 280
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2022-08-19T16:00:30Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "FC Copenhagen",
+                "price": -120
+              },
+              {
+                "name": "Lyngby",
+                "price": 340
+              },
+              {
+                "name": "Draw",
+                "price": 280
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c083a0fd3207050ea79ba484668410d7",
+    "sport_key": "cricket_the_hundred",
+    "sport_title": "The Hundred",
+    "commence_time": "2022-08-19T18:00:00Z",
+    "home_team": "Birmingham Phoenix",
+    "away_team": "Northern Superchargers",
+    "bookmakers": [
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-19T16:01:03Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Birmingham Phoenix",
+                "price": -156
+              },
+              {
+                "name": "Northern Superchargers",
+                "price": 125
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-19T15:59:33Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Birmingham Phoenix",
+                "price": -147
+              },
+              {
+                "name": "Northern Superchargers",
+                "price": 144
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "Birmingham Phoenix",
+                "price": -143
+              },
+              {
+                "name": "Northern Superchargers",
+                "price": 148
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "e3ca9aebf7eb604402685e5bcc4b2414",
+    "sport_key": "soccer_spain_la_liga",
+    "sport_title": "La Liga - Spain",
+    "commence_time": "2022-08-19T18:00:00Z",
+    "home_team": "Espanyol",
+    "away_team": "Rayo Vallecano",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2022-08-19T16:01:49Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 160
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 190
+              },
+              {
+                "name": "Draw",
+                "price": 190
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2022-08-19T16:01:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 160
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 200
+              },
+              {
+                "name": "Draw",
+                "price": 190
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-19T16:01:48Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 172
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 220
+              },
+              {
+                "name": "Draw",
+                "price": 205
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 174
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 225
+              },
+              {
+                "name": "Draw",
+                "price": 210
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "mybookieag",
+        "title": "MyBookie.ag",
+        "last_update": "2022-08-19T16:00:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 130
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 225
+              },
+              {
+                "name": "Draw",
+                "price": 215
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2022-08-19T16:01:52Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 165
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 195
+              },
+              {
+                "name": "Draw",
+                "price": 195
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2022-08-19T16:01:49Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 165
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 200
+              },
+              {
+                "name": "Draw",
+                "price": 195
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-19T16:00:21Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 155
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 210
+              },
+              {
+                "name": "Draw",
+                "price": 200
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2022-08-19T16:01:54Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 155
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 210
+              },
+              {
+                "name": "Draw",
+                "price": 200
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sugarhouse",
+        "title": "SugarHouse",
+        "last_update": "2022-08-19T16:01:52Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 160
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 215
+              },
+              {
+                "name": "Draw",
+                "price": 205
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2022-08-19T16:01:53Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 155
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 210
+              },
+              {
+                "name": "Draw",
+                "price": 200
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2022-08-19T16:01:55Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 155
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 210
+              },
+              {
+                "name": "Draw",
+                "price": 200
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2022-08-19T16:01:53Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 160
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 200
+              },
+              {
+                "name": "Draw",
+                "price": 190
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2022-08-19T16:01:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 163
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 190
+              },
+              {
+                "name": "Draw",
+                "price": 195
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2022-08-19T16:01:52Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 160
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 205
+              },
+              {
+                "name": "Draw",
+                "price": 205
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "intertops",
+        "title": "Intertops",
+        "last_update": "2022-08-19T16:00:28Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 160
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 195
+              },
+              {
+                "name": "Draw",
+                "price": 190
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2022-08-19T16:00:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 165
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 208
+              },
+              {
+                "name": "Draw",
+                "price": 200
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2022-08-19T16:00:23Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 165
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 208
+              },
+              {
+                "name": "Draw",
+                "price": 200
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2022-08-19T16:01:51Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Espanyol",
+                "price": 160
+              },
+              {
+                "name": "Rayo Vallecano",
+                "price": 210
+              },
+              {
+                "name": "Draw",
+                "price": 205
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "e5abdb3a14b6c63ec76c1598785838d3",
+    "sport_key": "soccer_turkey_super_league",
+    "sport_title": "Turkey Super League",
+    "commence_time": "2022-08-19T18:00:00Z",
+    "home_team": "Ümraniyespor",
+    "away_team": "Galatasaray",
+    "bookmakers": [
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2022-08-19T16:01:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Galatasaray",
+                "price": -120
+              },
+              {
+                "name": "Ümraniyespor",
+                "price": 325
+              },
+              {
+                "name": "Draw",
+                "price": 275
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2022-08-19T16:01:44Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Galatasaray",
+                "price": -130
+              },
+              {
+                "name": "Ümraniyespor",
+                "price": 295
+              },
+              {
+                "name": "Draw",
+                "price": 250
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-19T16:01:43Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Galatasaray",
+                "price": -114
+              },
+              {
+                "name": "Ümraniyespor",
+                "price": 370
+              },
+              {
+                "name": "Draw",
+                "price": 280
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "Galatasaray",
+                "price": -112
+              },
+              {
+                "name": "Ümraniyespor",
+                "price": 380
+              },
+              {
+                "name": "Draw",
+                "price": 290
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2022-08-19T16:01:44Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Galatasaray",
+                "price": -125
+              },
+              {
+                "name": "Ümraniyespor",
+                "price": 310
+              },
+              {
+                "name": "Draw",
+                "price": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2022-08-19T16:01:47Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Galatasaray",
+                "price": -132
+              },
+              {
+                "name": "Ümraniyespor",
+                "price": 330
+              },
+              {
+                "name": "Draw",
+                "price": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2022-08-19T16:01:47Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Galatasaray",
+                "price": -132
+              },
+              {
+                "name": "Ümraniyespor",
+                "price": 330
+              },
+              {
+                "name": "Draw",
+                "price": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2022-08-19T16:01:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Galatasaray",
+                "price": -132
+              },
+              {
+                "name": "Ümraniyespor",
+                "price": 330
+              },
+              {
+                "name": "Draw",
+                "price": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-19T16:00:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Galatasaray",
+                "price": -132
+              },
+              {
+                "name": "Ümraniyespor",
+                "price": 330
+              },
+              {
+                "name": "Draw",
+                "price": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "gtbets",
+        "title": "GTbets",
+        "last_update": "2022-08-19T16:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Galatasaray",
+                "price": -135
+              },
+              {
+                "name": "Ümraniyespor",
+                "price": 375
+              },
+              {
+                "name": "Draw",
+                "price": 264
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2022-08-19T16:01:49Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Galatasaray",
+                "price": -120
+              },
+              {
+                "name": "Ümraniyespor",
+                "price": 300
+              },
+              {
+                "name": "Draw",
+                "price": 255
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "intertops",
+        "title": "Intertops",
+        "last_update": "2022-08-19T16:00:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Galatasaray",
+                "price": -137
+              },
+              {
+                "name": "Ümraniyespor",
+                "price": 320
+              },
+              {
+                "name": "Draw",
+                "price": 250
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2022-08-19T16:01:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Galatasaray",
+                "price": -125
+              },
+              {
+                "name": "Ümraniyespor",
+                "price": 333
+              },
+              {
+                "name": "Draw",
+                "price": 280
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "f683e53fb66af0bc8c798da5b6b363cf",
+    "sport_key": "cricket_odi",
+    "sport_title": "One Day Internationals",
+    "commence_time": "2022-08-19T18:00:00Z",
+    "home_team": "West Indies",
+    "away_team": "New Zealand",
+    "bookmakers": [
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-19T16:02:07Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New Zealand",
+                "price": -227
+              },
+              {
+                "name": "West Indies",
+                "price": 220
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "New Zealand",
+                "price": -222
+              },
+              {
+                "name": "West Indies",
+                "price": 230
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-19T16:00:32Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New Zealand",
+                "price": -222
+              },
+              {
+                "name": "West Indies",
+                "price": 175
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "8369b669909ac3127309962654b4d86a",
+    "sport_key": "soccer_spain_segunda_division",
+    "sport_title": "La Liga 2 - Spain",
+    "commence_time": "2022-08-19T18:00:00Z",
+    "home_team": "Villarreal",
+    "away_team": "SD Eibar",
+    "bookmakers": [
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2022-08-19T16:00:53Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "SD Eibar",
+                "price": 130
+              },
+              {
+                "name": "Villarreal",
+                "price": 200
+              },
+              {
+                "name": "Draw",
+                "price": 200
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2022-08-19T15:57:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "SD Eibar",
+                "price": 155
+              },
+              {
+                "name": "Villarreal",
+                "price": 200
+              },
+              {
+                "name": "Draw",
+                "price": 210
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-19T15:59:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "SD Eibar",
+                "price": 160
+              },
+              {
+                "name": "Villarreal",
+                "price": 210
+              },
+              {
+                "name": "Draw",
+                "price": 215
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "SD Eibar",
+                "price": 168
+              },
+              {
+                "name": "Villarreal",
+                "price": 230
+              },
+              {
+                "name": "Draw",
+                "price": 225
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2022-08-19T16:00:54Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "SD Eibar",
+                "price": 150
+              },
+              {
+                "name": "Villarreal",
+                "price": 205
+              },
+              {
+                "name": "Draw",
+                "price": 210
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2022-08-19T15:59:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "SD Eibar",
+                "price": 145
+              },
+              {
+                "name": "Villarreal",
+                "price": 185
+              },
+              {
+                "name": "Draw",
+                "price": 210
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-19T15:59:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "SD Eibar",
+                "price": 143
+              },
+              {
+                "name": "Villarreal",
+                "price": 190
+              },
+              {
+                "name": "Draw",
+                "price": 195
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2022-08-19T16:00:55Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "SD Eibar",
+                "price": 145
+              },
+              {
+                "name": "Villarreal",
+                "price": 190
+              },
+              {
+                "name": "Draw",
+                "price": 195
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2022-08-19T16:00:55Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "SD Eibar",
+                "price": 145
+              },
+              {
+                "name": "Villarreal",
+                "price": 190
+              },
+              {
+                "name": "Draw",
+                "price": 195
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2022-08-19T16:00:52Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "SD Eibar",
+                "price": 147
+              },
+              {
+                "name": "Villarreal",
+                "price": 192
+              },
+              {
+                "name": "Draw",
+                "price": 200
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

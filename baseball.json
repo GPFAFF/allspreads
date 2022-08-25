@@ -1,0 +1,3769 @@
+[
+  {
+    "id": "aa6c1bb0a2cdcb2dfdba57962f63d01c",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2022-08-22T18:11:00Z",
+    "home_team": "Kansas City Royals",
+    "away_team": "Chicago White Sox",
+    "bookmakers": [
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-22T13:43:25Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -164
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 138
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2022-08-22T13:46:51Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -155
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 135
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -152
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 139
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2022-08-22T13:46:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -161
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 135
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -160
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 135
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -151
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 136
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sugarhouse",
+        "title": "SugarHouse",
+        "last_update": "2022-08-22T13:48:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -159
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 140
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2022-08-22T13:44:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -162
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 138
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "gtbets",
+        "title": "GTbets",
+        "last_update": "2022-08-22T13:45:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -151
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 139
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -147
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 136
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2022-08-22T13:44:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -151
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 139
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2022-08-22T13:45:14Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -160
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 135
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2022-08-22T13:48:17Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -165
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 138
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2022-08-22T13:48:03Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -155
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 130
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -162
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 135
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -155
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 130
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -159
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 140
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "intertops",
+        "title": "Intertops",
+        "last_update": "2022-08-22T13:45:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -155
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 140
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -162
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 136
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-22T13:47:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -145
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 140
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": -139
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 144
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c14e2864b90732cca0f09dfc95423c2a",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2022-08-22T23:06:00Z",
+    "home_team": "Pittsburgh Pirates",
+    "away_team": "Atlanta Braves",
+    "bookmakers": [
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -192
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 174
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2022-08-22T13:46:51Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -195
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 165
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2022-08-22T13:46:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -200
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 163
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -206
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 170
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -205
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 170
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -200
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 170
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2022-08-22T13:44:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -189
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 174
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "gtbets",
+        "title": "GTbets",
+        "last_update": "2022-08-22T13:45:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -189
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 169
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -189
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 175
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -196
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 164
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2022-08-22T13:48:03Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -200
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 165
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -213
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 178
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2022-08-22T13:45:14Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -200
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 165
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-22T13:47:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -182
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 174
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -172
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 182
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-22T13:43:25Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -204
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 170
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sugarhouse",
+        "title": "SugarHouse",
+        "last_update": "2022-08-22T13:48:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -200
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 175
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2022-08-22T13:44:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -200
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 170
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2022-08-22T13:48:17Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -205
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 170
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -200
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 175
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "intertops",
+        "title": "Intertops",
+        "last_update": "2022-08-22T13:45:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": -190
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 170
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1ed3966a772c67f3f9e0c7a45fef6fd5",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2022-08-22T23:06:00Z",
+    "home_team": "Philadelphia Phillies",
+    "away_team": "Cincinnati Reds",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2022-08-22T13:46:51Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 195
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -230
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 205
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -227
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 200
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -250
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2022-08-22T13:46:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 205
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -250
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 198
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -240
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2022-08-22T13:44:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 205
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -227
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 190
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -230
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "gtbets",
+        "title": "GTbets",
+        "last_update": "2022-08-22T13:45:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 197
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -227
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 196
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -240
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 212
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -233
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 178
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -213
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2022-08-22T13:48:03Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 200
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -245
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2022-08-22T13:45:14Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 185
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -225
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-22T13:47:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 215
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -227
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 225
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -213
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sugarhouse",
+        "title": "SugarHouse",
+        "last_update": "2022-08-22T13:48:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 210
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -245
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2022-08-22T13:44:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 210
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -250
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2022-08-22T13:48:17Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 205
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -250
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-22T13:43:25Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 205
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -250
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 210
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -245
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "intertops",
+        "title": "Intertops",
+        "last_update": "2022-08-22T13:45:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 200
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -230
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "088381fa1148b9798f3d4fbc4c90320a",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2022-08-22T23:06:00Z",
+    "home_team": "New York Yankees",
+    "away_team": "New York Mets",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2022-08-22T13:46:51Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -165
+              },
+              {
+                "name": "New York Yankees",
+                "price": 140
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -156
+              },
+              {
+                "name": "New York Yankees",
+                "price": 142
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -160
+              },
+              {
+                "name": "New York Yankees",
+                "price": 135
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2022-08-22T13:46:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -167
+              },
+              {
+                "name": "New York Yankees",
+                "price": 140
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -162
+              },
+              {
+                "name": "New York Yankees",
+                "price": 136
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -160
+              },
+              {
+                "name": "New York Yankees",
+                "price": 135
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -156
+              },
+              {
+                "name": "New York Yankees",
+                "price": 141
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2022-08-22T13:44:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -154
+              },
+              {
+                "name": "New York Yankees",
+                "price": 142
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "gtbets",
+        "title": "GTbets",
+        "last_update": "2022-08-22T13:45:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -154
+              },
+              {
+                "name": "New York Yankees",
+                "price": 142
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -149
+              },
+              {
+                "name": "New York Yankees",
+                "price": 140
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -154
+              },
+              {
+                "name": "New York Yankees",
+                "price": 130
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2022-08-22T13:48:03Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -165
+              },
+              {
+                "name": "New York Yankees",
+                "price": 139
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2022-08-22T13:45:14Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -160
+              },
+              {
+                "name": "New York Yankees",
+                "price": 135
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-22T13:47:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -149
+              },
+              {
+                "name": "New York Yankees",
+                "price": 144
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -145
+              },
+              {
+                "name": "New York Yankees",
+                "price": 148
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sugarhouse",
+        "title": "SugarHouse",
+        "last_update": "2022-08-22T13:48:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -157
+              },
+              {
+                "name": "New York Yankees",
+                "price": 138
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2022-08-22T13:44:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -162
+              },
+              {
+                "name": "New York Yankees",
+                "price": 138
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2022-08-22T13:48:17Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -162
+              },
+              {
+                "name": "New York Yankees",
+                "price": 135
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-22T13:43:25Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -172
+              },
+              {
+                "name": "New York Yankees",
+                "price": 143
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -159
+              },
+              {
+                "name": "New York Yankees",
+                "price": 140
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "intertops",
+        "title": "Intertops",
+        "last_update": "2022-08-22T13:45:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": -155
+              },
+              {
+                "name": "New York Yankees",
+                "price": 140
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "d90bc3b874040420331a1215292bcfbf",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2022-08-22T23:11:00Z",
+    "home_team": "Tampa Bay Rays",
+    "away_team": "Los Angeles Angels",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2022-08-22T13:46:51Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 180
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -210
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 187
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -204
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 185
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -225
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 180
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -221
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2022-08-22T13:46:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 175
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -213
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2022-08-22T13:48:03Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 180
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -220
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "gtbets",
+        "title": "GTbets",
+        "last_update": "2022-08-22T13:45:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 184
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -204
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 180
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -210
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 188
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -225
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 160
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -193
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 190
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -208
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2022-08-22T13:44:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 187
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -204
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2022-08-22T13:45:14Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 180
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -225
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-22T13:47:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 190
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -200
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 198
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -189
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-22T13:43:25Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 180
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -217
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sugarhouse",
+        "title": "SugarHouse",
+        "last_update": "2022-08-22T13:48:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 188
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -220
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2022-08-22T13:44:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 180
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -220
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2022-08-22T13:48:17Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 180
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -220
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 188
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -220
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "intertops",
+        "title": "Intertops",
+        "last_update": "2022-08-22T13:45:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 180
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -205
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "586485d24f8ff9f56e8772d0e15a1642",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2022-08-22T23:11:00Z",
+    "home_team": "Minnesota Twins",
+    "away_team": "Texas Rangers",
+    "bookmakers": [
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -204
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 184
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2022-08-22T13:46:51Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -210
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 180
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -221
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 180
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -210
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 175
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2022-08-22T13:46:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -213
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 175
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -215
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 180
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2022-08-22T13:44:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -201
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 184
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "gtbets",
+        "title": "GTbets",
+        "last_update": "2022-08-22T13:45:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -201
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 181
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2022-08-22T13:48:03Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -210
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 170
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -210
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 180
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -200
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 180
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -200
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 167
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2022-08-22T13:45:14Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -200
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 165
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-22T13:47:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -196
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 188
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -189
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 196
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-22T13:43:25Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -217
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 180
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sugarhouse",
+        "title": "SugarHouse",
+        "last_update": "2022-08-22T13:48:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -215
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 185
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2022-08-22T13:44:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -215
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 185
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2022-08-22T13:48:17Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -220
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 180
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -215
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 185
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "intertops",
+        "title": "Intertops",
+        "last_update": "2022-08-22T13:45:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": -205
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 180
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2e2a86ffb1fd9a188210582ee56bd4ad",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2022-08-23T00:06:00Z",
+    "home_team": "Chicago Cubs",
+    "away_team": "St. Louis Cardinals",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2022-08-22T13:46:51Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 140
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -165
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 142
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -156
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 140
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -165
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2022-08-22T13:46:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 145
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -175
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 140
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -165
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 148
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -176
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 139
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -154
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2022-08-22T13:44:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 152
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -165
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "gtbets",
+        "title": "GTbets",
+        "last_update": "2022-08-22T13:45:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 142
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -154
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 150
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -159
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2022-08-22T13:48:03Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 139
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -165
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 127
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -152
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2022-08-22T13:45:14Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 145
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -175
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-22T13:47:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 148
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -154
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 154
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -147
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sugarhouse",
+        "title": "SugarHouse",
+        "last_update": "2022-08-22T13:48:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 143
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -165
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2022-08-22T13:44:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 143
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -165
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2022-08-22T13:48:17Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 140
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -167
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-22T13:43:25Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 140
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -167
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 143
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": -165
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "8f582f6e489c1e0138c95cc817e6217b",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2022-08-23T01:41:00Z",
+    "home_team": "Oakland Athletics",
+    "away_team": "Miami Marlins",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2022-08-22T13:46:51Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -140
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 120
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -137
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 127
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -140
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 118
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2022-08-22T13:46:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -149
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 125
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -140
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 120
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -148
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 126
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -140
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 125
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2022-08-22T13:44:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -137
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 127
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "gtbets",
+        "title": "GTbets",
+        "last_update": "2022-08-22T13:45:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -137
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 127
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -137
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 127
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2022-08-22T13:48:03Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -140
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 117
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -145
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 122
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-22T13:47:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -135
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 130
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -130
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 136
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2022-08-22T13:45:14Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -145
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 120
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-22T13:43:25Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -147
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 123
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sugarhouse",
+        "title": "SugarHouse",
+        "last_update": "2022-08-22T13:48:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -141
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 125
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2022-08-22T13:48:17Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -148
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 123
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2022-08-22T13:44:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -148
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 125
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -141
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 125
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "intertops",
+        "title": "Intertops",
+        "last_update": "2022-08-22T13:45:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Miami Marlins",
+                "price": -137
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 127
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "f237a1ec37b8e8c8b96f3acfc9ee6010",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2022-08-23T02:11:00Z",
+    "home_team": "Los Angeles Dodgers",
+    "away_team": "Milwaukee Brewers",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2022-08-22T13:46:51Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -255
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 215
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -250
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 220
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -260
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 210
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2022-08-22T13:46:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -278
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 200
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -261
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 210
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -270
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 220
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2022-08-22T13:48:03Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -260
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 210
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -260
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 210
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "gtbets",
+        "title": "GTbets",
+        "last_update": "2022-08-22T13:45:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -245
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 210
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2022-08-22T13:44:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -245
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 220
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2022-08-22T13:47:26Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -295
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 240
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2022-08-22T13:46:41Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -238
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 215
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair",
+        "title": "Betfair",
+        "last_update": "2022-08-22T13:47:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -250
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 235
+              }
+            ]
+          },
+          {
+            "key": "h2h_lay",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -233
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 250
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2022-08-22T13:45:14Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -250
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 200
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet",
+        "title": "Unibet",
+        "last_update": "2022-08-22T13:43:25Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -250
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 210
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2022-08-22T13:47:08Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -250
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 215
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sugarhouse",
+        "title": "SugarHouse",
+        "last_update": "2022-08-22T13:48:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -250
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 215
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2022-08-22T13:44:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -250
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 210
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2022-08-22T13:48:17Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -250
+              },
+              {
+                "name": "Milwaukee Brewers",
+                "price": 210
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
