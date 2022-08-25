@@ -1,0 +1,75 @@
+{
+  "polyfillFiles": [
+    "static/chunks/polyfills-c67a75d1b6f99dc8.js"
+  ],
+  "devFiles": [],
+  "ampDevFiles": [],
+  "lowPriorityFiles": [
+    "static/InakoJwXVZfUOTZJWKmBk/_buildManifest.js",
+    "static/InakoJwXVZfUOTZJWKmBk/_ssgManifest.js"
+  ],
+  "rootMainFiles": [],
+  "pages": {
+    "/": [
+      "static/chunks/webpack-14a891bf35ecde1d.js",
+      "static/chunks/framework-4556c45dd113b893.js",
+      "static/chunks/main-a9843dfedfe4c8a6.js",
+      "static/chunks/pages/index-fecc7ff2e60cc1f0.js"
+    ],
+    "/_app": [
+      "static/chunks/webpack-14a891bf35ecde1d.js",
+      "static/chunks/framework-4556c45dd113b893.js",
+      "static/chunks/main-a9843dfedfe4c8a6.js",
+      "static/css/0bc0cde260d08b97.css",
+      "static/chunks/pages/_app-5a990cd2890dc551.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack-14a891bf35ecde1d.js",
+      "static/chunks/framework-4556c45dd113b893.js",
+      "static/chunks/main-a9843dfedfe4c8a6.js",
+      "static/chunks/pages/_error-a4ba2246ff8fb532.js"
+    ],
+    "/odds": [
+      "static/chunks/webpack-14a891bf35ecde1d.js",
+      "static/chunks/framework-4556c45dd113b893.js",
+      "static/chunks/main-a9843dfedfe4c8a6.js",
+      "static/chunks/71-d70146d6dca24a3f.js",
+      "static/chunks/pages/odds-e3ea541cdd445c75.js"
+    ],
+    "/picks": [
+      "static/chunks/webpack-14a891bf35ecde1d.js",
+      "static/chunks/framework-4556c45dd113b893.js",
+      "static/chunks/main-a9843dfedfe4c8a6.js",
+      "static/chunks/pages/picks-128cb6d6137d5cef.js"
+    ],
+    "/sports": [
+      "static/chunks/webpack-14a891bf35ecde1d.js",
+      "static/chunks/framework-4556c45dd113b893.js",
+      "static/chunks/main-a9843dfedfe4c8a6.js",
+      "static/chunks/71-d70146d6dca24a3f.js",
+      "static/chunks/pages/sports-101b6859aa04aa39.js"
+    ],
+    "/sports/[sport]": [
+      "static/chunks/webpack-14a891bf35ecde1d.js",
+      "static/chunks/framework-4556c45dd113b893.js",
+      "static/chunks/main-a9843dfedfe4c8a6.js",
+      "static/chunks/71-d70146d6dca24a3f.js",
+      "static/chunks/pages/sports/[sport]-06c473c84f42c79f.js"
+    ],
+    "/sports/[sport]/odds": [
+      "static/chunks/webpack-14a891bf35ecde1d.js",
+      "static/chunks/framework-4556c45dd113b893.js",
+      "static/chunks/main-a9843dfedfe4c8a6.js",
+      "static/chunks/71-d70146d6dca24a3f.js",
+      "static/chunks/pages/sports/[sport]/odds-dd3e240fefa78e36.js"
+    ],
+    "/sports/[sport]/scores": [
+      "static/chunks/webpack-14a891bf35ecde1d.js",
+      "static/chunks/framework-4556c45dd113b893.js",
+      "static/chunks/main-a9843dfedfe4c8a6.js",
+      "static/chunks/71-d70146d6dca24a3f.js",
+      "static/chunks/pages/sports/[sport]/scores-e5bf8ea458aa5ff6.js"
+    ]
+  },
+  "ampFirstPages": []
+}

@@ -1,0 +1,13 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/picks": "pages/picks.html",
+  "/sports": "pages/sports.js",
+  "/sports/[sport]/odds": "pages/sports/[sport]/odds.html",
+  "/sports/[sport]": "pages/sports/[sport].html",
+  "/sports/[sport]/scores": "pages/sports/[sport]/scores.html",
+  "/odds": "pages/odds.js",
+  "/": "pages/index.html",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}
