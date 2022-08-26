@@ -1,5 +1,3 @@
-import footballData from "../football.json";
-
 export function getPath(path) {
   switch (path) {
     case "football":
@@ -41,57 +39,50 @@ export const shimmer = (w, h) => `
   <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
 </svg>`;
 
-export const data = [
-  {
-    id: "1",
-    name: "Football",
-    slug: "football",
-    src: "/football.webp",
-    odds: footballData,
-  },
-  {
-    id: "2",
-    name: "Baseball",
-    slug: "baseball",
-    src: "/baseball.webp",
-  },
-  {
-    id: "3",
-    name: "Hockey",
-    slug: "hockey",
-    src: "/hockey.webp",
-  },
-  {
-    id: "4",
-    name: "Basketball",
-    slug: "basketball",
-    src: "/basketball.webp",
-  },
-  {
-    id: "5",
-    name: "College Football",
-    slug: "college-football",
-    src: "/cfb.webp",
-  },
-  {
-    id: "6",
-    name: "College Basketball",
-    slug: "college-basketball",
-    src: "/ncaabb.webp",
-  },
-  {
-    id: "7",
-    name: "Golf",
-    slug: "golf",
-    src: "/golf.webp",
-  },
-  {
-    id: "8",
-    name: "Soccer",
-    slug: "soccer",
-    src: "/soccer.webp",
-  },
-];
+export function getAllPageSlugs() {
+  const data = [
+    {
+      id: "1",
+      slug: "football",
+    },
+    {
+      id: "2",
+      slug: "baseball",
+    },
+    {
+      id: "3",
+      slug: "hockey",
+    },
+    {
+      id: "4",
+      slug: "basketball",
+    },
+    {
+      id: "5",
+      slug: "college-football",
+    },
+    {
+      id: "6",
+      slug: "college-basketball",
+    },
+    {
+      id: "7",
+      slug: "golf",
+    },
+    {
+      id: "8",
+      slug: "soccer",
+    },
+  ];
+
+  return data.map((item) => {
+    return {
+      params: {
+        sport: item.slug,
+      },
+    };
+  });
+}
 
 export function positiveOrNegativeSpread(item) {
   return Number(item) > 0 ? `+${item}` : `${item}`;

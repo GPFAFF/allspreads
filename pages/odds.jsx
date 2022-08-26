@@ -1,22 +1,19 @@
 import React from "react";
 import List from "../components/list";
 import Layout from "../components/layout";
-import { data } from "../helpers/index";
+import { useQuery } from "react-query";
+import { fetchAllSports } from "../hooks";
 
 export default function Odds() {
+  const { data, isLoading } = useQuery(['sports'], () => fetchAllSports());
+
+  if (isLoading) return <>....</>;
+
   return (
     <>
       <List data={data} />
     </>
   );
-}
-
-export async function getStaticProps(context) {
-  return {
-    props: {
-      data,
-    },
-  };
 }
 
 Odds.getLayout = function getLayout(page) {

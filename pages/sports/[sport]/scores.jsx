@@ -39,11 +39,6 @@ export default function Scores() {
   const router = useRouter();
 
   const key = getPath(router.query.sport);
-  // const { name, src, slug, odds } = data?.find(
-  //   (item) => item.name.toLowerCase() === query.name
-  // );
-
-  // console.log("data", key);
   const { data, status, isLoading } = useQuery(
     ["odds", key],
     () => fetchScores(key),
@@ -71,35 +66,6 @@ export default function Scores() {
     </>
   );
 }
-
-// export async function getStaticProps(context) {
-//   return {
-//     props: {
-//       data,
-//     },
-//   };
-// }
-
-// export async function getStaticProps(context) {
-//   const queryClient = new QueryClient();
-//   const name = getPath(context.params.name);
-
-//   await queryClient.fetchQuery(["odds"], () => fetchOdds(name));
-
-//   return {
-//     props: {
-//       dehydratedState: dehydrate(queryClient),
-//     },
-//   };
-// }
-
-// export async function getStaticPaths() {
-//   const paths = data.map((name) => ({
-//     params: { name: name.slug },
-//   }));
-//   // dont get paths for cms posts, instead, let fallback handle it
-//   return { paths, fallback: true };
-// }
 
 Scores.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>

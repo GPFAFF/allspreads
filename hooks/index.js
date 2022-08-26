@@ -1,3 +1,5 @@
+import { server } from "../config";
+
 export const fetchOdds = async (key) => {
   const res = await fetch(
     `https://api.the-odds-api.com/v4/sports/${key}/odds/?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&regions=us&markets=h2h,spreads,totals&oddsFormat=american`
@@ -11,3 +13,15 @@ export const fetchScores = async (key) => {
   );
   return res.json();
 };
+
+export const fetchAllSports = async () => {
+  const res = await fetch(`${server}/api/sports`)
+  const data = await res.json()
+  return data;
+}
+
+export const fetchSingleSport = async (key) => {
+  const res = await fetch(`${server}/api/sports/${key}`)
+  const data = await res.json()
+  return data;
+}

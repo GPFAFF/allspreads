@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useQuery } from "react-query";
 import Layout from "../components/layout";
 import { fetchOdds } from "../hooks";
-// import data from "../upcoming.json";
 
 export default function Picks() {
   return (

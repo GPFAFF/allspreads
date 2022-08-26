@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useQuery } from "react-query";
 import Layout from "../../../components/layout";
-import { fetchOdds } from "../../../hooks";
+import { fetchOdds, fetchSingleSport } from "../../../hooks";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import { getPath, toBase64, shimmer } from "../../../helpers";
+import { getPath, toBase64, shimmer, getAllPageSlugs } from "../../../helpers";
 import { server } from "../../../config";
 
 const SportStyles = styled.div`
@@ -23,7 +23,10 @@ const SportStyles = styled.div`
   }
 `;
 
-export default function SingleSport({ data }) {
+export default function SingleSport() {
+  const router = useRouter();
+  const { data, isLoading } = useQuery(['singleSport'], () => fetchSingleSport(router.query.sport));
+
   return (
     <>
       <SportStyles>
@@ -48,23 +51,6 @@ export default function SingleSport({ data }) {
       </SportStyles>
     </>
   );
-}
-
-
-export async function getStaticProps(context) {
-  const urlPath = context.params.sport;
-  const res = await fetch(`${server}/api/sports/${urlPath}`)
-  const data = await res.json()
-
-  return {
-    props: {
-      data
-    },
-  }
-}
-
-export async function getStaticPaths() {
-  return { paths: ['/sports/[sport]'], fallback: true };
 }
 
 SingleSport.getLayout = function getLayout(page) {
