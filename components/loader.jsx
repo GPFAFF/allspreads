@@ -4,6 +4,7 @@ import styled, { keyframes } from 'styled-components';
 const SpinnerStyles = styled.div`
   width: 100px;
   margin: auto;
+  text-align: center;
 `;
 
 const LoadingText = styled.p`
