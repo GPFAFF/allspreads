@@ -10,6 +10,7 @@ import styled from "styled-components";
 import { data, getPath, toBase64, shimmer } from "../../../helpers";
 import ScoresCard from "../../../components/scores-card";
 import { isBefore, parseISO } from "date-fns";
+import Loader from "../../../components/loader";
 
 const SportStyles = styled.div`
   display: grid;
@@ -53,7 +54,7 @@ export default function Scores() {
       isBefore(new Date(item.commence_time), new Date("2022-09-14T00:30:00Z"))
     );
 
-  if (isLoading) return <p>...</p>;
+  if (isLoading) return <Loader />;
 
   return (
     <>

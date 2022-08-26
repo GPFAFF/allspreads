@@ -9,6 +9,7 @@ import styled from "styled-components";
 import { getPath, toBase64, shimmer } from "../../../helpers";
 import OddsCard from "../../../components/odds-card";
 import { isBefore, parseISO } from "date-fns";
+import Loader from "../../../components/loader";
 
 const OddsTitle = styled.h2`
   margin-bottom: 20px;
@@ -32,7 +33,7 @@ export default function SingleOdds() {
       isBefore(new Date(item.commence_time), new Date("2022-09-14T00:30:00Z"))
     );
 
-  if (isLoading) return <p>...</p>;
+  if (isLoading) return <Loader />;
 
   return (
     <>

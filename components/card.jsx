@@ -25,6 +25,7 @@ export default function Card({ item }) {
       <h2>{name}</h2>
       <Link href={`/sports/${slug}`}>
         <Image
+          objectFit="cover"
           alt={name}
           src={src}
           placeholder="blur"

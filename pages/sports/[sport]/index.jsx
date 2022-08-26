@@ -8,6 +8,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { getPath, toBase64, shimmer, getAllPageSlugs } from "../../../helpers";
 import { server } from "../../../config";
+import Loader from "../../../components/loader";
 
 const SportStyles = styled.div`
   display: grid;
@@ -27,10 +28,13 @@ export default function SingleSport() {
   const router = useRouter();
   const { data, isLoading } = useQuery(['singleSport'], () => fetchSingleSport(router.query.sport));
 
+  if (isLoading) return <Loader />
+
   return (
     <>
       <SportStyles>
         <Image
+          objectFit="cover"
           alt={data?.slug}
           src={data?.src}
           placeholder="blur"

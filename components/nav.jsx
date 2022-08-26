@@ -16,6 +16,11 @@ const NavStyles = styled.nav`
     text-align: center;
     align-items: center;
     gap: 2rem;
+
+    @media (max-width: 480px) {
+      grid-template-rows: 1fr auto;
+      grid-template-columns: 1fr;
+    }
   }
 
   li {
@@ -23,8 +28,23 @@ const NavStyles = styled.nav`
     order: 1;
   }
 
+  @media (max-width: 480px) {
+    li:nth-child(3) {
+      order: -1;
+      margin-bottom: -40px;
+    };
+
+    li:last-child {
+      margin-bottom: 20px;
+    }
+  }
+
   .logo {
     transform: translateY(-25%);
+
+    @media (max-width: 480px) {
+      transform: translateY(-6%);
+    }
   }
 
   a {

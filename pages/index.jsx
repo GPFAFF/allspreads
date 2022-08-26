@@ -5,12 +5,6 @@ import { fetchOdds } from "../hooks";
 // import data from "../upcoming.json";
 
 export default function HomePage() {
-  // const { data, status } = useQuery("odds", () => fetchOdds("upcoming"));
-  // console.log("data", data);
-  // console.log("status", status);
-
-  const status = "success";
-
   return (
     <>
       <div
