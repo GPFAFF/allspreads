@@ -1,8 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import styled from "styled-components";
-import Link from "next/link";
-import { toBase64, shimmer, positiveOrNegativeSpread } from "../helpers";
+import {  positiveOrNegativeSpread } from "../helpers";
 
 const Odds = styled.div`
   margin-bottom: 20px;
@@ -12,24 +10,6 @@ const OddsContainer = styled.div`
   display: grid;
   grid-template-rows: repeat(auto-fit, minmax(60px, 1fr));
   width: 100%;
-  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  width: 100%;
-  gap: 2em; */
-  /* display: grid;
-  background-color: #eee;
-  width: 100%;
-  padding: 20px;
-  margin: 20px;
-
-  @supports not (grid-template-rows: subgrid) {
-    --rows: auto 1fr;
-  }
-  grid-template-rows: var(--rows, subgrid);
-  grid-row: span;
-  gap: 1em;
-  h2 {
-    margin: 0;
-  } */
 `;
 
 const OddsCardStyles = styled.ul`

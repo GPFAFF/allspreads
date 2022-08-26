@@ -36,7 +36,7 @@ export default function Loader() {
   return (
     <SpinnerStyles>
       <BallStyles />
-      <p>Loading</p>
+      <LoadingText>Loading</LoadingText>
     </SpinnerStyles>
   )
 }
