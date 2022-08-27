@@ -4,6 +4,7 @@ import Nav from "./nav";
 import Header from "./header";
 import Footer from "./footer";
 import GlobalStyles from "../styles/GlobalStyles";
+import SEO from "./seo";
 
 const SiteBorderStyles = styled.div`
   max-width: 95vw;
@@ -23,6 +24,7 @@ const ContentStyles = styled.div`
 export default function Layout({ children }) {
   return (
     <>
+      <SEO description="All Spreads. All the Time" title="All Spreads" />
       <SiteBorderStyles>
         <ContentStyles>
           <Nav />

@@ -1,9 +1,15 @@
 import React from "react";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import { format } from "date-fns";
 import styled from "styled-components";
-import {  positiveOrNegativeSpread } from "../helpers";
+import { getFilePrefix, positiveOrNegativeSpread } from "../helpers";
+import TeamLogo from "./team-logo";
 
-const Odds = styled.div`
-  margin-bottom: 20px;
+const OddsTitle = styled.h2`
+  display: flex;
+  align-items: center;
+  gap: 8px;
 `;
 
 const OddsContainer = styled.div`
@@ -39,7 +45,7 @@ const OddsCardStyles = styled.ul`
   }
 `;
 
-const BookmakersStyles = styled.div`
+const BookmakersStyles = styled.p`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
@@ -56,12 +62,33 @@ const OddsGrid = styled.div`
 `;
 
 export default function OddsCard({ item }) {
+  const router = useRouter();
+
   return (
     <>
-      <h2>
-        {item.away_team} @ {item.home_team}
-      </h2>
+      <OddsTitle>
+        <TeamLogo
+          style={{ paddingRight: "8px" }}
+          alt={item.away_team}
+          height={50}
+          width={50}
+          objectFit="contain"
+          team={item.away_team}
+          slug={router.query.sport}
+        />
+        {item.away_team} @{" "}
+        <TeamLogo
+          alt={item.home_team}
+          height={50}
+          width={50}
+          objectFit="contain"
+          team={item.home_team}
+          slug={router.query.sport}
+        />{" "}
+        {item.home_team}
+      </OddsTitle>
       <p>{new Date(item.commence_time).toLocaleDateString()}</p>
+      <p>Time: {new Date(item.commence_time).toLocaleTimeString()}</p>
       <OddsContainer>
         <p>
           {item.away_team}

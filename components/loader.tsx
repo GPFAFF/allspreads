@@ -12,7 +12,7 @@ const LoadingText = styled.p`
   margin-top: 5px;
   font-family: Empirez;
   letter-spacing: 3px;
-  font-size: 10px;
+  font-size: 14px;
 `;
 
 const motion = keyframes`

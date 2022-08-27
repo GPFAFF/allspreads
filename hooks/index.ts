@@ -1,13 +1,13 @@
 import { server } from "../config";
 
-export const fetchOdds = async (key) => {
+export const fetchOdds = async (key: string | undefined) => {
   const res = await fetch(
     `https://api.the-odds-api.com/v4/sports/${key}/odds/?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&regions=us&markets=h2h,spreads,totals&oddsFormat=american`
   );
   return res.json();
 };
 
-export const fetchScores = async (key) => {
+export const fetchScores = async (key: string | undefined) => {
   const res = await fetch(
     `https://api.the-odds-api.com/v4/sports/${key}/scores/?daysFrom=1&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
   );
@@ -15,13 +15,18 @@ export const fetchScores = async (key) => {
 };
 
 export const fetchAllSports = async () => {
-  const res = await fetch(`${server}/api/sports`)
-  const data = await res.json()
+  const res = await fetch(`${server}/api/sports`);
+  const data = await res.json();
   return data;
-}
+};
 
-export const fetchSingleSport = async (key) => {
-  const res = await fetch(`${server}/api/sports/${key}`)
-  const data = await res.json()
+export const fetchSingleSport = async (key: string | string[] | undefined) => {
+  const res = await fetch(`${server}/api/sports/${key}`);
+  const data = await res.json();
   return data;
-}
+};
+
+// export const fetchFootball = async (key: string) => {
+//   const res = await fetch(`${server}/${key}.json`);
+//   return res;
+// };

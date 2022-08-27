@@ -18,8 +18,10 @@ const CardStyles = styled.div`
   }
 `;
 
-export default function Card(item: { key?: string; item: {name: string; slug: string; src: string; }}) {
-
+export default function Card(item: {
+  key?: string;
+  item: { name: string; slug: string; src: string };
+}) {
   const { name, slug, src } = item.item;
 
   return (

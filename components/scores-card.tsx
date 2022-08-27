@@ -1,9 +1,11 @@
+import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
+import TeamLogo from "./team-logo";
 
 const ScoreCardStyles = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 440px));
   gap: 2rem;
   list-style-type: none;
   background-color: var(--grey);
@@ -18,6 +20,11 @@ const ScoreCardStyles = styled.div`
 
   > h3 {
     margin-bottom: 20px;
+    text-align: center;
+
+    > div:nth-child(2) {
+      margin-left: 14px;
+    }
   }
 
   &:hover {
@@ -27,17 +34,87 @@ const ScoreCardStyles = styled.div`
 
   > p {
     font-family: monospace;
+    > span {
+      padding: 4px;
+      display: block;
+    }
   }
 `;
 
+const TeamName = styled.h4`
+  margin-left: 8px;
+  text-align: left;
+`
+
+const ScoreCardRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 20px;
+  gap: 10px;
+  margin: 10px 0;
+`;
+
 export default function ScoresCard({ item }) {
+  const router = useRouter();
+
+  let sortedScores = item.completed ? item?.scores : [];
+
+  sortedScores.sort((a, b) => {
+    return Number(a.score) - Number(b.score);
+  });
+
   return (
     <ScoreCardStyles>
       <h3>
-        {item.away_team} @ {item.home_team}
+        <ScoreCardRow>
+          <TeamLogo
+            style={{ paddingRight: "8px" }}
+            alt={item.away_team}
+            height={50}
+            width={50}
+            objectFit="contain"
+            team={item.away_team}
+            slug={router.query.sport}
+          />
+          <TeamName>{item.away_team}</TeamName>
+        </ScoreCardRow>
+        <ScoreCardRow>@</ScoreCardRow>
+        <ScoreCardRow>
+          <TeamLogo
+            style={{ paddingRight: "8px" }}
+            alt={item.home_team}
+            height={50}
+            width={50}
+            objectFit="contain"
+            team={item.home_team}
+            slug={router.query.sport}
+          />
+          <TeamName>{item.home_team}</TeamName>
+        </ScoreCardRow>
       </h3>
-      <p>Game Day: {new Date(item.commence_time).toLocaleDateString()}</p>
-      {item.completed ? <p>Score: {item.scores}</p> : <p>Score: 0 - 0</p>}
+      <p>
+        <span>
+          Game Day: {new Date(item.commence_time).toLocaleDateString()}
+        </span>
+        <span>Time: {new Date(item.commence_time).toLocaleTimeString()}</span>
+      </p>
+      {item.completed ? (
+        <div>
+          Score:{" "}
+          {sortedScores
+            .sort((a, b) => a.score - b.score)
+            .map((team, i) => (
+              <p key={i}>
+                <span>{team.name}</span> <span>{team.score}</span>
+              </p>
+            ))}
+        </div>
+      ) : (
+        <>
+          <div>Score 0 - 0</div>
+        </>
+      )}
     </ScoreCardStyles>
   );
 }

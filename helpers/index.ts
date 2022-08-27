@@ -19,11 +19,29 @@ export function getPath(path) {
   }
 }
 
+export function getFilePrefix(string) {
+  switch (string) {
+    case "football":
+      return "nfl";
+    case "baseball":
+      return "mlb";
+    default:
+      break;
+  }
+}
+
 export function toBase64(str) {
   return typeof window === "undefined"
     ? Buffer.from(str).toString("base64")
     : window.btoa(str);
 }
+
+export const formatName = (name: string, slug) => {
+  return `/${getFilePrefix(slug)}/${name
+    .split(" ")
+    .join("-")
+    .toLowerCase()}.svg`;
+};
 
 export const shimmer = (w, h) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
