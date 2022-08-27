@@ -24,7 +24,7 @@ export default function SEO({ description, title }) {
         href="/Empirez.woff"
         as="font"
         type="font/woff"
-        crossOrigin
+        crossOrigin="true"
       />
     </Head>
   );
