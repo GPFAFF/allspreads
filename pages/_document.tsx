@@ -1,20 +1,22 @@
-import React from 'react';
-import Document from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
+import React from "react";
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
+import * as gtag from "../lib/gtag";
+import { ServerStyleSheet } from "styled-components";
 
-export default class MyDocument extends Document {
+class MyDocument extends Document {
   static async getInitialProps(ctx) {
-    const sheet = new ServerStyleSheet()
-    const originalRenderPage = ctx.renderPage
+    const originalRenderPage = ctx.renderPage;
+    const sheet = new ServerStyleSheet();
 
     try {
       ctx.renderPage = () =>
         originalRenderPage({
           enhanceApp: (MyApp) => (props) =>
             sheet.collectStyles(<MyApp {...props} />),
-        })
+        });
 
-      const initialProps = await Document.getInitialProps(ctx)
+      const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
         styles: (
@@ -23,9 +25,42 @@ export default class MyDocument extends Document {
             {sheet.getStyleElement()}
           </>
         ),
-      }
+      };
     } finally {
-      sheet.seal()
+      sheet.seal();
     }
   }
+
+  render() {
+    return (
+      <Html>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <Script
+            strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+          />
+          <Script
+            id="gtag-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gtag.GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
+        </body>
+      </Html>
+    );
+  }
 }
+
+export default MyDocument;
