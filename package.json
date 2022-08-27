@@ -12,7 +12,7 @@
   "author": "gpfaff <greg.pfaff@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@netlify/plugin-nextjs": "^4.18.0",
+    "@netlify/plugin-nextjs": "^4.19.0",
     "babel-plugin-styled-components": "^2.0.7",
     "date-fns": "^2.29.2",
     "next": "^12.2.5",

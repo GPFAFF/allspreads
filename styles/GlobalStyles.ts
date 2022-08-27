@@ -72,11 +72,13 @@ const GlobalStyles = createGlobalStyle`
   }
   @font-face {
     font-family: 'Empirez';
+    font-display: swap;
     src: url('/Empirez.woff') format('woff');
     font-weight: 400;
   }
   p,
   li {
+    line-height: 1;
     letter-spacing: 0.5px;
   }
   h1,

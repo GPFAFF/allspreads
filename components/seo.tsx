@@ -21,7 +21,7 @@ export default function SEO({ description, title }) {
       <meta property="twitter:description" content={description} />
       <link
         rel="preload"
-        href="/public/Empirez.woff"
+        href="/Empirez.woff"
         as="font"
         type="font/woff"
       />

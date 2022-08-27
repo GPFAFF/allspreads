@@ -10,6 +10,7 @@ const SpinnerStyles = styled.div`
 const LoadingText = styled.p`
   color: var(--black);
   margin-top: 5px;
+  font-display: auto;
   font-family: Empirez;
   letter-spacing: 3px;
   font-size: 14px;
