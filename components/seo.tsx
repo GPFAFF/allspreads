@@ -19,6 +19,7 @@ export default function SEO({ description, title }) {
       <meta property="twitter:creator" content={SEOData.social.twitter} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
+      <link rel="shortcut icon" href="/favicon.ico" />
       <link
         rel="preload"
         href="/Empirez.woff"
