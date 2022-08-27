@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { formatName, getFilePrefix } from "../helpers";
-import { findByName } from "../helpers/find-logo";
+// import { findByName } from "../helpers/find-logo";
 
 type Props = {
   team: string;
