@@ -39,6 +39,10 @@ const OddsCardStyles = styled.ul`
     font-family: monospace;
   }
 
+  > a {
+    margin-bottom: 16px;
+  }
+
   &:hover {
     transition: 0.5s;
     transform: scale(1.01);
@@ -61,31 +65,43 @@ const OddsGrid = styled.div`
   }
 `;
 
+const ScoreCardRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+`;
+
 export default function OddsCard({ item }) {
   const router = useRouter();
 
   return (
     <>
       <OddsTitle>
-        <TeamLogo
-          style={{ paddingRight: "8px" }}
-          alt={item.away_team}
-          height={50}
-          width={50}
-          objectFit="contain"
-          team={item.away_team}
-          slug={router.query.sport}
-        />
-        {item.away_team} @{" "}
-        <TeamLogo
-          alt={item.home_team}
-          height={50}
-          width={50}
-          objectFit="contain"
-          team={item.home_team}
-          slug={router.query.sport}
-        />{" "}
-        {item.home_team}
+        <ScoreCardRow>
+          <TeamLogo
+            style={{ paddingRight: "8px" }}
+            alt={item.away_team}
+            height={50}
+            width={50}
+            objectFit="contain"
+            team={item.away_team}
+            slug={router.query.sport}
+          />
+          {item.away_team}
+        </ScoreCardRow>
+        <ScoreCardRow>@ </ScoreCardRow>
+        <ScoreCardRow>
+          <TeamLogo
+            alt={item.home_team}
+            height={50}
+            width={50}
+            objectFit="contain"
+            team={item.home_team}
+            slug={router.query.sport}
+          />{" "}
+          {item.home_team}
+        </ScoreCardRow>
       </OddsTitle>
       <p>{new Date(item.commence_time).toLocaleDateString()}</p>
       <p>Time: {new Date(item.commence_time).toLocaleTimeString()}</p>

@@ -32,7 +32,7 @@ const NavStyles = styled.nav`
     li:nth-child(3) {
       order: -1;
       margin-bottom: -40px;
-    };
+    }
 
     li:last-child {
       margin-bottom: 20px;
@@ -53,7 +53,7 @@ const NavStyles = styled.nav`
     color: var(--white);
 
     &:hover {
-      color: var(--grey);
+      color: var(--black);
     }
     &[aria-current="page"] {
       color: var(--black);

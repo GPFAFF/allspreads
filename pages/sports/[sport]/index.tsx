@@ -22,11 +22,10 @@ const SportStyles = styled.div`
       justify-content: center;
       grid-template-rows: 150px 100px 100px;
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         display: block;
       }
     }
-
   }
 `;
 
@@ -47,7 +46,7 @@ const StyledLink = styled.h2`
   transition: 0.5s;
   transform: scale(1);
 
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     margin: 20px auto;
   }
 
@@ -57,13 +56,15 @@ const StyledLink = styled.h2`
     transition: 0.5s;
     transform: scale(1.01);
   }
-`
+`;
 
 export default function SingleSport() {
   const router = useRouter();
-  const { data, isLoading } = useQuery(['singleSport'], () => fetchSingleSport(router.query.sport));
+  const { data, isLoading } = useQuery(["singleSport"], () =>
+    fetchSingleSport(router.query.sport)
+  );
 
-  if (isLoading) return <Loader />
+  if (isLoading) return <Loader />;
 
   return (
     <>
@@ -78,15 +79,33 @@ export default function SingleSport() {
           width={300}
           layout="responsive"
         />
-        <div>
-          <h2>{data?.name}</h2>
-          <Link href={`/sports/${data?.slug}/scores`}>
-            <StyledLink>Scores</StyledLink>
-          </Link>
-          <Link href={`/sports/${data?.slug}/odds`}>
-            <StyledLink>Odds</StyledLink>
-          </Link>
-        </div>
+        {data.slug === "golf" ? (
+          <div>
+            <h2>{data?.name}</h2>
+            <Link href={`/sports/golf_masters_tournament_winner/odds`}>
+              <StyledLink>Masters</StyledLink>
+            </Link>
+            <Link href={`/sports/golf_pga_championship_winner/odds`}>
+              <StyledLink>PGA</StyledLink>
+            </Link>
+            <Link href={`/sports/golf_us_open_winner/odds`}>
+              <StyledLink>US Open</StyledLink>
+            </Link>
+            <Link href={`/sports/golf_the_open_championship_winner/odds`}>
+              <StyledLink>The Open</StyledLink>
+            </Link>
+          </div>
+        ) : (
+          <div>
+            <h2>{data?.name}</h2>
+            <Link href={`/sports/${data?.slug}/scores`}>
+              <StyledLink>Scores</StyledLink>
+            </Link>
+            <Link href={`/sports/${data?.slug}/odds`}>
+              <StyledLink>Odds</StyledLink>
+            </Link>
+          </div>
+        )}
       </SportStyles>
     </>
   );
