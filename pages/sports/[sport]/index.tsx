@@ -48,6 +48,8 @@ const StyledLink = styled.h2`
 
   @media (max-width: 480px) {
     margin: 20px auto;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   &:hover {
@@ -56,6 +58,12 @@ const StyledLink = styled.h2`
     transition: 0.5s;
     transform: scale(1.01);
   }
+`;
+
+const CardNav = styled.span`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export default function SingleSport() {
@@ -81,7 +89,10 @@ export default function SingleSport() {
         />
         {data.slug === "golf" ? (
           <div>
-            <h2>{data?.name}</h2>
+            <CardNav>
+              <h2>{data?.name}</h2>
+              <Link href="/sports">Back</Link>
+            </CardNav>
             <Link href={`/sports/golf_masters_tournament_winner/odds`}>
               <StyledLink>Masters</StyledLink>
             </Link>
@@ -97,7 +108,10 @@ export default function SingleSport() {
           </div>
         ) : (
           <div>
-            <h2>{data?.name}</h2>
+            <CardNav>
+              <h2>{data?.name}</h2>
+              <Link href="/sports">Back</Link>
+            </CardNav>
             <Link href={`/sports/${data?.slug}/scores`}>
               <StyledLink>Scores</StyledLink>
             </Link>

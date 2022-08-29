@@ -56,6 +56,7 @@ const OddsCardStyles = styled.ul`
   &:hover {
     transition: 0.5s;
     transform: scale(1.01);
+    cursor: pointer;
   }
 `;
 
@@ -162,7 +163,9 @@ export default function OddsCard({ item }) {
                           if (market.key === "spreads") {
                             return (
                               <>
-                                <li key={`${bookmaker.title} - ${market.key}`}>Spreads</li>
+                                <li key={`${bookmaker.title} - ${market.key}`}>
+                                  Spreads
+                                </li>
                                 <li>
                                   {positiveOrNegativeSpread(
                                     market.outcomes[0].point
@@ -181,7 +184,9 @@ export default function OddsCard({ item }) {
                           if (market.key === "totals")
                             return (
                               <>
-                                <li key={`${bookmaker.title} - ${market.key}`}>Totals</li>
+                                <li key={`${bookmaker.title} - ${market.key}`}>
+                                  Totals
+                                </li>
                                 <li>
                                   O/U {market.outcomes[0].point}{" "}
                                   {positiveOrNegativeSpread(
@@ -230,7 +235,9 @@ export default function OddsCard({ item }) {
                           if (market.key === "h2h")
                             return (
                               <>
-                                <span key={`${bookmaker.title} - ${market.key}`}>
+                                <span
+                                  key={`${bookmaker.title} - ${market.key}`}
+                                >
                                   {""}
                                   {Number(market.outcomes[0].price) > 0
                                     ? `+${market.outcomes[0].price}`
@@ -245,7 +252,9 @@ export default function OddsCard({ item }) {
                           if (market.key === "spreads") {
                             return (
                               <>
-                                <li key={`${bookmaker.title} - ${market.key}`}>Spreads</li>
+                                <li key={`${bookmaker.title} - ${market.key}`}>
+                                  Spreads
+                                </li>
                                 <li>
                                   {positiveOrNegativeSpread(
                                     market.outcomes[0].point
@@ -264,7 +273,9 @@ export default function OddsCard({ item }) {
                           if (market.key === "totals")
                             return (
                               <>
-                                <li key={`${bookmaker.title} - ${market.key}`}>Totals</li>
+                                <li key={`${bookmaker.title} - ${market.key}`}>
+                                  Totals
+                                </li>
                                 <li>
                                   O/U {market.outcomes[0].point}{" "}
                                   {positiveOrNegativeSpread(

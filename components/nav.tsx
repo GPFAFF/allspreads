@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
+import { useRouter } from "next/router";
+
 import Logo from "./logo";
 
 const NavStyles = styled.nav`
@@ -26,6 +28,12 @@ const NavStyles = styled.nav`
   li {
     color: white;
     order: 1;
+
+    &.active {
+      > a {
+        color: var(--black);
+      }
+    }
   }
 
   @media (max-width: 480px) {
@@ -54,30 +62,30 @@ const NavStyles = styled.nav`
 
     &:hover {
       color: var(--black);
-    }
-    &[aria-current="page"] {
-      color: var(--black);
+      cursor: pointer;
     }
   }
 `;
 
 export default function Nav() {
+  const router = useRouter();
+
   return (
     <NavStyles>
       <ul>
-        <li>
+        <li className={router.pathname == "/" ? "active" : ""}>
           <Link href="/">Home</Link>
         </li>
-        <li>
+        <li className={router.pathname == "/sports" ? "active" : ""}>
           <Link href="/sports">Sports</Link>
         </li>
         <li>
           <Logo />
         </li>
-        <li>
+        <li className={router.pathname == "/odds" ? "active" : ""}>
           <Link href="/odds">Odds</Link>
         </li>
-        <li>
+        <li className={router.pathname == "/picks" ? "active" : ""}>
           <Link href="/picks">Picks</Link>
         </li>
       </ul>

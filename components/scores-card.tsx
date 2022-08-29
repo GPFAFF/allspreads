@@ -30,6 +30,7 @@ const ScoreCardStyles = styled.div`
   &:hover {
     transition: 0.5s;
     transform: scale(1.01);
+    cursor: pointer;
   }
 
   > p {

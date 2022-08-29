@@ -16,6 +16,7 @@ export default function HomePage() {
         }}
       >
         <h2>All Spreads. All the time</h2>
+        <p>News feed coming soon.</p>
       </div>
     </>
   );

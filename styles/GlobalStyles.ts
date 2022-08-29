@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
     --white: #fff;
     --grey: #efefef;
   }
+
   html {
     background-image: url('/bg.svg');
     background-size: 450px;
@@ -19,13 +20,16 @@ const GlobalStyles = createGlobalStyle`
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     color: var(--black);
   }
+
   body {
     font-size: 2rem;
   }
+
   fieldset {
     border-color: rgba(0,0,0,0.1);
     border-width: 1px;
   }
+
   button {
     background: var(--green);
     color: white;
@@ -41,46 +45,56 @@ const GlobalStyles = createGlobalStyle`
       --cast: 4px;
     }
   }
+
   .image-wrapper img[src*=base64\\,] {
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
   }
+
   /* Scrollbar Styles */
   body::-webkit-scrollbar {
     width: 12px;
   }
+
   body::-webkit-scrollbar-track {
     background: var(--white);
   }
+
   body::-webkit-scrollbar-thumb {
     background-color: var(--green) ;
     border-radius: 6px;
     border: 3px solid var(--white);
   }
+
   hr {
     border: 0;
     height: 8px;
     background-size: 1500px;
   }
+
   img {
     max-width: 100%;
   }
+
   .tilt {
     transform: rotate(-2deg);
     position: relative;
     display: inline-block;
   }
+
   @font-face {
     font-family: 'Empirez';
     font-display: swap;
     src: url('/Empirez.woff') format('woff');
     font-weight: 400;
   }
+
   p,
   li {
     line-height: 1;
     letter-spacing: 0.5px;
   }
+
   h1,
   h2,
   h3,
@@ -90,12 +104,14 @@ const GlobalStyles = createGlobalStyle`
     font-weight: normal;
     margin: 0;
   }
+
   a {
     color: var(--black);
     text-decoration-color: var(--green);
     /* Chrome renders this weird with this font, so we turn it off */
     text-decoration-skip-ink: none;
   }
+
   mark,
   .mark {
     background: var(--green);
@@ -104,6 +120,7 @@ const GlobalStyles = createGlobalStyle`
     display: inline;
     line-height: 1;
   }
+
   .center {
     text-align: center;
   }
