@@ -87,7 +87,7 @@ export default function OddsCard({ item }) {
 
   return (
     <>
-      <OddsTitle>
+      <OddsTitle key={item.id}>
         <ScoreCardRow>
           <TeamLogo
             style={{ paddingRight: "8px" }}
@@ -116,7 +116,7 @@ export default function OddsCard({ item }) {
       <p>{new Date(item.commence_time).toLocaleDateString()}</p>
       <p>Time: {new Date(item.commence_time).toLocaleTimeString()}</p>
       <OddsContainer>
-        <p>
+        <div>
           {item.away_team}
           <BookmakersStyles>
             {item.bookmakers.map((bookmaker) => {
@@ -147,7 +147,7 @@ export default function OddsCard({ item }) {
                           if (market.key === "h2h")
                             return (
                               <>
-                                <span>
+                                <span key={bookmaker.title}>
                                   {""}
                                   {Number(market.outcomes[0].price) > 0
                                     ? `+${market.outcomes[0].price}`
@@ -162,7 +162,7 @@ export default function OddsCard({ item }) {
                           if (market.key === "spreads") {
                             return (
                               <>
-                                <li>Spreads</li>
+                                <li key={`${bookmaker.title} - ${market.key}`}>Spreads</li>
                                 <li>
                                   {positiveOrNegativeSpread(
                                     market.outcomes[0].point
@@ -181,7 +181,7 @@ export default function OddsCard({ item }) {
                           if (market.key === "totals")
                             return (
                               <>
-                                <li>Totals</li>
+                                <li key={`${bookmaker.title} - ${market.key}`}>Totals</li>
                                 <li>
                                   O/U {market.outcomes[0].point}{" "}
                                   {positiveOrNegativeSpread(
@@ -198,8 +198,8 @@ export default function OddsCard({ item }) {
               );
             })}
           </BookmakersStyles>
-        </p>
-        <p>
+        </div>
+        <div>
           {item.home_team}
           <BookmakersStyles>
             {item.bookmakers.map((bookmaker) => {
@@ -230,7 +230,7 @@ export default function OddsCard({ item }) {
                           if (market.key === "h2h")
                             return (
                               <>
-                                <span>
+                                <span key={`${bookmaker.title} - ${market.key}`}>
                                   {""}
                                   {Number(market.outcomes[0].price) > 0
                                     ? `+${market.outcomes[0].price}`
@@ -245,7 +245,7 @@ export default function OddsCard({ item }) {
                           if (market.key === "spreads") {
                             return (
                               <>
-                                <li>Spreads</li>
+                                <li key={`${bookmaker.title} - ${market.key}`}>Spreads</li>
                                 <li>
                                   {positiveOrNegativeSpread(
                                     market.outcomes[0].point
@@ -264,7 +264,7 @@ export default function OddsCard({ item }) {
                           if (market.key === "totals")
                             return (
                               <>
-                                <li>Totals</li>
+                                <li key={`${bookmaker.title} - ${market.key}`}>Totals</li>
                                 <li>
                                   O/U {market.outcomes[0].point}{" "}
                                   {positiveOrNegativeSpread(
@@ -281,7 +281,7 @@ export default function OddsCard({ item }) {
               );
             })}
           </BookmakersStyles>
-        </p>
+        </div>
       </OddsContainer>
     </>
   );

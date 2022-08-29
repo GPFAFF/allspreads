@@ -72,6 +72,8 @@ export function getFilePrefix(string) {
       return "mlb";
     case "books":
       return "books";
+    case "college-football" || "college-basketball":
+      return "ncaa";
     default:
       break;
   }
@@ -89,6 +91,14 @@ export const formatName = (name: string, slug) => {
       .split(" ")
       .join("")
       .toLowerCase()}.svg`;
+  }
+
+  if (slug === "college-football" || slug === "college-basketball") {
+    return `/${getFilePrefix(slug)}/${name
+      .split(" ")
+      .join("-")
+      .toLowerCase()}.png`;
+
   }
 
   return `/${getFilePrefix(slug)}/${name
