@@ -1,14 +1,16 @@
 import React from "react";
 import { useQuery } from "react-query";
-import Layout from "../../../components/layout";
-import { fetchScores } from "../../../hooks";
+import { isBefore, addDays } from "date-fns";
 import { useRouter } from "next/router";
 import styled from "styled-components";
+import Link from "next/link";
+
+import Layout from "../../../components/layout";
+import { fetchScores } from "../../../hooks";
 import { getPath } from "../../../helpers";
 import ScoresCard from "../../../components/scores-card";
-import { isBefore } from "date-fns";
 import Loader from "../../../components/loader";
-import Link from "next/link";
+import { NextComponentType } from "next";
 
 const ScoresTitle = styled.h2`
   margin-bottom: 20px;
@@ -48,8 +50,7 @@ export default function Scores() {
 
   const normalizeScores =
     !isLoading &&
-    data?.filter((item) =>
-      isBefore(new Date(item.commence_time), new Date("2022-09-14T00:30:00Z"))
+    data?.filter((item: { commence_time: string | number | Date; }) => isBefore(new Date(item.commence_time), addDays(new Date(item.commence_time), 10))
     );
 
   if (isLoading) return <Loader />;
@@ -77,6 +78,6 @@ export default function Scores() {
   );
 }
 
-Scores.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
+Scores.getLayout = function getLayout(page: NextComponentType) {
+  return <Layout>{page}</Layout>
 };

@@ -1,14 +1,16 @@
 import React from "react";
 import { useQuery } from "react-query";
-import Layout from "../../../components/layout";
-import { fetchOdds } from "../../../hooks";
 import { useRouter } from "next/router";
 import styled from "styled-components";
+import { isBefore, addDays } from "date-fns";
+import Link from "next/link";
+import { NextComponentType } from "next";
+
+import Layout from "../../../components/layout";
+import { fetchOdds } from "../../../hooks";
 import { getPath } from "../../../helpers";
 import OddsCard from "../../../components/odds-card";
-import { isBefore } from "date-fns";
 import Loader from "../../../components/loader";
-import Link from "next/link";
 
 const OddsTitle = styled.h2`
   margin-bottom: 20px;
@@ -37,8 +39,11 @@ export default function SingleOdds() {
 
   const normalizeOdds =
     data?.length > 0 &&
-    data?.filter((item) =>
-      isBefore(new Date(item.commence_time), new Date("2022-09-14T00:30:00Z"))
+    data?.filter((item: { commence_time: string | number | Date }) =>
+      isBefore(
+        new Date(item.commence_time),
+        addDays(new Date(item.commence_time), 10)
+      )
     );
 
   if (isLoading) return <Loader />;
@@ -63,6 +68,6 @@ export default function SingleOdds() {
   );
 }
 
-SingleOdds.getLayout = function getLayout(page) {
+SingleOdds.getLayout = function getLayout(page: NextComponentType) {
   return <Layout>{page}</Layout>;
 };
