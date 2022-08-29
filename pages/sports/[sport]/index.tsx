@@ -20,7 +20,7 @@ const SportStyles = styled.div`
     &:last-of-type {
       display: grid;
       justify-content: center;
-      grid-template-rows: 150px 100px 100px;
+      grid-template-rows: 100px auto;
 
       @media (max-width: 480px) {
         display: block;

@@ -13,7 +13,52 @@ export function getPath(path) {
     case "hockey":
       return "icehockey_nhl";
     case "soccer":
-      return "soccer";
+      return "soccer_epl";
+    default:
+      break;
+  }
+}
+
+export function createBookmakerURL(path) {
+  switch (path) {
+    case "unibet":
+      return "https://www.unibet.com";
+    case "fanduel":
+      return "https://www.fanduel.com";
+    case "sugarhouse":
+      return "https://pa.playsugarhouse.com/?page=landing&l=RiversPhiladelphia";
+    case "betrivers":
+      return "https://www.betrivers.com";
+    case "barstool sportsbook":
+      return "https://www.barstoolsportsbook.com";
+    case "lowvig.ag":
+      return "https://www.lowvig.ag";
+    case "draftkings":
+      return "https://www.draftkings.com";
+    case "william hill (us)":
+      return "https://www.williamhill.com";
+    case "betus":
+      return "https://www.betus.com.pa/";
+    case "gtbets":
+      return "https://www.gtbets.ag";
+    case "wynnbet":
+      return "https://www.wynninteractive.com/wynnbet/";
+    case "mybookie.ag":
+      return "https://www.mybookie.ag/";
+    case "pointsbet (us)":
+      return "https://help.pointsbet.com/hc/en-us";
+    case "fox bet":
+      return "https://www.foxbet.com";
+    case "betmgm":
+      return "https://promo.nj.betmgm.com/en/promo/geolocator?orh=www.betmgm.com";
+    case "betfair":
+      return "https://www.betfair.com";
+    case "bovada":
+      return "https://www.bovada.com";
+    case "circa sports":
+      return "https://www.circasports.com/";
+    case "intertops":
+      return "https://www.onlinesportsbookchief.com/games/intertops/";
     default:
       break;
   }
@@ -25,6 +70,8 @@ export function getFilePrefix(string) {
       return "nfl";
     case "baseball":
       return "mlb";
+    case "books":
+      return "books";
     default:
       break;
   }
@@ -37,6 +84,13 @@ export function toBase64(str) {
 }
 
 export const formatName = (name: string, slug) => {
+  if (slug === "books") {
+    return `/${getFilePrefix(slug)}/${name
+      .split(" ")
+      .join("")
+      .toLowerCase()}.svg`;
+  }
+
   return `/${getFilePrefix(slug)}/${name
     .split(" ")
     .join("-")

@@ -3,13 +3,23 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { format } from "date-fns";
 import styled from "styled-components";
-import { getFilePrefix, positiveOrNegativeSpread } from "../helpers";
+import {
+  createBookmakerURL,
+  getFilePrefix,
+  positiveOrNegativeSpread,
+} from "../helpers";
 import TeamLogo from "./team-logo";
+import Link from "next/link";
 
-const OddsTitle = styled.h2`
+const OddsTitle = styled.h3`
   display: flex;
   align-items: center;
   gap: 8px;
+
+  @media (max-width: 480px) {
+    display: grid;
+    justify-content: start;
+  }
 `;
 
 const OddsContainer = styled.div`
@@ -40,7 +50,7 @@ const OddsCardStyles = styled.ul`
   }
 
   > a {
-    margin-bottom: 16px;
+    margin: 16px 0;
   }
 
   &:hover {
@@ -113,7 +123,23 @@ export default function OddsCard({ item }) {
               return (
                 <OddsCardStyles key={bookmaker.title}>
                   <>
-                    <h3>{bookmaker.title}</h3>
+                    <TeamLogo
+                      alt={bookmaker.title}
+                      height={25}
+                      width={25}
+                      objectFit="contain"
+                      team={bookmaker.key}
+                      slug="books"
+                    />
+                    <Link
+                      target="_blank"
+                      style={{ margin: "8px", paddingTop: "8px" }}
+                      href={`${createBookmakerURL(
+                        bookmaker.title.toLowerCase()
+                      )}`}
+                    >
+                      {bookmaker.title}
+                    </Link>
                     <OddsGrid>
                       <li>
                         H2H{" "}
@@ -180,7 +206,23 @@ export default function OddsCard({ item }) {
               return (
                 <OddsCardStyles key={bookmaker.title}>
                   <>
-                    <h3>{bookmaker.title}</h3>
+                    <TeamLogo
+                      alt={bookmaker.title}
+                      height={25}
+                      width={25}
+                      objectFit="contain"
+                      team={bookmaker.key}
+                      slug="books"
+                    />
+                    <Link
+                      target="_blank"
+                      style={{ margin: "8px", paddingTop: "8px" }}
+                      href={`${createBookmakerURL(
+                        bookmaker.title.toLowerCase()
+                      )}`}
+                    >
+                      {bookmaker.title}
+                    </Link>
                     <OddsGrid>
                       <li>
                         H2H{" "}

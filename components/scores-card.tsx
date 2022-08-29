@@ -44,7 +44,7 @@ const ScoreCardStyles = styled.div`
 const TeamName = styled.h4`
   margin-left: 8px;
   text-align: left;
-`
+`;
 
 const ScoreCardRow = styled.div`
   display: flex;
@@ -55,14 +55,14 @@ const ScoreCardRow = styled.div`
   margin: 10px 0;
 `;
 
-export default function ScoresCard({ item }) {
+const Scoreboard = styled.div`
+  > span {
+    display: block;
+    margin: 4px;
+  }
+`;
+export default function ScoresCard({ item, scores }) {
   const router = useRouter();
-
-  let sortedScores = item.completed ? item?.scores : [];
-
-  sortedScores.sort((a, b) => {
-    return Number(a.score) - Number(b.score);
-  });
 
   return (
     <ScoreCardStyles>
@@ -99,17 +99,14 @@ export default function ScoresCard({ item }) {
         </span>
         <span>Time: {new Date(item.commence_time).toLocaleTimeString()}</span>
       </p>
-      {item.completed ? (
-        <div>
-          Score:{" "}
-          {sortedScores
-            .sort((a, b) => a.score - b.score)
-            .map((team, i) => (
-              <p key={i}>
-                <span>{team.name}</span> <span>{team.score}</span>
-              </p>
-            ))}
-        </div>
+      {item.completed && scores ? (
+        <Scoreboard>
+          {scores.map((item) => (
+            <span key={item.name}>
+              {item.name}: {item.score}{" "}
+            </span>
+          ))}
+        </Scoreboard>
       ) : (
         <>
           <div>Score 0 - 0</div>

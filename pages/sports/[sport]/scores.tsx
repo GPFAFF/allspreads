@@ -66,9 +66,12 @@ export default function Scores() {
     <>
       <ScoresTitle>{normalizeScores[0].sport_title} Scores</ScoresTitle>
       <ScoresContainer>
-        {normalizeScores?.map((item) => (
-          <ScoresCard key={item.id} item={item} />
-        ))}
+        {normalizeScores?.map((item) => {
+          const sortedScores = item?.scores
+            ? item?.scores.sort((a, b) => a.score - b.score)
+            : [];
+          return <ScoresCard key={item.id} item={item} scores={sortedScores} />;
+        })}
       </ScoresContainer>
     </>
   );
