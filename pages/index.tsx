@@ -53,8 +53,10 @@ export default function HomePage() {
     <>
       <div>
         <h2 className="center">All Spreads. All the time</h2>
-        <h3 style={{ padding: "40px 0", textAlign: "center" }}>News Feed</h3>
-        {isLoading ? (
+        <h3 style={{ padding: "40px 0", textAlign: "center" }}>
+          News Feed - Coming Soon
+        </h3>
+        {/* {isLoading ? (
           <Loader />
         ) : (
           <Card>
@@ -73,7 +75,7 @@ export default function HomePage() {
               </SingleCard>
             ))}
           </Card>
-        )}
+        )} */}
       </div>
     </>
   );
