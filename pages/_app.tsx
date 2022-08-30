@@ -51,7 +51,7 @@ function App({ Component, pageProps }: AppLayoutProps) {
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
           <GlobalStyles />
-          {getLayout(<Component {...pageProps} />)};
+          {getLayout(<Component {...pageProps} />)}
         </Hydrate>
       </QueryClientProvider>
     </>
