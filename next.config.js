@@ -16,6 +16,7 @@ module.exports = {
       "www.elevenwarriors.com",
       "www.nbcsports.com",
       "soccer.nbcsports.com",
+      "www.castanet.net",
     ],
   },
   webpack(config) {

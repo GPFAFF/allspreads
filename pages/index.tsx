@@ -9,7 +9,7 @@ import { hasCdn } from "../helpers/index";
 import Link from "next/link";
 import Loader from "../components/loader";
 export default function HomePage() {
-  // const { data, isLoading } = useQuery(["news"], () => fetchSportsNews());
+  const { data, isLoading } = useQuery(["news"], () => fetchSportsNews());
 
   const Card = styled.div`
     gap: 20px;
@@ -56,18 +56,18 @@ export default function HomePage() {
         <h3 style={{ padding: "40px 0", textAlign: "center" }}>
           News Feed - Coming Soon
         </h3>
-        {/* {isLoading ? (
+        {isLoading ? (
           <Loader />
         ) : (
           <Card>
-            {filteredArticles?.map((item, i) => (
+            {data?.results?.map((item, i) => (
               <SingleCard key={i}>
-                <Link target="_blank" href={item.url}>
+                <Link target="_blank" href={item.link}>
                   <h3 style={{ paddingBottom: "40px" }}>{item.title}</h3>
                 </Link>
                 <Image
-                  alt={item.title}
-                  src={item.urlToImage}
+                  alt={item?.title}
+                  src={item?.image_url || "/logo.svg"}
                   width={350}
                   height={300}
                   objectFit="contain"
@@ -75,7 +75,7 @@ export default function HomePage() {
               </SingleCard>
             ))}
           </Card>
-        )} */}
+        )}
       </div>
     </>
   );

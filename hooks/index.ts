@@ -28,7 +28,7 @@ export const fetchSingleSport = async (key: string | string[] | undefined) => {
 
 export const fetchSportsNews = async () => {
   const res = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=us&pageSize=100&category=sports&apiKey=${process.env.NEXT_PUBLIC_SPORTS_NEWS_API_KEY}`
+    `https://newsdata.io/api/1/news?apikey=${process.env.NEXT_PUBLIC_SPORTS_NEWS_API_KEY}&country=us&category=sports&language=en&domain=theringer,si,profootballtalk,thesportsrush`
   );
   return res.json();
 };
