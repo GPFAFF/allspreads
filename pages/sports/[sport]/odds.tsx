@@ -42,7 +42,7 @@ export default function SingleOdds() {
     data?.filter((item: { commence_time: string | number | Date }) =>
       isBefore(
         new Date(item.commence_time),
-        addDays(new Date(item.commence_time), 10)
+        addDays(new Date(data[0]?.commence_time), 6)
       )
     );
 
@@ -69,5 +69,9 @@ export default function SingleOdds() {
 }
 
 SingleOdds.getLayout = function getLayout(page: NextComponentType) {
-  return <Layout>{page}</Layout>;
+  return (
+    <>
+      <Layout>{page}</Layout>
+    </>
+  );
 };

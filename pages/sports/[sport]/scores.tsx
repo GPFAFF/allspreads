@@ -50,7 +50,11 @@ export default function Scores() {
 
   const normalizeScores =
     !isLoading &&
-    data?.filter((item: { commence_time: string | number | Date; }) => isBefore(new Date(item.commence_time), addDays(new Date(item.commence_time), 10))
+    data?.filter((item: { commence_time: string | number | Date }) =>
+      isBefore(
+        new Date(item.commence_time),
+        addDays(new Date(data[0]?.commence_time), 6)
+      )
     );
 
   if (isLoading) return <Loader />;
@@ -79,5 +83,9 @@ export default function Scores() {
 }
 
 Scores.getLayout = function getLayout(page: NextComponentType) {
-  return <Layout>{page}</Layout>
+  return (
+    <>
+      <Layout>{page}</Layout>
+    </>
+  );
 };

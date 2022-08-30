@@ -8,7 +8,9 @@ import { NextComponentType } from "next";
 import { Sport } from "../types";
 
 export default function Sports() {
-  const { data, isLoading } = useQuery<Sport[]>(['sports'], () => fetchAllSports());
+  const { data, isLoading } = useQuery<Sport[]>(["sports"], () =>
+    fetchAllSports()
+  );
 
   if (isLoading) return <Loader />;
 
@@ -20,5 +22,9 @@ export default function Sports() {
 }
 
 Sports.getLayout = function getLayout(page: NextComponentType) {
-  return <Layout>{page}</Layout>
+  return (
+    <>
+      <Layout>{page}</Layout>
+    </>
+  );
 };

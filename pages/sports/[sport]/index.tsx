@@ -126,5 +126,9 @@ export default function SingleSport() {
 }
 
 SingleSport.getLayout = function getLayout(page: NextComponentType) {
-  return <Layout>{page}</Layout>
+  return (
+    <>
+      <Layout>{page}</Layout>
+    </>
+  );
 };

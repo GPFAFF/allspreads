@@ -9,7 +9,9 @@ import Loader from "../components/loader";
 import { Sport } from "../types";
 
 export default function Odds() {
-  const { data, isLoading } = useQuery<Sport[]>(['sports'], () => fetchAllSports());
+  const { data, isLoading } = useQuery<Sport[]>(["sports"], () =>
+    fetchAllSports()
+  );
 
   if (isLoading) return <Loader />;
 
@@ -21,5 +23,9 @@ export default function Odds() {
 }
 
 Odds.getLayout = function getLayout(page: NextComponentType) {
-  return <Layout>{page}</Layout>
+  return (
+    <>
+      <Layout>{page}</Layout>
+    </>
+  );
 };

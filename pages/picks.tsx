@@ -1,8 +1,6 @@
 import { NextComponentType } from "next";
-import React, { useEffect } from "react";
-import { useQuery } from "react-query";
+import React from "react";
 import Layout from "../components/layout";
-import { fetchOdds } from "../hooks";
 
 export default function Picks() {
   return (
@@ -23,5 +21,9 @@ export default function Picks() {
 }
 
 Picks.getLayout = function getLayout(page: NextComponentType) {
-  return <Layout>{page}</Layout>
+  return (
+    <>
+      <Layout>{page}</Layout>
+    </>
+  );
 };
