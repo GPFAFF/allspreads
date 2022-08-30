@@ -98,7 +98,6 @@ export const formatName = (name: string, slug) => {
       .split(" ")
       .join("-")
       .toLowerCase()}.png`;
-
   }
 
   return `/${getFilePrefix(slug)}/${name

@@ -60,7 +60,7 @@ const OddsCardStyles = styled.ul`
   }
 `;
 
-const BookmakersStyles = styled.p`
+const BookmakersStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
@@ -87,8 +87,8 @@ export default function OddsCard({ item }) {
   const router = useRouter();
 
   return (
-    <>
-      <OddsTitle key={item.id}>
+    <div>
+      <OddsTitle>
         <ScoreCardRow>
           <TeamLogo
             style={{ paddingRight: "8px" }}
@@ -116,7 +116,7 @@ export default function OddsCard({ item }) {
       </OddsTitle>
       <p>{new Date(item.commence_time).toLocaleDateString()}</p>
       <p>Time: {new Date(item.commence_time).toLocaleTimeString()}</p>
-      <OddsContainer>
+      <OddsContainer key={item.id}>
         <div>
           {item.away_team}
           <BookmakersStyles>
@@ -163,17 +163,17 @@ export default function OddsCard({ item }) {
                           if (market.key === "spreads") {
                             return (
                               <>
-                                <li key={`${bookmaker.title} - ${market.key}`}>
+                                <div key={`${bookmaker.title} - ${market.key}`}>
                                   Spreads
-                                </li>
-                                <li>
+                                </div>
+                                <div>
                                   {positiveOrNegativeSpread(
                                     market.outcomes[0].point
                                   )}{" "}
                                   {positiveOrNegativeSpread(
                                     market.outcomes[0].price
                                   )}
-                                </li>
+                                </div>
                               </>
                             );
                           }
@@ -184,15 +184,15 @@ export default function OddsCard({ item }) {
                           if (market.key === "totals")
                             return (
                               <>
-                                <li key={`${bookmaker.title} - ${market.key}`}>
+                                <div key={`${bookmaker.title} - ${market.key}`}>
                                   Totals
-                                </li>
-                                <li>
+                                </div>
+                                <div>
                                   O/U {market.outcomes[0].point}{" "}
                                   {positiveOrNegativeSpread(
                                     market.outcomes[0].price
                                   )}
-                                </li>
+                                </div>
                               </>
                             );
                         })}
@@ -252,17 +252,17 @@ export default function OddsCard({ item }) {
                           if (market.key === "spreads") {
                             return (
                               <>
-                                <li key={`${bookmaker.title} - ${market.key}`}>
+                                <div key={`${bookmaker.title} - ${market.key}`}>
                                   Spreads
-                                </li>
-                                <li>
+                                </div>
+                                <div>
                                   {positiveOrNegativeSpread(
                                     market.outcomes[0].point
                                   )}{" "}
                                   {positiveOrNegativeSpread(
                                     market.outcomes[0].price
                                   )}
-                                </li>
+                                </div>
                               </>
                             );
                           }
@@ -273,15 +273,15 @@ export default function OddsCard({ item }) {
                           if (market.key === "totals")
                             return (
                               <>
-                                <li key={`${bookmaker.title} - ${market.key}`}>
+                                <div key={`${bookmaker.title} - ${market.key}`}>
                                   Totals
-                                </li>
-                                <li>
+                                </div>
+                                <div>
                                   O/U {market.outcomes[0].point}{" "}
                                   {positiveOrNegativeSpread(
                                     market.outcomes[0].price
                                   )}
-                                </li>
+                                </div>
                               </>
                             );
                         })}
@@ -294,6 +294,6 @@ export default function OddsCard({ item }) {
           </BookmakersStyles>
         </div>
       </OddsContainer>
-    </>
+    </div>
   );
 }
