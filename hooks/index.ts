@@ -26,6 +26,13 @@ export const fetchSingleSport = async (key: string | string[] | undefined) => {
   return data;
 };
 
+export const fetchSportsNews = async () => {
+  const res = await fetch(
+    `https://newsapi.org/v2/top-headlines?country=us&pageSize=100&category=sports&apiKey=${process.env.NEXT_PUBLIC_SPORTS_NEWS_API_KEY}`
+  );
+  return res.json();
+};
+
 // export const fetchFootball = async (key: string) => {
 //   const res = await fetch(`${server}/${key}.json`);
 //   return res;

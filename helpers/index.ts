@@ -106,6 +106,17 @@ export const formatName = (name: string, slug) => {
     .toLowerCase()}.svg`;
 };
 
+export const hasCdn = (string: string): Boolean => {
+  const array = [
+    "espn",
+    "nbcsports.com",
+    "sports illustrated",
+    "nfl news",
+    "eleven warriors",
+  ];
+
+  return Boolean(array.includes(string));
+};
 export const shimmer = (w, h) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
