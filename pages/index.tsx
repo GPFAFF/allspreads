@@ -9,7 +9,7 @@ import { hasCdn } from "../helpers/index";
 import Link from "next/link";
 import Loader from "../components/loader";
 export default function HomePage() {
-  const { data, isLoading } = useQuery(["news"], () => fetchSportsNews());
+  // const { data, isLoading } = useQuery(["news"], () => fetchSportsNews());
 
   const Card = styled.div`
     gap: 20px;
@@ -45,9 +45,9 @@ export default function HomePage() {
     }
   `;
 
-  const filteredArticles = data?.articles.filter((item) =>
-    hasCdn(item.source.name.toLowerCase())
-  );
+  // const filteredArticles = data?.articles.filter((item) =>
+  //   hasCdn(item.source.name.toLowerCase())
+  // );
 
   return (
     <>
