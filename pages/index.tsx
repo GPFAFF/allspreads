@@ -53,9 +53,7 @@ export default function HomePage() {
     <>
       <div>
         <h2 className="center">All Spreads. All the time</h2>
-        <h3 style={{ padding: "40px 0", textAlign: "center" }}>
-          News Feed - Coming Soon
-        </h3>
+        <h3 style={{ padding: "40px 0", textAlign: "center" }}>News Feed</h3>
         {isLoading ? (
           <Loader />
         ) : (
