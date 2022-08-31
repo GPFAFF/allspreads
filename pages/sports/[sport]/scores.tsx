@@ -78,7 +78,7 @@ export default function Scores() {
             height={50}
             width={50}
             objectFit="contain"
-            team={router.query.sport.toString()}
+            team={getSport(router.query.sport).toLowerCase()}
             slug={""}
           />
           {getSport(router.query.sport)} Spreads
