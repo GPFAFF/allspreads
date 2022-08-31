@@ -107,6 +107,10 @@ export function toBase64(str) {
 }
 
 export const formatName = (name: string, slug) => {
+  if (name === "college-football" && !slug) {
+    return `/ncaa/ncaa.svg`;
+  }
+
   if (name && !slug) {
     return `/${name}/${name}.svg`;
   }

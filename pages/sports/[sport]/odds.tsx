@@ -52,7 +52,7 @@ export default function SingleOdds() {
   const slug = router.query.sport;
 
   const [filters, setFilters] = useState({});
-  const { data, isLoading, isIdle } = useFetchOdds(filters);
+  const { data, isLoading } = useFetchOdds(key, filters);
 
   const onChange = (event) => {
     setFilters(event?.target.value);
@@ -65,7 +65,7 @@ export default function SingleOdds() {
       <SearchBar>
         <OddsTitle>
           <Image
-            alt={slug}
+            alt={getSport(router.query.sport)}
             height={50}
             width={50}
             src={`${slug ? formatName(slug, "") : "/logo.svg"}`}

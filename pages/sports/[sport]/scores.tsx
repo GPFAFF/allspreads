@@ -1,19 +1,21 @@
-import React from "react";
-import { useQuery } from "react-query";
-import { isBefore, addDays } from "date-fns";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import Link from "next/link";
+import { NextComponentType } from "next";
+import { DebounceInput } from "react-debounce-input";
 
 import Layout from "../../../components/layout";
-import { fetchScores } from "../../../hooks";
-import { getPath } from "../../../helpers";
+import { getPath, getSport } from "../../../helpers";
 import ScoresCard from "../../../components/scores-card";
 import Loader from "../../../components/loader";
-import { NextComponentType } from "next";
+import Image from "next/image";
+import { formatName } from "../../../helpers/index";
+import { useFetchScores } from "../../../hooks/index";
 
 const ScoresTitle = styled.h2`
-  margin-bottom: 20px;
+  display: grid;
+  justify-content: center;
 `;
 
 const NotFound = styled.h2`
@@ -36,48 +38,75 @@ const ScoresContainer = styled.div`
   justify-content: center;
 `;
 
+const StyledInput = styled(DebounceInput)`
+  border-radius: 4px;
+  padding: 20px;
+  width: 250px;
+  align-self: end;
+`;
+
+const SearchBar = styled.div`
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 20px;
+  align-items: center;
+`;
+
 export default function Scores() {
   const router = useRouter();
-
   const key = getPath(router.query.sport);
-  const { data, isLoading } = useQuery(
-    ["scores", key],
-    () => fetchScores(key),
-    {
-      refetchOnWindowFocus: false,
-    }
-  );
+  const slug = router.query.sport;
 
-  const normalizeScores =
-    !isLoading &&
-    data?.filter((item: { commence_time: string | number | Date }) =>
-      isBefore(
-        new Date(item.commence_time),
-        addDays(new Date(data[0]?.commence_time), 6)
-      )
-    );
+  const [filters, setFilters] = useState({});
+  const { data, isLoading } = useFetchScores(key, filters);
+
+  const onChange = (event) => {
+    setFilters(event?.target.value);
+  };
 
   if (isLoading) return <Loader />;
 
-  if (data.length === 0)
-    return (
-      <Center>
-        <NotFound>No scores found</NotFound>
-        <Link href={`/sports/${key}`}>Back</Link>
-      </Center>
-    );
-
   return (
     <>
-      <ScoresTitle>{normalizeScores[0].sport_title} Scores</ScoresTitle>
-      <ScoresContainer>
-        {normalizeScores?.map((item) => {
-          const sortedScores = item?.scores
-            ? item?.scores.sort((a, b) => a.score - b.score)
-            : [];
-          return <ScoresCard key={item.id} item={item} scores={sortedScores} />;
-        })}
-      </ScoresContainer>
+      <SearchBar>
+        <ScoresTitle>
+          <Image
+            alt={getSport(router.query.sport)}
+            height={50}
+            width={50}
+            src={`${slug ? formatName(slug, "") : "/logo.svg"}`}
+          />
+          {getSport(router.query.sport)} Spreads
+        </ScoresTitle>
+        <StyledInput
+          placeholder="Search by team"
+          minLength={2}
+          debounceTimeout={300}
+          onChange={onChange}
+        />
+      </SearchBar>
+      <div>
+        {data.length === 0 ? (
+          <Center>
+            <NotFound>No odds found</NotFound>
+            <Link href={`/sports/${key}`}>Back</Link>
+          </Center>
+        ) : (
+          <>
+            <ScoresContainer>
+              {data?.map((item, i) => {
+                const sortedScores = item?.scores
+                  ? item?.scores.sort((a, b) => a.score - b.score)
+                  : [];
+                return (
+                  <ScoresCard key={item.id} item={item} scores={sortedScores} />
+                );
+              })}
+            </ScoresContainer>
+          </>
+        )}
+      </div>
     </>
   );
 }

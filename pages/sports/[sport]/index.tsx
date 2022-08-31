@@ -61,9 +61,11 @@ const StyledLink = styled.h2`
 `;
 
 const CardNav = styled.span`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: block;
+
+  > h2 {
+    margin-bottom: 20px;
+  }
 `;
 
 export default function SingleSport() {

@@ -36,11 +36,11 @@ export const fetchSportsNews = async () => {
   return res.json();
 };
 
-export const useFetchOdds = (filters) => {
+export const useFetchOdds = (key, filters) => {
   // Notice we only use `employees` as query key, because we want to preserve our cache
   return useQuery(
     ["odds"],
-    () => fetchOdds(filters),
+    () => fetchOdds(key),
     // We pass a third argument to our useQuery function, an options object
     {
       select: (odds) => {
@@ -56,6 +56,43 @@ export const useFetchOdds = (filters) => {
           );
         } else {
           return odds
+            ?.filter((item: { commence_time: string | number | Date }) =>
+              isBefore(
+                new Date(item.commence_time),
+                addDays(new Date(data[0]?.commence_time), 6)
+              )
+            )
+            .filter(
+              (odd) =>
+                odd.home_team.toLowerCase().includes(filters.toLowerCase()) ||
+                odd.away_team.toLowerCase().includes(filters.toLowerCase())
+            );
+        }
+      },
+    }
+  );
+};
+
+export const useFetchScores = (key, filters) => {
+  // Notice we only use `employees` as query key, because we want to preserve our cache
+  return useQuery(
+    ["scores"],
+    () => fetchScores(key),
+    // We pass a third argument to our useQuery function, an options object
+    {
+      select: (scores) => {
+        if (Object.entries(filters).length === 0) {
+          return (
+            scores?.length > 0 &&
+            scores?.filter((item: { commence_time: string | number | Date }) =>
+              isBefore(
+                new Date(item.commence_time),
+                addDays(new Date(data[0]?.commence_time), 6)
+              )
+            )
+          );
+        } else {
+          return scores
             ?.filter((item: { commence_time: string | number | Date }) =>
               isBefore(
                 new Date(item.commence_time),
