@@ -8,7 +8,6 @@ export default function sportHandler(
   const { query } = req;
   const { sport } = query;
 
-  debugger;
   const filtered = data.filter((p) => p.slug === sport);
 
   // Sport with slug exists

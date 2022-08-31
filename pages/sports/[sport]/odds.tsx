@@ -12,6 +12,7 @@ import OddsCard from "../../../components/odds-card";
 import Loader from "../../../components/loader";
 import Image from "next/image";
 import { formatName } from "../../../helpers/index";
+import TeamLogo from "../../../components/team-logo";
 
 const OddsTitle = styled.h2`
   display: grid;
@@ -65,11 +66,14 @@ export default function SingleOdds() {
     <>
       <SearchBar>
         <OddsTitle>
-          <Image
+          <TeamLogo
+            style={{ paddingRight: "8px" }}
             alt={getSport(router.query.sport)}
             height={50}
             width={50}
-            src={`${slug ? formatName(slug, "") : "/logo.svg"}`}
+            objectFit="contain"
+            team={router.query.sport}
+            slug={""}
           />
           {getSport(router.query.sport)} Spreads
         </OddsTitle>
