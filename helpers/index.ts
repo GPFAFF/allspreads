@@ -106,7 +106,7 @@ export function toBase64(str) {
     : window.btoa(str);
 }
 
-export const formatName = (name: string, slug) => {
+export const formatName = (name: string | string[], slug) => {
   if (name === "college-football" && !slug) {
     return `/ncaa/ncaa.svg`;
   }

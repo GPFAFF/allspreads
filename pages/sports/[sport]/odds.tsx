@@ -60,7 +60,7 @@ export default function SingleOdds() {
 
   if (isLoading) return <Loader />;
 
-  console.log("ro", router.query.sport);
+  console.log("ro", router.query.sport, "slug", slug);
   return (
     <>
       <SearchBar>
@@ -69,7 +69,7 @@ export default function SingleOdds() {
             alt={getSport(router.query.sport)}
             height={50}
             width={50}
-            src={`${slug ? formatName(router.query.sport, "") : "/logo.svg"}`}
+            src={`${slug ? formatName(slug, "") : "/logo.svg"}`}
           />
           {getSport(router.query.sport)} Spreads
         </OddsTitle>
