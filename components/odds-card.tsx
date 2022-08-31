@@ -150,24 +150,14 @@ export default function OddsCard({ item }) {
                                 { point: string; price: string | number }
                               ];
                             }) => {
-                              if (market.key === "h2h")
-                                <H2H bookmaker={bookmaker} market={market} />;
-                            }
-                          )}
-                        </li>
-                        <li>
-                          {bookmaker.markets.map(
-                            (market: {
-                              key: any;
-                              outcomes?: [
-                                { point: string; price: string | number }
-                              ];
-                            }) => {
-                              if (market.key === "spreads") {
-                                <Spreads
-                                  bookmaker={bookmaker}
-                                  market={market}
-                                />;
+                              if (market.key === "h2h") {
+                                return (
+                                  <H2H
+                                    key={market.key}
+                                    bookmaker={bookmaker}
+                                    market={market}
+                                  />
+                                );
                               }
                             }
                           )}
@@ -180,11 +170,35 @@ export default function OddsCard({ item }) {
                                 { point: string; price: string | number }
                               ];
                             }) => {
-                              if (market.key === "totals")
-                                <Totals
-                                  bookmaker={bookmaker}
-                                  market={market}
-                                />;
+                              if (market.key === "spreads") {
+                                return (
+                                  <Spreads
+                                    key={market.key}
+                                    bookmaker={bookmaker}
+                                    market={market}
+                                  />
+                                );
+                              }
+                            }
+                          )}
+                        </li>
+                        <li>
+                          {bookmaker.markets.map(
+                            (market: {
+                              key: any;
+                              outcomes?: [
+                                { point: string; price: string | number }
+                              ];
+                            }) => {
+                              if (market.key === "totals") {
+                                return (
+                                  <Totals
+                                    key={market.key}
+                                    bookmaker={bookmaker}
+                                    market={market}
+                                  />
+                                );
+                              }
                             }
                           )}
                         </li>
@@ -229,8 +243,15 @@ export default function OddsCard({ item }) {
                               key: string;
                               outcomes?: [{ price: string | number }];
                             }) => {
-                              if (market.key === "h2h")
-                                <H2H bookmaker={bookmaker} market={market} />;
+                              if (market.key === "h2h") {
+                                return (
+                                  <H2H
+                                    key={market.key}
+                                    bookmaker={bookmaker}
+                                    market={market}
+                                  />
+                                );
+                              }
                             }
                           )}
                         </li>
@@ -243,10 +264,13 @@ export default function OddsCard({ item }) {
                               ];
                             }) => {
                               if (market.key === "spreads") {
-                                <Spreads
-                                  bookmaker={bookmaker}
-                                  market={market}
-                                />;
+                                return (
+                                  <Spreads
+                                    key={market.key}
+                                    bookmaker={bookmaker}
+                                    market={market}
+                                  />
+                                );
                               }
                             }
                           )}
@@ -260,10 +284,13 @@ export default function OddsCard({ item }) {
                               ];
                             }) => {
                               if (market.key === "totals") {
-                                <Totals
-                                  bookmaker={bookmaker}
-                                  market={market}
-                                />;
+                                return (
+                                  <Totals
+                                    key={market.key}
+                                    bookmaker={bookmaker}
+                                    market={market}
+                                  />
+                                );
                               }
                             }
                           )}
