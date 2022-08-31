@@ -42,7 +42,7 @@ const SearchBar = styled.div`
 const StyledInput = styled(DebounceInput)`
   border-radius: 4px;
   padding: 20px;
-  width: 200px;
+  width: 250px;
   align-self: end;
 `;
 
@@ -60,6 +60,7 @@ export default function SingleOdds() {
 
   if (isLoading) return <Loader />;
 
+  console.log("ro", router.query.sport);
   return (
     <>
       <SearchBar>
@@ -68,7 +69,7 @@ export default function SingleOdds() {
             alt={getSport(router.query.sport)}
             height={50}
             width={50}
-            src={`${slug ? formatName(slug, "") : "/logo.svg"}`}
+            src={`${slug ? formatName(router.query.sport, "") : "/logo.svg"}`}
           />
           {getSport(router.query.sport)} Spreads
         </OddsTitle>
