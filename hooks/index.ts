@@ -1,4 +1,7 @@
 import { server } from "../config";
+import { data } from "../football";
+import { useQuery } from "react-query";
+import { isBefore, addDays } from "date-fns";
 
 export const fetchOdds = async (key: string | undefined) => {
   const res = await fetch(
@@ -31,6 +34,43 @@ export const fetchSportsNews = async () => {
     `https://newsdata.io/api/1/news?apikey=${process.env.NEXT_PUBLIC_SPORTS_NEWS_API_KEY}&country=us&category=sports&language=en&domain=theringer,si,profootballtalk,thesportsrush`
   );
   return res.json();
+};
+
+export const useFetchOdds = (filters) => {
+  // Notice we only use `employees` as query key, because we want to preserve our cache
+  return useQuery(
+    ["odds"],
+    () => fetchOdds(filters),
+    // We pass a third argument to our useQuery function, an options object
+    {
+      select: (odds) => {
+        if (Object.entries(filters).length === 0) {
+          return (
+            odds?.length > 0 &&
+            odds?.filter((item: { commence_time: string | number | Date }) =>
+              isBefore(
+                new Date(item.commence_time),
+                addDays(new Date(data[0]?.commence_time), 6)
+              )
+            )
+          );
+        } else {
+          return odds
+            ?.filter((item: { commence_time: string | number | Date }) =>
+              isBefore(
+                new Date(item.commence_time),
+                addDays(new Date(data[0]?.commence_time), 6)
+              )
+            )
+            .filter(
+              (odd) =>
+                odd.home_team.toLowerCase().includes(filters.toLowerCase()) ||
+                odd.away_team.toLowerCase().includes(filters.toLowerCase())
+            );
+        }
+      },
+    }
+  );
 };
 
 // export const fetchFootball = async (key: string) => {

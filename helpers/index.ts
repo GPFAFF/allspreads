@@ -79,6 +79,27 @@ export function getFilePrefix(string) {
   }
 }
 
+export function getSport(path) {
+  switch (path) {
+    case "football":
+      return "NFL";
+    case "basketball":
+      return "NBA";
+    case "college-football":
+      return "NCAA Football";
+    case "college-basketball":
+      return "NCAA Basketball";
+    case "baseball":
+      return "MLB";
+    case "hockey":
+      return "NHL";
+    case "soccer":
+      return "Soccer";
+    default:
+      break;
+  }
+}
+
 export function toBase64(str) {
   return typeof window === "undefined"
     ? Buffer.from(str).toString("base64")
@@ -86,6 +107,10 @@ export function toBase64(str) {
 }
 
 export const formatName = (name: string, slug) => {
+  if (name && !slug) {
+    return `/${name}/${name}.svg`;
+  }
+
   if (slug === "books") {
     return `/${getFilePrefix(slug)}/${name
       .split(" ")

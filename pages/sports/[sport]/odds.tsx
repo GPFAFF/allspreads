@@ -1,19 +1,21 @@
-import React from "react";
-import { useQuery } from "react-query";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import { isBefore, addDays } from "date-fns";
 import Link from "next/link";
 import { NextComponentType } from "next";
+import { DebounceInput } from "react-debounce-input";
 
 import Layout from "../../../components/layout";
-import { fetchOdds } from "../../../hooks";
-import { getPath } from "../../../helpers";
+import { useFetchOdds } from "../../../hooks";
+import { getPath, getSport } from "../../../helpers";
 import OddsCard from "../../../components/odds-card";
 import Loader from "../../../components/loader";
+import Image from "next/image";
+import { formatName } from "../../../helpers/index";
 
 const OddsTitle = styled.h2`
-  margin-bottom: 20px;
+  display: grid;
+  justify-content: center;
 `;
 
 const NotFound = styled.h2`
@@ -29,40 +31,67 @@ const Center = styled.div`
   }
 `;
 
+const SearchBar = styled.div`
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 20px;
+  align-items: center;
+`;
+
+const StyledInput = styled(DebounceInput)`
+  border-radius: 4px;
+  padding: 20px;
+  width: 200px;
+  align-self: end;
+`;
+
 export default function SingleOdds() {
   const router = useRouter();
   const key = getPath(router.query.sport);
+  const slug = router.query.sport;
 
-  const { data, isLoading } = useQuery(["odds", key], () => fetchOdds(key), {
-    refetchOnWindowFocus: false,
-  });
+  const [filters, setFilters] = useState({});
+  const { data, isLoading, isIdle } = useFetchOdds(filters);
 
-  const normalizeOdds =
-    data?.length > 0 &&
-    data?.filter((item: { commence_time: string | number | Date }) =>
-      isBefore(
-        new Date(item.commence_time),
-        addDays(new Date(data[0]?.commence_time), 6)
-      )
-    );
+  const onChange = (event) => {
+    setFilters(event?.target.value);
+  };
 
   if (isLoading) return <Loader />;
 
-  if (data.length === 0)
-    return (
-      <Center>
-        <NotFound>No odds found</NotFound>
-        <Link href={`/sports/${key}`}>Back</Link>
-      </Center>
-    );
-
   return (
     <>
-      <OddsTitle>{normalizeOdds[0].sport_title} Spreads</OddsTitle>
+      <SearchBar>
+        <OddsTitle>
+          <Image
+            alt={slug}
+            height={50}
+            width={50}
+            src={`${slug ? formatName(slug, "") : "/logo.svg"}`}
+          />
+          {getSport(router.query.sport)} Spreads
+        </OddsTitle>
+        <StyledInput
+          placeholder="Search by team"
+          minLength={2}
+          debounceTimeout={300}
+          onChange={onChange}
+        />
+      </SearchBar>
       <div>
-        {normalizeOdds?.map((item) => (
-          <OddsCard key={item.id} item={item} />
-        ))}
+        {data.length === 0 ? (
+          <Center>
+            <NotFound>No odds found</NotFound>
+            <Link href={`/sports/${key}`}>Back</Link>
+          </Center>
+        ) : (
+          <>
+            {data?.map((item, i) => (
+              <OddsCard key={i} item={item} />
+            ))}
+          </>
+        )}
       </div>
     </>
   );
