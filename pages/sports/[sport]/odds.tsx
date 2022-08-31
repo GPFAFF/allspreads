@@ -72,7 +72,7 @@ export default function SingleOdds() {
             height={50}
             width={50}
             objectFit="contain"
-            team={router.query.sport}
+            team={router.query.sport.toString()}
             slug={""}
           />
           {getSport(router.query.sport)} Spreads
