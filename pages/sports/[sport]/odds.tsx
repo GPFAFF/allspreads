@@ -53,13 +53,15 @@ export default function SingleOdds() {
   const slug = router.query.sport;
 
   const [filters, setFilters] = useState({});
-  const { data, isLoading } = useFetchOdds(key, filters);
+  const { data, isLoading, isError } = useFetchOdds(key, filters);
 
   const onChange = (event) => {
     setFilters(event?.target.value);
   };
 
   if (isLoading) return <Loader />;
+
+  if (isError) return <h3>Something went wrong. Please try again</h3>;
 
   console.log("ro", router.query.sport, "slug", slug);
   return (

@@ -60,13 +60,15 @@ export default function Scores() {
   const slug = router.query.sport;
 
   const [filters, setFilters] = useState({});
-  const { data, isLoading } = useFetchScores(key, filters);
+  const { data, isLoading, isError } = useFetchScores(key, filters);
 
   const onChange = (event) => {
     setFilters(event?.target.value);
   };
 
   if (isLoading) return <Loader />;
+
+  if (isError) return <h3>Something went wrong. Please try again</h3>;
 
   return (
     <>
