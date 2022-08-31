@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import styled from "styled-components";
 import Link from "next/link";
 import { NextComponentType } from "next";
 import { DebounceInput } from "react-debounce-input";
+import styled from "styled-components";
 
 import Layout from "../../../components/layout";
 import { useFetchOdds } from "../../../hooks";
 import { getPath, getSport } from "../../../helpers";
 import OddsCard from "../../../components/odds-card";
 import Loader from "../../../components/loader";
-import Image from "next/image";
-import { formatName } from "../../../helpers/index";
 import TeamLogo from "../../../components/team-logo";
 
 const OddsTitle = styled.h2`
@@ -52,7 +50,7 @@ export default function SingleOdds() {
   const key = getPath(router.query.sport);
   const slug = router.query.sport;
 
-  const [filters, setFilters] = useState({});
+  const [filters, setFilters] = useState("");
   const { data, isLoading, isError } = useFetchOdds(key, filters);
 
   const onChange = (event) => {
@@ -71,14 +69,14 @@ export default function SingleOdds() {
         <OddsTitle>
           <TeamLogo
             style={{ paddingRight: "8px" }}
-            alt={getSport(router.query.sport)}
+            alt={getSport(slug)}
             height={50}
             width={50}
             objectFit="contain"
-            team={getSport(router.query.sport).toLowerCase()}
+            team={getSport(slug).toLowerCase()}
             slug={""}
           />
-          {getSport(router.query.sport)} Spreads
+          {getSport(slug)} Spreads
         </OddsTitle>
         <StyledInput
           placeholder="Search by team"

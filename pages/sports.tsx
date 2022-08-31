@@ -1,10 +1,11 @@
 import React from "react";
 import { useQuery } from "react-query";
+import { NextComponentType } from "next";
+
 import List from "../components/list";
 import Layout from "../components/layout";
 import { fetchAllSports } from "../hooks";
 import Loader from "../components/loader";
-import { NextComponentType } from "next";
 import { Sport } from "../types";
 
 export default function Sports() {

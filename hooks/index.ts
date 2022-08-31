@@ -1,7 +1,7 @@
 import { server } from "../config";
-import { data } from "../football";
 import { useQuery } from "react-query";
 import { isBefore, addDays } from "date-fns";
+import { useCallback } from "react";
 
 export const fetchOdds = async (key: string | undefined) => {
   const res = await fetch(
@@ -51,81 +51,56 @@ export const fetchSportsNews = async () => {
   return res.json();
 };
 
-export const useFetchOdds = (key, filters) => {
-  // Notice we only use `employees` as query key, because we want to preserve our cache
-  return useQuery(
-    ["odds"],
-    () => fetchOdds(key),
-    // We pass a third argument to our useQuery function, an options object
-    {
-      select: (odds) => {
-        if (Object.entries(filters).length === 0) {
-          return (
-            odds?.length > 0 &&
-            odds?.filter((item: { commence_time: string | number | Date }) =>
-              isBefore(
-                new Date(item.commence_time),
-                addDays(new Date(data[0]?.commence_time), 6)
-              )
-            )
-          );
-        } else {
-          return odds
-            ?.filter((item: { commence_time: string | number | Date }) =>
-              isBefore(
-                new Date(item.commence_time),
-                addDays(new Date(data[0]?.commence_time), 6)
-              )
-            )
-            .filter(
-              (odd) =>
-                odd.home_team.toLowerCase().includes(filters.toLowerCase()) ||
-                odd.away_team.toLowerCase().includes(filters.toLowerCase())
-            );
-        }
-      },
-    }
+const initialSortedData = (data: any[]) => {
+  console.log("initialSortedData", data);
+  return (
+    data?.length > 0 &&
+    data.filter((item: { commence_time: string | number | Date }) =>
+      isBefore(
+        new Date(item.commence_time),
+        addDays(new Date(data[0]?.commence_time), 6)
+      )
+    )
   );
 };
 
-export const useFetchScores = (key, filters) => {
-  // Notice we only use `employees` as query key, because we want to preserve our cache
-  return useQuery(
-    ["scores"],
-    () => fetchScores(key),
-    // We pass a third argument to our useQuery function, an options object
-    {
-      select: (scores) => {
-        if (Object.entries(filters).length === 0) {
-          return (
-            scores?.length > 0 &&
-            scores?.filter((item: { commence_time: string | number | Date }) =>
-              isBefore(
-                new Date(item.commence_time),
-                addDays(new Date(data[0]?.commence_time), 6)
-              )
-            )
-          );
-        } else {
-          return scores
-            ?.filter((item: { commence_time: string | number | Date }) =>
-              isBefore(
-                new Date(item.commence_time),
-                addDays(new Date(data[0]?.commence_time), 6)
-              )
-            )
-            .filter(
-              (odd) =>
-                odd.home_team.toLowerCase().includes(filters.toLowerCase()) ||
-                odd.away_team.toLowerCase().includes(filters.toLowerCase())
-            );
-        }
-      },
-    }
-  );
+const filteredData = (data: any[], filters: string) => {
+  return data
+    .filter((item: { commence_time: string | number | Date }) =>
+      isBefore(
+        new Date(item.commence_time),
+        addDays(new Date(data[0]?.commence_time), 6)
+      )
+    )
+    .filter(
+      (odd: { home_team: string; away_team: string }) =>
+        odd.home_team.toLowerCase().includes(filters.toLowerCase()) ||
+        odd.away_team.toLowerCase().includes(filters.toLowerCase())
+    );
 };
 
-// export const fetchFootball = async (key: string) => {
-//   const res = await fetch(`${server}/${key}.json`);
-//   return res;
-// };
+export const useFetchOdds = (key: string, filters: string) => {
+  return useQuery(["odds"], () => fetchOdds(key), {
+    select: useCallback(
+      (odds) => {
+        return !filters.length
+          ? initialSortedData(odds)
+          : filteredData(odds, filters);
+      },
+      [filters]
+    ),
+  });
+};
+
+export const useFetchScores = (key: string, filters: string) => {
+  return useQuery(["scores"], () => fetchScores(key), {
+    select: useCallback(
+      (scores) => {
+        return !filters.length
+          ? initialSortedData(scores)
+          : filteredData(scores, filters);
+      },
+      [filters]
+    ),
+  });
+};

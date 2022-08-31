@@ -1,10 +1,10 @@
 import React, { useState, ReactNode, useEffect } from "react";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
-import GlobalStyles from "../styles/GlobalStyles";
 import type { AppLayoutProps, NextWebVitalsMetric } from "next/app";
 import Script from "next/script";
 import { useRouter } from "next/router";
 import * as gtag from "../lib/gtag";
+import GlobalStyles from "../styles/GlobalStyles";
 
 export function reportWebVitals(metric: NextWebVitalsMetric) {
   console.log(metric);

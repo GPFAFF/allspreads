@@ -1,21 +1,12 @@
-import { NextComponentType } from "next";
 import React from "react";
+import { NextComponentType } from "next";
 import Layout from "../components/layout";
 
 export default function Custom404() {
   return (
-    <h2
-      style={{
-        display: "flex",
-        width: "100%",
-        marginTop: "50px",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      404 - Page Not Found
-    </h2>
+    <div className="center">
+      <h2>404 - Page Not Found</h2>
+    </div>
   );
 }
 

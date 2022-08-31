@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import styled from "styled-components";
 import Link from "next/link";
+import styled from "styled-components";
+
 import { toBase64, shimmer } from "../helpers";
-import { Sport } from "../types";
 
 const CardStyles = styled.div`
   display: grid;

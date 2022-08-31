@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+
 import Nav from "./nav";
 import Header from "./header";
 import Footer from "./footer";
-import GlobalStyles from "../styles/GlobalStyles";
 import SEO from "./seo";
 
 const SiteBorderStyles = styled.div`

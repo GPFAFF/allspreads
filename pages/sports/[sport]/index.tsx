@@ -1,14 +1,15 @@
 import React from "react";
 import { useQuery } from "react-query";
-import Layout from "../../../components/layout";
-import { fetchSingleSport } from "../../../hooks";
+import { NextComponentType } from "next";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
+
+import Layout from "../../../components/layout";
+import { fetchSingleSport } from "../../../hooks";
 import { toBase64, shimmer } from "../../../helpers";
 import Loader from "../../../components/loader";
-import { NextComponentType } from "next";
 
 const SportStyles = styled.div`
   display: grid;

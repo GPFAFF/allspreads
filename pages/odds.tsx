@@ -1,9 +1,9 @@
 import React from "react";
 import { NextComponentType } from "next";
+import { useQuery } from "react-query";
 
 import List from "../components/list";
 import Layout from "../components/layout";
-import { useQuery } from "react-query";
 import { fetchAllSports } from "../hooks";
 import Loader from "../components/loader";
 import { Sport } from "../types";

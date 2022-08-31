@@ -1,19 +1,11 @@
-import { NextComponentType } from "next";
 import React from "react";
+import { NextComponentType } from "next";
+
 import Layout from "../components/layout";
 
 export default function Picks() {
   return (
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        marginTop: "50px",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div className="center">
       <h2>Picks</h2>
       <p>Check back for free selections</p>
     </div>

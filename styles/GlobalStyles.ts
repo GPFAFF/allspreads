@@ -123,6 +123,12 @@ const GlobalStyles = createGlobalStyle`
 
   .center {
     text-align: center;
+    display: flex,
+    width: 100%,
+    marginTop: 50px,
+    flexDirection: column,
+    justifyContent: center,
+    alignItems: center,
   }
 `;
 

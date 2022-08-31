@@ -1,12 +1,12 @@
-import { NextComponentType } from "next";
 import React from "react";
+import { NextComponentType } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { useQuery } from "react-query";
+import styled from "styled-components";
+
 import Layout from "../components/layout";
 import { fetchSportsNews } from "../hooks";
-import styled from "styled-components";
-import Image from "next/image";
-import { hasCdn } from "../helpers/index";
-import Link from "next/link";
 import Loader from "../components/loader";
 
 const Card = styled.div`
@@ -47,10 +47,6 @@ export default function HomePage() {
     fetchSportsNews()
   );
 
-  // const filteredArticles = data?.articles.filter((item) =>
-  //   hasCdn(item.source.name.toLowerCase())
-  // );
-
   return (
     <>
       <div>
@@ -65,20 +61,29 @@ export default function HomePage() {
           <Loader />
         ) : (
           <Card>
-            {data?.results?.map((item, i) => (
-              <SingleCard key={i}>
-                <Link target="_blank" href={item.link}>
-                  <h3 style={{ paddingBottom: "40px" }}>{item.title}</h3>
-                </Link>
-                <Image
-                  alt={item?.title}
-                  src={item?.image_url || "/logo.svg"}
-                  width={350}
-                  height={300}
-                  objectFit="contain"
-                />
-              </SingleCard>
-            ))}
+            {data?.results?.map(
+              (
+                item: {
+                  link: string;
+                  title: string;
+                  image_url: string;
+                },
+                i: React.Key
+              ) => (
+                <SingleCard key={i}>
+                  <Link target="_blank" href={item.link}>
+                    <h3 style={{ paddingBottom: "40px" }}>{item.title}</h3>
+                  </Link>
+                  <Image
+                    alt={item?.title}
+                    src={item?.image_url || "/logo.svg"}
+                    width={350}
+                    height={300}
+                    objectFit="contain"
+                  />
+                </SingleCard>
+              )
+            )}
           </Card>
         )}
       </div>

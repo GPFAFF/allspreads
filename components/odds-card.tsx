@@ -1,15 +1,13 @@
 import React from "react";
-import Image from "next/image";
 import { useRouter } from "next/router";
-import { format } from "date-fns";
-import styled from "styled-components";
-import {
-  createBookmakerURL,
-  getFilePrefix,
-  positiveOrNegativeSpread,
-} from "../helpers";
-import TeamLogo from "./team-logo";
 import Link from "next/link";
+import styled from "styled-components";
+
+import { createBookmakerURL, positiveOrNegativeSpread } from "../helpers";
+import TeamLogo from "./team-logo";
+import Spreads from "./spreads";
+import Totals from "./totals";
+import H2H from "./H2H";
 
 const OddsTitle = styled.h3`
   display: flex;
@@ -120,177 +118,162 @@ export default function OddsCard({ item }) {
         <div>
           {item.away_team}
           <BookmakersStyles>
-            {item.bookmakers.map((bookmaker) => {
-              return (
-                <OddsCardStyles key={bookmaker.title}>
-                  <>
-                    <TeamLogo
-                      alt={bookmaker.title}
-                      height={25}
-                      width={25}
-                      objectFit="contain"
-                      team={bookmaker.key}
-                      slug="books"
-                    />
-                    <Link
-                      target="_blank"
-                      style={{ margin: "8px", paddingTop: "8px" }}
-                      href={`${createBookmakerURL(
-                        bookmaker.title.toLowerCase()
-                      )}`}
-                    >
-                      {bookmaker.title}
-                    </Link>
-                    <OddsGrid>
-                      <li>
-                        H2H{" "}
-                        {bookmaker.markets.map((market) => {
-                          if (market.key === "h2h")
-                            return (
-                              <>
-                                <span key={bookmaker.title}>
-                                  {""}
-                                  {Number(market.outcomes[0].price) > 0
-                                    ? `+${market.outcomes[0].price}`
-                                    : `${market.outcomes[0].price}`}
-                                </span>
-                              </>
-                            );
-                        })}
-                      </li>
-                      <li>
-                        {bookmaker.markets.map((market) => {
-                          if (market.key === "spreads") {
-                            return (
-                              <>
-                                <div key={`${bookmaker.title} - ${market.key}`}>
-                                  Spreads
-                                </div>
-                                <div>
-                                  {positiveOrNegativeSpread(
-                                    market.outcomes[0].point
-                                  )}{" "}
-                                  {positiveOrNegativeSpread(
-                                    market.outcomes[0].price
-                                  )}
-                                </div>
-                              </>
-                            );
-                          }
-                        })}
-                      </li>
-                      <li>
-                        {bookmaker.markets.map((market) => {
-                          if (market.key === "totals")
-                            return (
-                              <>
-                                <div key={`${bookmaker.title} - ${market.key}`}>
-                                  Totals
-                                </div>
-                                <div>
-                                  O/U {market.outcomes[0].point}{" "}
-                                  {positiveOrNegativeSpread(
-                                    market.outcomes[0].price
-                                  )}
-                                </div>
-                              </>
-                            );
-                        })}
-                      </li>
-                    </OddsGrid>
-                  </>
-                </OddsCardStyles>
-              );
-            })}
+            {item.bookmakers.map(
+              (bookmaker: { title: any; key?: any; markets?: any }) => {
+                return (
+                  <OddsCardStyles key={bookmaker.title}>
+                    <>
+                      <TeamLogo
+                        alt={bookmaker.title}
+                        height={25}
+                        width={25}
+                        objectFit="contain"
+                        team={bookmaker.key}
+                        slug="books"
+                      />
+                      <Link
+                        target="_blank"
+                        style={{ margin: "8px", paddingTop: "8px" }}
+                        href={`${createBookmakerURL(
+                          bookmaker.title.toLowerCase()
+                        )}`}
+                      >
+                        {bookmaker.title}
+                      </Link>
+                      <OddsGrid>
+                        <li>
+                          H2H{" "}
+                          {bookmaker.markets.map(
+                            (market: {
+                              key: any;
+                              outcomes?: [
+                                { point: string; price: string | number }
+                              ];
+                            }) => {
+                              if (market.key === "h2h")
+                                <H2H bookmaker={bookmaker} market={market} />;
+                            }
+                          )}
+                        </li>
+                        <li>
+                          {bookmaker.markets.map(
+                            (market: {
+                              key: any;
+                              outcomes?: [
+                                { point: string; price: string | number }
+                              ];
+                            }) => {
+                              if (market.key === "spreads") {
+                                <Spreads
+                                  bookmaker={bookmaker}
+                                  market={market}
+                                />;
+                              }
+                            }
+                          )}
+                        </li>
+                        <li>
+                          {bookmaker.markets.map(
+                            (market: {
+                              key: any;
+                              outcomes?: [
+                                { point: string; price: string | number }
+                              ];
+                            }) => {
+                              if (market.key === "totals")
+                                <Totals
+                                  bookmaker={bookmaker}
+                                  market={market}
+                                />;
+                            }
+                          )}
+                        </li>
+                      </OddsGrid>
+                    </>
+                  </OddsCardStyles>
+                );
+              }
+            )}
           </BookmakersStyles>
         </div>
         <div>
           {item.home_team}
           <BookmakersStyles>
-            {item.bookmakers.map((bookmaker) => {
-              return (
-                <OddsCardStyles key={bookmaker.title}>
-                  <>
-                    <TeamLogo
-                      alt={bookmaker.title}
-                      height={25}
-                      width={25}
-                      objectFit="contain"
-                      team={bookmaker.key}
-                      slug="books"
-                    />
-                    <Link
-                      target="_blank"
-                      style={{ margin: "8px", paddingTop: "8px" }}
-                      href={`${createBookmakerURL(
-                        bookmaker.title.toLowerCase()
-                      )}`}
-                    >
-                      {bookmaker.title}
-                    </Link>
-                    <OddsGrid>
-                      <li>
-                        H2H{" "}
-                        {bookmaker.markets.map((market) => {
-                          if (market.key === "h2h")
-                            return (
-                              <>
-                                <span
-                                  key={`${bookmaker.title} - ${market.key}`}
-                                >
-                                  {""}
-                                  {Number(market.outcomes[0].price) > 0
-                                    ? `+${market.outcomes[0].price}`
-                                    : `${market.outcomes[0].price}`}
-                                </span>
-                              </>
-                            );
-                        })}
-                      </li>
-                      <li>
-                        {bookmaker.markets.map((market) => {
-                          if (market.key === "spreads") {
-                            return (
-                              <>
-                                <div key={`${bookmaker.title} - ${market.key}`}>
-                                  Spreads
-                                </div>
-                                <div>
-                                  {positiveOrNegativeSpread(
-                                    market.outcomes[0].point
-                                  )}{" "}
-                                  {positiveOrNegativeSpread(
-                                    market.outcomes[0].price
-                                  )}
-                                </div>
-                              </>
-                            );
-                          }
-                        })}
-                      </li>
-                      <li>
-                        {bookmaker.markets.map((market) => {
-                          if (market.key === "totals")
-                            return (
-                              <>
-                                <div key={`${bookmaker.title} - ${market.key}`}>
-                                  Totals
-                                </div>
-                                <div>
-                                  O/U {market.outcomes[0].point}{" "}
-                                  {positiveOrNegativeSpread(
-                                    market.outcomes[0].price
-                                  )}
-                                </div>
-                              </>
-                            );
-                        })}
-                      </li>
-                    </OddsGrid>
-                  </>
-                </OddsCardStyles>
-              );
-            })}
+            {item.bookmakers.map(
+              (bookmaker: { title: any; key?: any; markets?: any }) => {
+                return (
+                  <OddsCardStyles key={bookmaker.title}>
+                    <>
+                      <TeamLogo
+                        alt={bookmaker.title}
+                        height={25}
+                        width={25}
+                        objectFit="contain"
+                        team={bookmaker.key}
+                        slug="books"
+                      />
+                      <Link
+                        target="_blank"
+                        style={{ margin: "8px", paddingTop: "8px" }}
+                        href={`${createBookmakerURL(
+                          bookmaker.title.toLowerCase()
+                        )}`}
+                      >
+                        {bookmaker.title}
+                      </Link>
+                      <OddsGrid>
+                        <li>
+                          H2H{" "}
+                          {bookmaker.markets.map(
+                            (market: {
+                              key: string;
+                              outcomes?: [{ price: string | number }];
+                            }) => {
+                              if (market.key === "h2h")
+                                <H2H bookmaker={bookmaker} market={market} />;
+                            }
+                          )}
+                        </li>
+                        <li>
+                          {bookmaker.markets.map(
+                            (market: {
+                              key: any;
+                              outcomes?: [
+                                { point: string; price: string | number }
+                              ];
+                            }) => {
+                              if (market.key === "spreads") {
+                                <Spreads
+                                  bookmaker={bookmaker}
+                                  market={market}
+                                />;
+                              }
+                            }
+                          )}
+                        </li>
+                        <li>
+                          {bookmaker.markets.map(
+                            (market: {
+                              key: string;
+                              outcomes?: [
+                                { point: string; price: string | number }
+                              ];
+                            }) => {
+                              if (market.key === "totals") {
+                                <Totals
+                                  bookmaker={bookmaker}
+                                  market={market}
+                                />;
+                              }
+                            }
+                          )}
+                        </li>
+                      </OddsGrid>
+                    </>
+                  </OddsCardStyles>
+                );
+              }
+            )}
           </BookmakersStyles>
         </div>
       </OddsContainer>
