@@ -61,9 +61,10 @@ export default function SingleOdds() {
 
   if (isLoading) return <Loader />;
 
-  if (isError) return <h3>Something went wrong. Please try again</h3>;
+  if (isError) {
+    return <h3 className="center">Something went wrong. Please try again</h3>;
+  }
 
-  console.log("ro", router.query.sport, "slug", slug);
   return (
     <>
       <SearchBar>

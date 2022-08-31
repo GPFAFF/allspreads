@@ -9,11 +9,15 @@ import Loader from "../components/loader";
 import { Sport } from "../types";
 
 export default function Odds() {
-  const { data, isLoading } = useQuery<Sport[]>(["sports"], () =>
+  const { data, isLoading, isError } = useQuery<Sport[]>(["sports"], () =>
     fetchAllSports()
   );
 
   if (isLoading) return <Loader />;
+
+  if (isError) {
+    return <h3 className="center">Something went wrong. Please try again</h3>;
+  }
 
   return (
     <>

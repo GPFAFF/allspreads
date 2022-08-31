@@ -70,11 +70,15 @@ const CardNav = styled.span`
 
 export default function SingleSport() {
   const router = useRouter();
-  const { data, isLoading } = useQuery(["singleSport"], () =>
+  const { data, isLoading, isError } = useQuery(["singleSport"], () =>
     fetchSingleSport(router.query.sport)
   );
 
   if (isLoading) return <Loader />;
+
+  if (isError) {
+    return <h3 className="center">Something went wrong. Please try again</h3>;
+  }
 
   return (
     <>

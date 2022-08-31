@@ -7,6 +7,9 @@ export const fetchOdds = async (key: string | undefined) => {
   const res = await fetch(
     `https://api.the-odds-api.com/v4/sports/${key}/odds/?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&regions=us&markets=h2h,spreads,totals&oddsFormat=american`
   );
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
   return res.json();
 };
 
@@ -14,17 +17,26 @@ export const fetchScores = async (key: string | undefined) => {
   const res = await fetch(
     `https://api.the-odds-api.com/v4/sports/${key}/scores/?daysFrom=1&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
   );
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
   return res.json();
 };
 
 export const fetchAllSports = async () => {
   const res = await fetch(`${server}/api/sports`);
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
   const data = await res.json();
   return data;
 };
 
 export const fetchSingleSport = async (key: string | string[] | undefined) => {
   const res = await fetch(`${server}/api/sports/${key}`);
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
   const data = await res.json();
   return data;
 };
@@ -33,6 +45,9 @@ export const fetchSportsNews = async () => {
   const res = await fetch(
     `https://newsdata.io/api/1/news?apikey=${process.env.NEXT_PUBLIC_SPORTS_NEWS_API_KEY}&country=us&category=sports&language=en&domain=theringer,si,profootballtalk,thesportsrush`
   );
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
   return res.json();
 };
 

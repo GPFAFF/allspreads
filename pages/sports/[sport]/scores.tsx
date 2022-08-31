@@ -68,7 +68,9 @@ export default function Scores() {
 
   if (isLoading) return <Loader />;
 
-  if (isError) return <h3>Something went wrong. Please try again</h3>;
+  if (isError) {
+    return <h3 className="center">Something went wrong. Please try again</h3>;
+  }
 
   return (
     <>
