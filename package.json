@@ -13,6 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@netlify/plugin-nextjs": "^4.19.0",
+    "@sentry/nextjs": "^7.12.0",
     "babel-plugin-styled-components": "^2.0.7",
     "date-fns": "^2.29.2",
     "lodash.debounce": "^4.0.8",
@@ -21,6 +22,7 @@
     "react": "^18.2.0",
     "react-debounce-input": "^3.3.0",
     "react-dom": "^18.2.0",
+    "react-error-boundary": "^3.1.4",
     "react-icons": "^4.4.0",
     "react-query": "^3.39.2",
     "styled-components": "^4.1.3"

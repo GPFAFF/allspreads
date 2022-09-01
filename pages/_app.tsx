@@ -1,5 +1,11 @@
 import React, { useState, ReactNode, useEffect } from "react";
-import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
+import {
+  Hydrate,
+  QueryClient,
+  QueryClientProvider,
+  useQueryErrorResetBoundary,
+} from "react-query";
+import { ErrorBoundary } from "react-error-boundary";
 import type { AppLayoutProps, NextWebVitalsMetric } from "next/app";
 import Script from "next/script";
 import { useRouter } from "next/router";
@@ -13,6 +19,8 @@ export function reportWebVitals(metric: NextWebVitalsMetric) {
 function App({ Component, pageProps }: AppLayoutProps) {
   const [queryClient] = useState(() => new QueryClient());
   const router = useRouter();
+  const { reset } = useQueryErrorResetBoundary();
+
   useEffect(() => {
     const handleRouteChange = (url) => {
       gtag.pageview(url);
@@ -48,12 +56,22 @@ function App({ Component, pageProps }: AppLayoutProps) {
           `,
         }}
       />
-      <QueryClientProvider client={queryClient}>
-        <Hydrate state={pageProps.dehydratedState}>
-          <GlobalStyles />
-          {getLayout(<Component {...pageProps} />)}
-        </Hydrate>
-      </QueryClientProvider>
+      <ErrorBoundary
+        onReset={reset}
+        fallbackRender={({ resetErrorBoundary }) => (
+          <div>
+            There was an error!
+            <button onClick={() => resetErrorBoundary()}>Try again</button>
+          </div>
+        )}
+      >
+        <QueryClientProvider client={queryClient}>
+          <Hydrate state={pageProps.dehydratedState}>
+            <GlobalStyles />
+            {getLayout(<Component {...pageProps} />)}
+          </Hydrate>
+        </QueryClientProvider>
+      </ErrorBoundary>
     </>
   );
 }

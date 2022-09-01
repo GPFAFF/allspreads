@@ -1,9 +1,10 @@
-import { NextApiResponse, NextApiRequest } from 'next';
-import { data } from '../../../data';
+import { NextApiResponse, NextApiRequest } from "next";
+import { withSentry } from "@sentry/nextjs";
 
-export default function handler(
-  _req: NextApiRequest,
-  res: NextApiResponse
-) {
-  return res.status(200).json(data)
+import { data } from "../../../data";
+
+async function handler(_req: NextApiRequest, res: NextApiResponse) {
+  return res.status(200).json(data);
 }
+
+export default withSentry(handler);
