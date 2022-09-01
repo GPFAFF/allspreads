@@ -83,9 +83,6 @@ export default function SingleSport() {
 
   return (
     <>
-      <div className="center">
-        <h2>{data.name}</h2>
-      </div>
       <SportStyles>
         <Image
           objectFit="cover"

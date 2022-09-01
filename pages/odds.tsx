@@ -22,8 +22,7 @@ export default function Odds() {
   return (
     <>
       <div className="center">
-        <h2>Odds</h2>
-        <p>Select your sports odds</p>
+        <h2 style={{ paddingBottom: "40px" }}>Odds</h2>
       </div>
       <List sportsList={data} />
     </>

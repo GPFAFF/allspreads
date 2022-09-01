@@ -22,8 +22,7 @@ export default function Sports() {
   return (
     <>
       <div className="center">
-        <h2>Sports</h2>
-        <p>Select your sport</p>
+        <h2 style={{ paddingBottom: "40px" }}>Sports</h2>
       </div>
       <List sportsList={data} />
     </>
