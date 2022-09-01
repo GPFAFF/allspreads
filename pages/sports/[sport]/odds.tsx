@@ -106,7 +106,7 @@ export default function SingleOdds() {
 SingleOdds.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout>{page}</Layout>
+      <Layout title="Odds">{page}</Layout>
     </>
   );
 };

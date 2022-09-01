@@ -52,7 +52,6 @@ export const fetchSportsNews = async () => {
 };
 
 const initialSortedData = (data: any[]) => {
-  console.log("initialSortedData", data);
   return (
     data?.length > 0 &&
     data.filter((item: { commence_time: string | number | Date }) =>

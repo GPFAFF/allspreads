@@ -21,6 +21,10 @@ export default function Odds() {
 
   return (
     <>
+      <div className="center">
+        <h2>Odds</h2>
+        <p>Select your sports odds</p>
+      </div>
       <List sportsList={data} />
     </>
   );
@@ -29,7 +33,7 @@ export default function Odds() {
 Odds.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout>{page}</Layout>
+      <Layout title="Odds">{page}</Layout>
     </>
   );
 };

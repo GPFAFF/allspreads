@@ -21,6 +21,10 @@ export default function Sports() {
 
   return (
     <>
+      <div className="center">
+        <h2>Sports</h2>
+        <p>Select your sport</p>
+      </div>
       <List sportsList={data} />
     </>
   );
@@ -29,7 +33,7 @@ export default function Sports() {
 Sports.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout>{page}</Layout>
+      <Layout title="Sports">{page}</Layout>
     </>
   );
 };

@@ -15,7 +15,7 @@ export default function Picks() {
 Picks.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout>{page}</Layout>
+      <Layout title="Picks">{page}</Layout>
     </>
   );
 };

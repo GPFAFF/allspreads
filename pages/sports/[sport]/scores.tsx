@@ -122,7 +122,7 @@ export default function Scores() {
 Scores.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout>{page}</Layout>
+      <Layout title="Scores">{page}</Layout>
     </>
   );
 };

@@ -83,6 +83,9 @@ export default function SingleSport() {
 
   return (
     <>
+      <div className="center">
+        <h2>{data.name}</h2>
+      </div>
       <SportStyles>
         <Image
           objectFit="cover"
@@ -135,7 +138,7 @@ export default function SingleSport() {
 SingleSport.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout>{page}</Layout>
+      <Layout title="Sports">{page}</Layout>
     </>
   );
 };

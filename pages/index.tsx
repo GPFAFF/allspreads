@@ -94,7 +94,7 @@ export default function HomePage() {
 HomePage.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout>{page}</Layout>
+      <Layout title="Home">{page}</Layout>
     </>
   );
 };

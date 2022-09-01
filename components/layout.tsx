@@ -21,10 +21,13 @@ const ContentStyles = styled.div`
   background-color: white;
 `;
 
-export default function Layout({ children }) {
+export default function Layout({ children, title }) {
   return (
     <>
-      <SEO description="All Spreads. All the Time" title="All Spreads" />
+      <SEO
+        description="All Spreads. All the Time. Your daily source for bets, betting, spreads and sports news"
+        title={title}
+      />
       <SiteBorderStyles>
         <ContentStyles>
           <Nav />
