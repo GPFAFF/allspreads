@@ -59,7 +59,7 @@ export default function Scores() {
   const key = getPath(router.query.sport);
   const slug = router.query.sport;
 
-  const [filters, setFilters] = useState({});
+  const [filters, setFilters] = useState("");
   const { data, isLoading, isError } = useFetchScores(key, filters);
 
   const onChange = (event) => {
