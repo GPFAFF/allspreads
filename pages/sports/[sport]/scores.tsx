@@ -78,14 +78,14 @@ export default function Scores() {
         <ScoresTitle>
           <TeamLogo
             style={{ paddingRight: "8px" }}
-            alt={getSport(router.query.sport)}
+            alt={getSport(slug)}
             height={50}
             width={50}
             objectFit="contain"
-            team={getSport(router.query.sport).toLowerCase()}
+            team={getSport(slug).toLowerCase()}
             slug={""}
           />
-          {getSport(router.query.sport)} Spreads
+          {getSport(slug)} Spreads
         </ScoresTitle>
         <StyledInput
           placeholder="Search by team"
