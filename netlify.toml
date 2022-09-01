@@ -7,3 +7,4 @@ package = "@sentry/netlify-build-plugin"
   [plugins.inputs]
     sentryOrg = "allspreads"
     sentryProject = "javascript-nextjs"
+    sentryRepository = "github.com/GPFAFF/allspreads"
