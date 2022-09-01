@@ -10,6 +10,7 @@ const moduleExports = {
   // Your existing module.exports
   sentry: {
     hideSourceMaps: true,
+    authToken: process.env.NEXT_PUBLIC_SENTRY_AUTH_TOKEN,
   },
   images: {
     domains: [
