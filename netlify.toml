@@ -1,6 +1,8 @@
 # Paste content of your `netlify.toml` file here
 [[plugins]]
-package = "@netlify/plugin-nextjs, @sentry/netlify-build-plugin"
+package = "@netlify/plugin-nextjs"
+[[plugins]]
+package = "@sentry/netlify-build-plugin"
 
   [plugins.inputs]
     sentryOrg = "allspreads"
