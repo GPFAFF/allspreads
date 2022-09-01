@@ -8,6 +8,9 @@ const { withSentryConfig } = require("@sentry/nextjs");
 
 const moduleExports = {
   // Your existing module.exports
+  sentry: {
+    hideSourceMaps: true,
+  },
   images: {
     domains: [
       "static01.nyt.com",
@@ -48,7 +51,4 @@ module.exports = withSentryConfig(moduleExports, {
   //   urlPrefix, include, ignore
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options.
-  sentry: {
-    hideSourceMaps: true,
-  },
 });
