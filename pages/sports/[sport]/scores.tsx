@@ -39,21 +39,25 @@ const ScoresContainer = styled.div`
   justify-content: center;
 `;
 
-const StyledInput = styled(DebounceInput)`
-  border-radius: 4px;
-  padding: 20px;
-  width: 250px;
-  align-self: end;
-`;
-
 const SearchBar = styled.div`
   display: grid;
   justify-content: space-between;
   grid-template-columns: 1fr 1fr;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   align-items: center;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
+const StyledInput = styled(DebounceInput)`
+  border-radius: 4px;
+  padding: 20px;
+  width: auto;
+  margin-top: 20px;
+  align-self: end;
+`;
 export default function Scores() {
   const router = useRouter();
   const key = getPath(router.query.sport);

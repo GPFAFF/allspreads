@@ -16,7 +16,7 @@ type Props = {
 export default function TeamLogo(props: Props) {
   const { team, height, width, objectFit, slug, style } = props;
 
-  const path = getFilePrefix(slug)
+  const path = getFilePrefix(slug);
 
   return (
     <Image
@@ -25,7 +25,7 @@ export default function TeamLogo(props: Props) {
       height={height}
       width={width}
       objectFit={objectFit}
-      src={`${path ? formatName(team, slug) : "/logo.svg"}`}
+      src={`${path || team ? formatName(team, slug) : "/logo.svg"}`}
     />
   );
 }

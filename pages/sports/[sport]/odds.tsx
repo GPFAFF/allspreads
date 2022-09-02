@@ -34,14 +34,19 @@ const SearchBar = styled.div`
   display: grid;
   justify-content: space-between;
   grid-template-columns: 1fr 1fr;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   align-items: center;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const StyledInput = styled(DebounceInput)`
   border-radius: 4px;
   padding: 20px;
-  width: 250px;
+  width: auto;
+  margin-top: 20px;
   align-self: end;
 `;
 
@@ -73,7 +78,7 @@ export default function SingleOdds() {
             height={50}
             width={50}
             objectFit="contain"
-            team={getSport(slug).toLowerCase()}
+            team={getSport(slug)?.toLowerCase()}
             slug={""}
           />
           {getSport(slug)} Spreads
