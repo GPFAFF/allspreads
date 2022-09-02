@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import { formatName, getFilePrefix } from "../helpers";
-// import { findByName } from "../helpers/find-logo";
+import { findFallback, formatName, getFilePrefix } from "../helpers";
 
 type Props = {
   team: string;
@@ -15,6 +14,7 @@ type Props = {
 
 export default function TeamLogo(props: Props) {
   const { team, height, width, objectFit, slug, style } = props;
+  const [imageError, setImageError] = useState(false);
 
   const path = getFilePrefix(slug);
 
@@ -25,7 +25,14 @@ export default function TeamLogo(props: Props) {
       height={height}
       width={width}
       objectFit={objectFit}
-      src={`${path || team ? formatName(team, slug) : "/logo.svg"}`}
+      onError={() => setImageError(true)}
+      src={
+        imageError
+          ? findFallback(path)
+          : path || team
+          ? formatName(team, slug)
+          : "/logo.svg"
+      }
     />
   );
 }

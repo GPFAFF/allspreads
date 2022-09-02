@@ -117,6 +117,18 @@ export const formatSEOTitle = (str: string) => {
   return `${str?.charAt(0).toUpperCase()}${str?.slice(1)}`;
 };
 
+export const findFallback = (slug) => {
+  console.log("slug", slug);
+  switch (slug) {
+    case "college-football":
+      return "/ncaa/fallback.svg";
+    case "football":
+      return "/nfl/nfl.svg";
+    default:
+      return "/logo.svg";
+  }
+};
+
 export const formatName = (name: string, slug) => {
   if (name === "college-football" && !slug) {
     return `/ncaa/ncaa.svg`;
