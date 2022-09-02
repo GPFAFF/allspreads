@@ -13,21 +13,21 @@ export const data = [
   },
   {
     id: "3",
+    name: "College Football",
+    slug: "college-football",
+    src: "/cfb.webp",
+  },
+  {
+    id: "4",
     name: "Hockey",
     slug: "hockey",
     src: "/hockey.webp",
   },
   {
-    id: "4",
+    id: "5",
     name: "Basketball",
     slug: "basketball",
     src: "/basketball.webp",
-  },
-  {
-    id: "5",
-    name: "College Football",
-    slug: "college-football",
-    src: "/cfb.webp",
   },
   {
     id: "6",
