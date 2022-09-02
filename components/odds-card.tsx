@@ -131,15 +131,16 @@ export default function OddsCard({ item }) {
                         team={bookmaker.key}
                         slug="books"
                       />
-                      <Link
+                      <a
                         target="_blank"
                         style={{ margin: "8px", paddingTop: "8px" }}
                         href={`${createBookmakerURL(
                           bookmaker.title.toLowerCase()
                         )}`}
+                        rel="noreferrer"
                       >
                         {bookmaker.title}
-                      </Link>
+                      </a>
                       <OddsGrid>
                         <li>
                           H2H{" "}
@@ -226,15 +227,16 @@ export default function OddsCard({ item }) {
                         team={bookmaker.key}
                         slug="books"
                       />
-                      <Link
+                      <a
                         target="_blank"
                         style={{ margin: "8px", paddingTop: "8px" }}
                         href={`${createBookmakerURL(
                           bookmaker.title.toLowerCase()
                         )}`}
+                        rel="noreferrer"
                       >
                         {bookmaker.title}
-                      </Link>
+                      </a>
                       <OddsGrid>
                         <li>
                           H2H{" "}

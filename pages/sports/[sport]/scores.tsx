@@ -6,7 +6,7 @@ import { NextComponentType } from "next";
 import { DebounceInput } from "react-debounce-input";
 
 import Layout from "../../../components/layout";
-import { getPath, getSport } from "../../../helpers";
+import { formatSEOTitle, getPath, getSport } from "../../../helpers";
 import ScoresCard from "../../../components/scores-card";
 import Loader from "../../../components/loader";
 import Image from "next/image";
@@ -119,10 +119,13 @@ export default function Scores() {
   );
 }
 
-Scores.getLayout = function getLayout(page: NextComponentType) {
+Scores.getLayout = function getLayout(page: any) {
+  const title = formatSEOTitle(page?.props.title?.query?.sport);
+  const formatString = title ? `${title} | Scores` : "Sport Scores";
+
   return (
     <>
-      <Layout title="Scores">{page}</Layout>
+      <Layout title={formatString}>{page}</Layout>
     </>
   );
 };

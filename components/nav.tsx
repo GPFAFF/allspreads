@@ -76,13 +76,13 @@ export default function Nav() {
         <li className={router.pathname == "/" ? "active" : ""}>
           <Link href="/">Home</Link>
         </li>
-        <li className={router.pathname == "/sports" ? "active" : ""}>
+        <li className={router.pathname.startsWith("/sports") ? "active" : ""}>
           <Link href="/sports">Sports</Link>
         </li>
         <li>
           <Logo />
         </li>
-        <li className={router.pathname == "/odds" ? "active" : ""}>
+        <li className={router.pathname.startsWith("/odds") ? "active" : ""}>
           <Link href="/odds">Odds</Link>
         </li>
         <li className={router.pathname == "/picks" ? "active" : ""}>

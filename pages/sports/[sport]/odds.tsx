@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 import Layout from "../../../components/layout";
 import { useFetchOdds } from "../../../hooks";
-import { getPath, getSport } from "../../../helpers";
+import { formatSEOTitle, getPath, getSport } from "../../../helpers";
 import OddsCard from "../../../components/odds-card";
 import Loader from "../../../components/loader";
 import TeamLogo from "../../../components/team-logo";
@@ -103,10 +103,13 @@ export default function SingleOdds() {
   );
 }
 
-SingleOdds.getLayout = function getLayout(page: NextComponentType) {
+SingleOdds.getLayout = function getLayout(page: any) {
+  const title = formatSEOTitle(page?.props.title?.query?.sport);
+  const formatString = title ? `${title} Odds` : "Odds";
+
   return (
     <>
-      <Layout title="Odds">{page}</Layout>
+      <Layout title={formatString}>{page}</Layout>
     </>
   );
 };

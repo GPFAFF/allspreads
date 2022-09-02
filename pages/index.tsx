@@ -71,9 +71,9 @@ export default function HomePage() {
                 i: React.Key
               ) => (
                 <SingleCard key={i}>
-                  <Link target="_blank" href={item.link}>
+                  <a target="_blank" href={item.link} rel="noreferrer">
                     <h3 style={{ paddingBottom: "40px" }}>{item.title}</h3>
-                  </Link>
+                  </a>
                   <Image
                     alt={item?.title}
                     src={item?.image_url || "/logo.svg"}

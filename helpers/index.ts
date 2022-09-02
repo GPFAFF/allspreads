@@ -106,6 +106,17 @@ export function toBase64(str) {
     : window.btoa(str);
 }
 
+export const formatSEOTitle = (str: string) => {
+  if (str && str.includes("-")) {
+    return str
+      .split("-")
+      .map((item) => item.charAt(0).toUpperCase() + item.slice(1))
+      .join(" ");
+  }
+
+  return `${str?.charAt(0).toUpperCase()}${str?.slice(1)}`;
+};
+
 export const formatName = (name: string, slug) => {
   if (name === "college-football" && !slug) {
     return `/ncaa/ncaa.svg`;

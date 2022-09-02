@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const HeaderStyles = styled.h1`
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
 `;
 
 export default function Header() {

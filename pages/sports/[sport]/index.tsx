@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 import Layout from "../../../components/layout";
 import { fetchSingleSport } from "../../../hooks";
-import { toBase64, shimmer } from "../../../helpers";
+import { toBase64, shimmer, formatSEOTitle } from "../../../helpers";
 import Loader from "../../../components/loader";
 
 const SportStyles = styled.div`
@@ -132,10 +132,13 @@ export default function SingleSport() {
   );
 }
 
-SingleSport.getLayout = function getLayout(page: NextComponentType) {
+SingleSport.getLayout = function getLayout(page: any) {
+  const title = formatSEOTitle(page?.props.title?.query?.sport);
+  const formatString = title ? `${title}` : "Sport";
+
   return (
     <>
-      <Layout title="Sports">{page}</Layout>
+      <Layout title={formatString}>{page}</Layout>
     </>
   );
 };
