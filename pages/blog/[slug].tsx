@@ -68,16 +68,14 @@ export default function BlogPost({ source, frontMatter }) {
 export async function getStaticPaths() {
   const postsDirectory = path.join(process.cwd(), "posts");
   const filenames = fs.readdirSync(postsDirectory);
-  console.log("filenames", filenames);
   const paths = filenames.map((name) => ({
     params: { slug: name.replace(".mdx", "") },
   }));
-  console.log("paths", paths);
   // dont get paths for cms posts, instead, let fallback handle it
   return { paths, fallback: true };
 }
 
-export async function getStaticProps({ params, preview }) {
+export async function getStaticProps({ params }) {
   let postFile;
   try {
     const postPath = path.join(process.cwd(), "posts", `${params.slug}.mdx`);
