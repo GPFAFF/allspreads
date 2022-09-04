@@ -6,7 +6,6 @@ import Link from "next/link";
 import orderby from "lodash.orderby";
 import styled from "styled-components";
 
-import { posts as postsFromCMS } from "../../content";
 import { formatSEOTitle } from "../../helpers/index";
 import Layout from "../../components/layout";
 
@@ -32,6 +31,7 @@ export default function Blog({ posts }) {
         <Link key={post.title} href={`blog/${post.slug}`}>
           <BlogPost key={post.title}>
             <h2 style={{ textDecoration: "underline" }}>{post.title}</h2>
+            <p>{post.publishedOn}</p>
             <p>{post.summary}</p>
           </BlogPost>
         </Link>

@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
-import { NextComponentType } from "next";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
@@ -75,6 +74,8 @@ export default function SingleSport() {
     fetchSingleSport(router.query.sport)
   );
 
+  const [imageError, setImageError] = useState(false);
+
   if (isLoading) return <Loader />;
 
   if (isError) {
@@ -87,7 +88,8 @@ export default function SingleSport() {
         <Image
           objectFit="cover"
           alt={data?.slug}
-          src={data?.src}
+          onError={() => setImageError(true)}
+          src={imageError ? "/logo.svg" : data?.src}
           placeholder="blur"
           blurDataURL={`${data?.src},${toBase64(shimmer(700, 475))}`}
           height={300}

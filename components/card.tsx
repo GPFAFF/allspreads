@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
@@ -23,6 +23,7 @@ export default function Card(item: {
   item: { name: string; slug: string; src: string };
 }) {
   const { name, slug, src } = item.item;
+  const [imageError, setImageError] = useState(false);
 
   return (
     <CardStyles>
@@ -31,7 +32,8 @@ export default function Card(item: {
         <Image
           objectFit="cover"
           alt={name}
-          src={src}
+          onError={() => setImageError(true)}
+          src={imageError ? "/logo.svg" : src}
           placeholder="blur"
           blurDataURL={`${src},${toBase64(shimmer(700, 475))}`}
           height={300}

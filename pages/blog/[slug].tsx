@@ -9,7 +9,6 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import styled from "styled-components";
 
-import { posts as postsFromCMS } from "../../content";
 import { formatSEOTitle } from "../../helpers/index";
 import Layout from "../../components/layout";
 import Loader from "../../components/loader";

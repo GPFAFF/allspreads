@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NextComponentType } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { useQuery } from "react-query";
+import { useInfiniteQuery } from "react-query";
 import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
 
 import Layout from "../components/layout";
 import { fetchSportsNews } from "../hooks";
@@ -43,9 +43,38 @@ const SingleCard = styled.div`
   }
 `;
 export default function HomePage() {
-  const { data, isLoading, isError } = useQuery(["news"], () =>
-    fetchSportsNews()
+  const { ref, inView } = useInView();
+
+  const {
+    data,
+    isLoading,
+    isError,
+    isFetching,
+    isFetchingNextPage,
+    isFetchingPreviousPage,
+    fetchNextPage,
+    fetchPreviousPage,
+    hasNextPage,
+    hasPreviousPage,
+  } = useInfiniteQuery(
+    ["news"],
+    async ({ pageParam = 1 }) => {
+      const res = await fetchSportsNews(pageParam);
+      return res;
+    },
+    {
+      getNextPageParam: (lastPage, _allPages) => lastPage.nextPage,
+      getPreviousPageParam: (firstPage, _allPages) => firstPage.nextPage,
+    }
   );
+
+  useEffect(() => {
+    if (inView) {
+      fetchNextPage();
+    }
+  }, [inView, fetchNextPage]);
+
+  const [imageError, setImageError] = useState(false);
 
   return (
     <>
@@ -60,32 +89,51 @@ export default function HomePage() {
         {isLoading ? (
           <Loader />
         ) : (
-          <Card>
-            {data?.results?.map(
-              (
-                item: {
-                  link: string;
-                  title: string;
-                  image_url: string;
-                },
-                i: React.Key
-              ) => (
-                <SingleCard key={i}>
-                  <a target="_blank" href={item.link} rel="noreferrer">
-                    <h3 style={{ paddingBottom: "40px" }}>{item.title}</h3>
-                  </a>
-                  <Image
-                    alt={item?.title}
-                    src={item?.image_url || "/logo.svg"}
-                    width={350}
-                    height={300}
-                    objectFit="contain"
-                  />
-                </SingleCard>
-              )
-            )}
-          </Card>
+          <>
+            {data.pages.map((page, i) => (
+              <Card key={i}>
+                {page?.results?.map(
+                  (
+                    item: {
+                      link: string;
+                      title: string;
+                      image_url: string;
+                    },
+                    i: React.Key
+                  ) => (
+                    <SingleCard key={i}>
+                      <a target="_blank" href={item.link} rel="noreferrer">
+                        <h3 style={{ paddingBottom: "40px" }}>{item.title}</h3>
+                      </a>
+                      <Image
+                        alt={item?.title}
+                        onError={() => setImageError(true)}
+                        src={imageError ? "/logo.svg" : item?.image_url}
+                        width={350}
+                        height={300}
+                        objectFit="contain"
+                      />
+                    </SingleCard>
+                  )
+                )}
+              </Card>
+            ))}
+          </>
         )}
+
+        <div>
+          <button
+            ref={ref}
+            onClick={() => fetchNextPage()}
+            disabled={!hasNextPage || isFetchingNextPage}
+          >
+            {isFetchingNextPage
+              ? "Loading more..."
+              : hasNextPage
+              ? "Load Newer"
+              : "Nothing more to load"}
+          </button>
+        </div>
       </div>
     </>
   );
