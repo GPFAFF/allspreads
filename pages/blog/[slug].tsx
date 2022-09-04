@@ -83,13 +83,9 @@ export async function getStaticProps({ params, preview }) {
   try {
     const postPath = path.join(process.cwd(), "posts", `${params.slug}.mdx`);
     postFile = fs.readFileSync(postPath, "utf-8");
-  } catch {
+  } catch (error) {
     // must be from cms or its a 404
-    const collection = preview ? postsFromCMS.draft : postsFromCMS.published;
-    postFile = collection.find((p) => {
-      const { data } = matter(p);
-      return data.slug === params.slug;
-    });
+    console.error(error);
   }
 
   if (!postFile) {
