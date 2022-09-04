@@ -28,7 +28,7 @@ export default function TeamLogo(props: Props) {
       onError={() => setImageError(true)}
       src={
         imageError
-          ? findFallback(path)
+          ? findFallback(path || team)
           : path || team
           ? formatName(team, slug)
           : "/logo.svg"

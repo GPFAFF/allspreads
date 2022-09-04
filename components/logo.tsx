@@ -5,7 +5,7 @@ import Image from "next/image";
 const LogoStyles = styled.div`
   font-size: clamp(1px, 0.65vw, 8px);
   background-size: 150em;
-  transform: translateY(-25%);
+  transform: translateY(-35%);
 `;
 
 export default function Logo() {

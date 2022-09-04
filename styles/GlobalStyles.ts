@@ -91,7 +91,7 @@ const GlobalStyles = createGlobalStyle`
 
   p,
   li {
-    line-height: 1;
+    line-height: 1.5;
     letter-spacing: 0.5px;
   }
 

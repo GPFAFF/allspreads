@@ -19,9 +19,10 @@ const SportStyles = styled.div`
 
   div {
     &:last-of-type {
-      display: grid;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
-      grid-template-rows: 100px auto;
 
       @media (max-width: 480px) {
         display: block;
@@ -40,7 +41,6 @@ const StyledLink = styled.h2`
   align-items: center;
   justify-content: center;
   margin: 20px;
-  margin-left: 0;
   padding: 20px;
   border: 2px solid black;
   border-radius: 4px;

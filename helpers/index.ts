@@ -118,9 +118,8 @@ export const formatSEOTitle = (str: string) => {
 };
 
 export const findFallback = (slug) => {
-  console.log("slug", slug);
   switch (slug) {
-    case "college-football":
+    case "college-football" || "ncaa":
       return "/ncaa/fallback.svg";
     case "football":
       return "/nfl/nfl.svg";
