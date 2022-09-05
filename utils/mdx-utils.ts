@@ -14,19 +14,11 @@ export const postFilePaths = fs
   .filter((path) => /\.mdx?$/.test(path));
 
 export const sortPostsByDate = (posts: any) => {
-  return (
-    orderby(posts).map((content) => {
-      const { data } = matter(content);
-      return data;
-    }),
-    ["publishedOn"],
-    ["desc"]
-  );
-  // return posts.sort((a: any, b: any) => {
-  //   const aDate = new Date(a.data.publishedOn);
-  //   const bDate = new Date(b.data.publishedOn);
-  //   return bDate - aDate;
-  // });
+  return posts.sort((a: any, b: any) => {
+    const aDate = new Date(a.data.publishedOn).valueOf();
+    const bDate = new Date(b.data.publishedOn).valueOf();
+    return bDate - aDate;
+  });
 };
 
 export const getPosts = () => {
