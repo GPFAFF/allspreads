@@ -1,11 +1,8 @@
 import React from "react";
-import matter from "gray-matter";
-import path from "path";
-import fs from "fs";
 import Link from "next/link";
-import orderby from "lodash.orderby";
 import styled from "styled-components";
 
+import { getPosts } from "../../utils/mdx-utils";
 import { formatSEOTitle } from "../../helpers/index";
 import Layout from "../../components/layout";
 
@@ -28,7 +25,11 @@ export default function Blog({ posts }) {
   return (
     <div>
       {posts.map((post) => (
-        <Link key={post.title} href={`blog/${post.slug}`}>
+        <Link
+          as={`/blog/${post.filePath.replace(/\.mdx?$/, "")}`}
+          href={`/blog/[slug]`}
+          key={post.title}
+        >
           <BlogPost key={post.title}>
             <h2 style={{ textDecoration: "underline" }}>{post.title}</h2>
             <p>{post.publishedOn}</p>
@@ -40,26 +41,11 @@ export default function Blog({ posts }) {
   );
 }
 
-export async function getStaticProps(ctx) {
-  const postsDirectory = path.join(process.cwd(), "posts");
-  const filenames = fs.readdirSync(postsDirectory);
-  const filePosts = filenames.map((filename) => {
-    const filePath = path.join(postsDirectory, filename);
-    return fs.readFileSync(filePath, "utf8");
-  });
-
-  const posts = orderby(
-    filePosts.map((content) => {
-      const { data } = matter(content);
-      return data;
-    }),
-    ["publishedOn"],
-    ["desc"]
-  );
+export function getStaticProps() {
+  const posts = getPosts();
 
   return { props: { posts } };
 }
-
 Blog.getLayout = function getLayout(page: any) {
   const title = formatSEOTitle("blog");
   const formatString = title ? `${title}` : "Blog";
