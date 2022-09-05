@@ -24,19 +24,22 @@ const BlogPost = styled.div`
 export default function Blog({ posts }) {
   return (
     <div>
-      {posts.map((post) => (
-        <Link
-          as={`/blog/${post.filePath.replace(/\.mdx?$/, "")}`}
-          href={`/blog/[slug]`}
-          key={post.title}
-        >
-          <BlogPost key={post.title}>
-            <h2 style={{ textDecoration: "underline" }}>{post.title}</h2>
-            <p>{post.publishedOn}</p>
-            <p>{post.summary}</p>
-          </BlogPost>
-        </Link>
-      ))}
+      {posts.map((post) => {
+        const { title, publishedOn, summary } = post?.data;
+        return (
+          <Link
+            as={`/blog/${post.filePath.replace(/\.mdx?$/, "")}`}
+            href={`/blog/[slug]`}
+            key={post.title}
+          >
+            <BlogPost key={title}>
+              <h2 style={{ textDecoration: "underline" }}>{title}</h2>
+              <p>{publishedOn}</p>
+              <p>{summary}</p>
+            </BlogPost>
+          </Link>
+        );
+      })}
     </div>
   );
 }
