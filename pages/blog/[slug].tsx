@@ -95,36 +95,6 @@ export const getStaticPaths = async () => {
   };
 };
 
-// export async function getStaticPaths() {
-//   const postsDirectory = path.join(process.cwd(), "posts");
-//   const filenames = fs.readdirSync(postsDirectory);
-//   const paths = filenames.map((name) => ({
-//     params: { slug: name.replace(".mdx", "") },
-//   }));
-//   // dont get paths for cms posts, instead, let fallback handle it
-//   return { paths, fallback: true };
-// }
-
-// export async function getStaticProps({ params, preview }) {
-//   let postFile;
-//   try {
-//     const postPath = path.join(process.cwd(), "posts", `${params.slug}.mdx`);
-//     postFile = fs.readFileSync(postPath, "utf-8");
-//   } catch (error) {
-//     // must be from cms or its a 404
-//     console.error(error);
-//   }
-
-//   if (!postFile) {
-//     throw new Error("no post");
-//   }
-
-//   const { content, data } = matter(postFile);
-//   const mdxSource = await serialize(content, { scope: data });
-
-//   return { props: { source: mdxSource, frontMatter: data }, revalidate: 30 };
-// }
-
 BlogPost.getLayout = function getLayout(page: any) {
   const title = formatSEOTitle("post");
   const formatString = title ? `${title}` : "Blog";

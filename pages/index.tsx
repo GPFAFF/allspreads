@@ -100,21 +100,31 @@ export default function HomePage() {
                       image_url: string;
                     },
                     i: React.Key
-                  ) => (
-                    <SingleCard key={i}>
-                      <a target="_blank" href={item.link} rel="noreferrer">
-                        <h3 style={{ paddingBottom: "40px" }}>{item.title}</h3>
-                      </a>
-                      <Image
-                        alt={item?.title}
-                        onError={() => setImageError(true)}
-                        src={imageError ? "/logo.svg" : item?.image_url}
-                        width={350}
-                        height={300}
-                        objectFit="contain"
-                      />
-                    </SingleCard>
-                  )
+                  ) => {
+                    const useImageFallback =
+                      imageError || null || !item?.image_url;
+                    return (
+                      <SingleCard key={i}>
+                        <a target="_blank" href={item.link} rel="noreferrer">
+                          <h3 style={{ paddingBottom: "40px" }}>
+                            {item.title}
+                          </h3>
+                        </a>
+                        {item && (
+                          <Image
+                            alt={item?.title}
+                            onError={() => setImageError(true)}
+                            src={
+                              useImageFallback ? "/logo.svg" : item?.image_url
+                            }
+                            width={350}
+                            height={300}
+                            objectFit="contain"
+                          />
+                        )}
+                      </SingleCard>
+                    );
+                  }
                 )}
               </Card>
             ))}
