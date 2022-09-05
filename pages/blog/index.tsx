@@ -27,17 +27,19 @@ export default function Blog({ posts }) {
       {posts.map((post) => {
         const { title, publishedOn, summary } = post?.data;
         return (
-          <Link
-            as={`/blog/${post.filePath.replace(/\.mdx?$/, "")}`}
-            href={`/blog/[slug]`}
-            key={post.title}
-          >
-            <BlogPost key={title}>
-              <h2 style={{ textDecoration: "underline" }}>{title}</h2>
-              <p>{publishedOn}</p>
-              <p>{summary}</p>
-            </BlogPost>
-          </Link>
+          <React.Fragment key={post.title}>
+            <Link
+              as={`/blog/${post.filePath.replace(/\.mdx?$/, "")}`}
+              href={`/blog/[slug]`}
+              key={post.title}
+            >
+              <BlogPost key={post.title}>
+                <h2 style={{ textDecoration: "underline" }}>{title}</h2>
+                <p>{publishedOn}</p>
+                <p>{summary}</p>
+              </BlogPost>
+            </Link>
+          </React.Fragment>
         );
       })}
     </div>
@@ -50,12 +52,9 @@ export function getStaticProps() {
   return { props: { posts } };
 }
 Blog.getLayout = function getLayout(page: any) {
-  const title = formatSEOTitle("blog");
-  const formatString = title ? `${title}` : "Blog";
-
   return (
     <>
-      <Layout title={formatString}>{page}</Layout>
+      <Layout title="Blog on Spreads, Betting and Sports">{page}</Layout>
     </>
   );
 };

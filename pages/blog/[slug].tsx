@@ -96,7 +96,7 @@ export const getStaticPaths = async () => {
 };
 
 BlogPost.getLayout = function getLayout(page: any) {
-  const title = formatSEOTitle("post");
+  const title = formatSEOTitle(page?.props.title?.query?.slug);
   const formatString = title ? `${title}` : "Blog";
 
   return (
