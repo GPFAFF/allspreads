@@ -72,18 +72,12 @@ export async function getStaticPaths() {
     params: { slug: name.replace(".mdx", "") },
   }));
   // dont get paths for cms posts, instead, let fallback handle it
-  return { paths, fallback: true };
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  let postFile;
-  try {
-    const postPath = path.join(process.cwd(), "posts", `${params.slug}.mdx`);
-    postFile = fs.readFileSync(postPath, "utf-8");
-  } catch (error) {
-    // must be from cms or its a 404
-    console.error(error);
-  }
+  const postPath = path.join(process.cwd(), "posts", `${params.slug}.mdx`);
+  const postFile = fs.readFileSync(postPath, "utf-8");
 
   if (!postFile) {
     throw new Error("no post");
