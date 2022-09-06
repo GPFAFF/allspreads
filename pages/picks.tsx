@@ -9,7 +9,6 @@ export default function Picks() {
       <h2>Picks</h2>
       <p>Record 0 - 0</p>
       <div>09/05/22 - Chicago White Sox -117</div>
-      <div>09/05/22 - St. Louis Cardinals -1.5 -125</div>
     </div>
   );
 }
