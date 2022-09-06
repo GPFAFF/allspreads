@@ -11,7 +11,11 @@ export default function SEO({ description, title }) {
       <meta name="description" content={description} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
-      <meta property="og:image" content="https://allspreads.com/logo.png" />
+      <meta
+        key="og"
+        property="og:image"
+        content="https://allspreads.com/logo.png"
+      />
       <meta property="og:url" content="https://allspreads.com/" />
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content={siteTitle} />
@@ -20,6 +24,7 @@ export default function SEO({ description, title }) {
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta
+        key="twitter"
         property="twitter:image:src"
         content="https://allspreads.com/logo.png"
       />

@@ -106,11 +106,24 @@ export function toBase64(str) {
     : window.btoa(str);
 }
 
+export const isLeague = (str) => {
+  switch (str) {
+    case "nfl":
+      return "NFL";
+    default:
+      return "";
+  }
+};
+
 export const formatSEOTitle = (str: string) => {
   if (str && str.includes("-")) {
     return str
       .split("-")
-      .map((item) => item.charAt(0).toUpperCase() + item.slice(1))
+      .map((item) => {
+        return isLeague(item[0])
+          ? item.toUpperCase()
+          : item.charAt(0).toUpperCase() + item.slice(1);
+      })
       .join(" ");
   }
 
