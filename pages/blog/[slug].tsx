@@ -90,12 +90,9 @@ export const getStaticPaths = async () => {
 };
 
 BlogPost.getLayout = function getLayout(page: any) {
-  const title = formatSEOTitle(page?.props.title?.query?.slug);
-  const formatString = title ? `${title}` : "Blog";
-
   return (
     <>
-      <Layout title={formatString}>{page}</Layout>
+      <Layout title={page.props.source.scope.title}>{page}</Layout>
     </>
   );
 };
