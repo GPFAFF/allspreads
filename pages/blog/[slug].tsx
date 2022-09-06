@@ -1,4 +1,5 @@
-import React, { FC } from "react";
+import React from "react";
+// @ts-ignore
 import { MDXRemote } from "next-mdx-remote";
 import { getPostBySlug, postFilePaths } from "../../utils/mdx-utils";
 

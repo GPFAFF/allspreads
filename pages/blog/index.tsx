@@ -1,13 +1,14 @@
-import React from "react";
-import Link from "next/link";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import { getPosts } from "../../utils/mdx-utils";
-import { formatSEOTitle } from "../../helpers/index";
+import { toBase64, shimmer } from "../../helpers/index";
 import Layout from "../../components/layout";
+import Image from "next/image";
 
 const BlogPost = styled.div`
   display: grid;
+  grid-template-columns: 200px 1fr;
   list-style-type: none;
   background-color: var(--grey);
   border: 4px solid var(--green);
@@ -19,27 +20,86 @@ const BlogPost = styled.div`
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   transform: scale(1);
   transition: 0.5s;
+  gap: 20px;
+  align-items: center;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+
+  > div > p:first-of-type {
+    margin-bottom: 0;
+  }
+   > div > p {
+    margin: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    transform: scale(1.01);
+  }
 `;
 
+const BlogMargin = styled.p`
+  margin-top: 16px !important;
+`;
+
+const StyledAnchor = styled.a`
+  text-decoration: none;
+`;
+
+type Post = {
+  filePath: any;
+  data: {
+    author: string;
+    id: number;
+    imageSlug: string;
+    title: string;
+    publishedOn: string;
+    summary: string;
+  };
+};
 export default function Blog({ posts }) {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <div>
-      {posts.map((post) => {
-        const { title, publishedOn, summary } = post?.data;
+      {posts.map((post: Post) => {
+        const { author, id, imageSlug, title, publishedOn, summary } =
+          post?.data;
+
+        const href = `/blog/${post.filePath.replace(/\.mdx?$/, "")}`;
+
         return (
-          <React.Fragment key={post.title}>
-            <Link
-              as={`/blog/${post.filePath.replace(/\.mdx?$/, "")}`}
-              href={`/blog/[slug]`}
-              key={post.title}
-            >
-              <BlogPost key={post.title}>
-                <h2 style={{ textDecoration: "underline" }}>{title}</h2>
-                <p>{publishedOn}</p>
-                <p>{summary}</p>
-              </BlogPost>
-            </Link>
-          </React.Fragment>
+          <div key={id}>
+            <StyledAnchor href={href} key={title}>
+              <>
+                <BlogPost key={title}>
+                  <div>
+                    <Image
+                      objectFit="contain"
+                      alt={title}
+                      onError={() => setImageError(true)}
+                      src={imageError ? "/logo.svg" : imageSlug}
+                      placeholder="blur"
+                      blurDataURL={`${imageSlug},${toBase64(
+                        shimmer(700, 475)
+                      )}`}
+                      height={300}
+                      width={300}
+                    />
+                    <p>{publishedOn}</p>
+                    <p>{author}</p>
+                  </div>
+                  <div>
+                    <h2 style={{ textDecoration: "underline" }}>{title}</h2>
+                    <BlogMargin>{summary}</BlogMargin>
+                  </div>
+                </BlogPost>
+              </>
+            </StyledAnchor>
+          </div>
         );
       })}
     </div>

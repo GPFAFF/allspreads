@@ -130,6 +130,11 @@ const GlobalStyles = createGlobalStyle`
     justifyContent: center,
     alignItems: center,
   }
+
+  .winner {
+    color: var(--green);
+    padding: 2px;
+  }
 `;
 
 export default GlobalStyles;

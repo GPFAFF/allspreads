@@ -7,8 +7,8 @@ export default function Picks() {
   return (
     <div className="center">
       <h2>Picks</h2>
-      <p>Record 0 - 0</p>
-      <div>09/05/22 - Chicago White Sox -117</div>
+      <p>Record 1 - 0</p>
+      <div className="winner">09/05/22 - Chicago White Sox -117</div>
     </div>
   );
 }

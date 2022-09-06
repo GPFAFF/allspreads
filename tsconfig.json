@@ -20,7 +20,8 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/_error.js",
-    "pages/_error.js"
+    "pages/_error.js",
+    "utils/mdx-utils.mts"
   ],
   "exclude": ["node_modules"]
 }

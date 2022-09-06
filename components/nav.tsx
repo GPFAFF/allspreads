@@ -19,7 +19,7 @@ const NavStyles = styled.nav`
     align-items: center;
     gap: 2rem;
 
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
       grid-template-rows: 1fr auto;
       grid-template-columns: 1fr;
     }
@@ -36,7 +36,7 @@ const NavStyles = styled.nav`
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 600px) {
     li:nth-child(4) {
       order: -1;
       margin-bottom: -40px;

@@ -11,7 +11,7 @@ export default function SEO({ description, title }) {
       <meta name="description" content={description} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
-      <meta property="og:image" content="https://allspreads.com/logo.svg" />
+      <meta property="og:image" content="https://allspreads.com/logo.png" />
       <meta property="og:url" content="https://allspreads.com/" />
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content={siteTitle} />
