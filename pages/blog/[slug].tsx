@@ -42,14 +42,6 @@ export default function BlogPost({ source, frontMatter }) {
   }
   return (
     <div>
-      <Head>
-        <title>{`AllSpreads Blog | ${frontMatter.title}`}</title>
-        <meta
-          name="description"
-          content={`AllSpreads | ${frontMatter.summary}`}
-        />
-        <meta property="twitter:description" content={frontMatter.title} />
-      </Head>
       <main>
         <h1
           style={{

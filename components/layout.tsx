@@ -25,7 +25,10 @@ export default function Layout({ children, title }) {
   return (
     <>
       <SEO
-        description="All Spreads. All the Time. Your daily source for bets, betting, spreads and sports news"
+        description={
+          children?.props?.source?.scope.title ||
+          "All Spreads. All the Time. Your daily source for bets, betting, spreads and sports news"
+        }
         title={title}
       />
       <SiteBorderStyles>
