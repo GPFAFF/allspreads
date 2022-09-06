@@ -13,10 +13,9 @@ const ListStyles = styled.div`
 
 type Props = {
   sportsList: Sport[] | undefined;
-}
+};
 
 export default function List(props: Props) {
-
   const { sportsList } = props;
 
   return (

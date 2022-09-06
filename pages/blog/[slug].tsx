@@ -48,6 +48,7 @@ export default function BlogPost({ source, frontMatter }) {
           name="description"
           content={`AllSpreads | ${frontMatter.summary}`}
         />
+        <meta property="twitter:description" content={frontMatter.title} />
       </Head>
       <main>
         <h1
