@@ -81,7 +81,7 @@ export default function Blog({ posts }) {
                       objectFit="cover"
                       alt={title}
                       onError={() => setImageError(true)}
-                      src={imageError ? "/logo.svg" : imageSlug}
+                      src={imageSlug}
                       placeholder="blur"
                       blurDataURL={`${imageSlug},${toBase64(
                         shimmer(700, 475)
