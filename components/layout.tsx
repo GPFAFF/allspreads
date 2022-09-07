@@ -26,7 +26,7 @@ export default function Layout({ children, title }) {
     <>
       <SEO
         description={
-          children?.props?.source?.scope.title ||
+          children?.props?.source?.scope.summary ||
           "All Spreads. All the Time. Your daily source for bets, betting, spreads and sports news"
         }
         title={title}
