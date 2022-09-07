@@ -78,7 +78,7 @@ export default function Blog({ posts }) {
                 <BlogPost key={title}>
                   <div>
                     <Image
-                      objectFit="contain"
+                      objectFit="cover"
                       alt={title}
                       onError={() => setImageError(true)}
                       src={imageError ? "/logo.svg" : imageSlug}
@@ -88,6 +88,7 @@ export default function Blog({ posts }) {
                       )}`}
                       height={300}
                       width={300}
+                      layout="responsive"
                     />
                     <p>{publishedOn}</p>
                     <p>{author}</p>
