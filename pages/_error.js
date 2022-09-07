@@ -13,10 +13,11 @@
 
 import * as Sentry from "@sentry/nextjs";
 import NextErrorComponent from "next/error";
+import Layout from "../components/layout";
 
-const CustomErrorComponent = (props) => (
-  <NextErrorComponent statusCode={props.statusCode} />
-);
+export default function CustomErrorComponent(props) {
+  return <NextErrorComponent statusCode={props.statusCode} />;
+}
 
 CustomErrorComponent.getInitialProps = async (contextData) => {
   // In case this is running in a serverless function, await this in order to give Sentry
@@ -27,4 +28,10 @@ CustomErrorComponent.getInitialProps = async (contextData) => {
   return NextErrorComponent.getInitialProps(contextData);
 };
 
-export default CustomErrorComponent;
+CustomErrorComponent.getLayout = function getLayout(page) {
+  return (
+    <>
+      <Layout title="Error Page">{page}</Layout>
+    </>
+  );
+};
