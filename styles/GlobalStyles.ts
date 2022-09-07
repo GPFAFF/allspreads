@@ -135,6 +135,11 @@ const GlobalStyles = createGlobalStyle`
     color: var(--green);
     padding: 2px;
   }
+
+  .loser {
+    color: #c72534;
+    padding: 2px;
+  }
 `;
 
 export default GlobalStyles;
