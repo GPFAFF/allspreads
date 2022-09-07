@@ -13,10 +13,18 @@
 
 import * as Sentry from "@sentry/nextjs";
 import NextErrorComponent from "next/error";
+import Link from "next/link";
 import Layout from "../components/layout";
 
 export default function CustomErrorComponent(props) {
-  return <NextErrorComponent statusCode={props.statusCode} />;
+  return (
+    <>
+      <Link href="/">
+        <h2>There was an error</h2>
+      </Link>
+      <NextErrorComponent statusCode={props.statusCode} />
+    </>
+  );
 }
 
 CustomErrorComponent.getInitialProps = async (contextData) => {
