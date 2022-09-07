@@ -19,8 +19,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/_error.js",
-    "pages/_error.js",
+    "pages/_error.tsx",
+    "pages/_error.tsx",
     "utils/mdx-utils.mts"
   ],
   "exclude": ["node_modules"]
