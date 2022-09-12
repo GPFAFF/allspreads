@@ -7,7 +7,7 @@ export default function Picks() {
   return (
     <div className="center">
       <h2>Picks</h2>
-      <p>Record 8 / 13 (61.5%)</p>
+      <p>Record 11 / 18 (61.1%)</p>
       <div className="winner">09/05/22 - Chicago White Sox -117</div>
       <div className="loser">
         09/06/22 - Chicago Cubs / Cincinnati Reds U 8 -115
@@ -29,10 +29,15 @@ export default function Picks() {
       <div className="loser">09/10/22 - Alabama -20 v Texas</div>
       <div className="winner">09/10/22 - USC -8.5 v Stanford</div>
       <div className="winner">09/10/22 - Tennessee -6.5 v Pittsburgh</div>
-      <div>09/11/22 - Baltimore 1H Under 22</div>
-      <div>09/11/22 - Nick Chubb Anytime TD</div>
-      <div>09/11/22 - Trey Lance Over 38.5 Rushing Yards</div>
-      <div>09/11/22 - Chargers / Raiders - O52</div>
+      <div className="winner">09/11/22 - Baltimore 1H Under 22</div>
+      <div className="loser">09/11/22 - Nick Chubb Anytime TD</div>
+      <div className="winner">
+        09/11/22 - Trey Lance Over 38.5 Rushing Yards
+      </div>
+      <div className="loser">09/11/22 - Chargers / Raiders - O52</div>
+      <div className="winner">
+        09/11/22 - Julio Jones - Over 38.5 yards receiving
+      </div>
     </div>
   );
 }
