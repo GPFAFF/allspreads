@@ -2,6 +2,7 @@ import React from "react";
 // @ts-ignore
 import { MDXRemote } from "next-mdx-remote";
 import { getPostBySlug, postFilePaths } from "../../utils/mdx-utils";
+import Image from "next/image";
 
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -27,7 +28,12 @@ const BlogCard = styled.div`
   padding: 12px 4px 12px 32px;
 `;
 
+const ResponsiveImage = (props) => (
+  <Image alt={props.alt} layout="responsive" {...props} />
+);
+
 const components = {
+  img: ResponsiveImage,
   a: CustomLink,
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
