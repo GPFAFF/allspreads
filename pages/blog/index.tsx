@@ -115,7 +115,9 @@ export function getStaticProps() {
 Blog.getLayout = function getLayout(page: any) {
   return (
     <>
-      <Layout title="Blog on Spreads, Betting and Sports">{page}</Layout>
+      <Layout title="Game previews, recaps, spread analysis, betting tips, and all things sports related">
+        {page}
+      </Layout>
     </>
   );
 };
