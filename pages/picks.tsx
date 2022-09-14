@@ -7,7 +7,7 @@ export default function Picks() {
   return (
     <div className="center">
       <h2>Picks</h2>
-      <p>Record 13 / 21 (61.9%)</p>
+      <p>Record 13 / 22 (59%)</p>
       <div className="winner">09/05/22 - Chicago White Sox -117</div>
       <div className="loser">
         09/06/22 - Chicago Cubs / Cincinnati Reds U 8 -115
@@ -48,7 +48,7 @@ export default function Picks() {
         09/12/22 - Jerry Jeudy - Over 60.5 yards receiving
       </div>
       <div className="loser">09/12/22 - Denver Broncos - -6.5 receiving</div>
-      <div>09/13/22 - Los Angeles Angels ML +117</div>
+      <div className="loser">09/13/22 - Los Angeles Angels ML +117</div>
     </div>
   );
 }
