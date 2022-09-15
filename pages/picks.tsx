@@ -52,6 +52,11 @@ export default function Picks() {
       <div className="winner">09/14/22 - Orioles -1.5 RL +134</div>
       <div className="winner">09/14/22 - Seattle Mariners -1.5 RL +152</div>
       <div className="loser">09/14/22 - Tampa Bay Rays -102</div>
+      <div>09/15/22 - Chicago White Sox -1.5 RL +132</div>
+      <div>09/15/22 - Chiefs v Chargers U 54</div>
+      <div>09/15/22 - Travis Kelce - Over 6.5 Receptions</div>
+      <div>09/15/22 - Travis Kelce - Over 79.5 yards</div>
+      <div>09/15/22 - Austin Ekeler - Over 37.5 receiving yards</div>
     </div>
   );
 }
