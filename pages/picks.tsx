@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NextComponentType } from "next";
 
 import Layout from "../components/layout";
 
 export default function Picks() {
+  const [winners, setWinners] = useState(0);
+  const [losers, setLosers] = useState(0);
+
+  const formatPercent = (winners: number, losers: number) => {
+    return `Record ${winners} / ${losers + winners} - ${Number(
+      winners / (losers + winners)
+    ).toFixed(3)}%`;
+  };
+
+  useEffect(() => {
+    const winners = document.querySelectorAll(".winner").length;
+    const losers = document.querySelectorAll(".loser").length;
+
+    setWinners(winners);
+    setLosers(losers);
+  }, []);
+
   return (
     <div className="center">
       <h2>Picks</h2>
-      <p>Record 20 / 33 (60.6%)</p>
+      <p>{formatPercent(winners, losers)}</p>
       <div className="winner">09/05/22 - Chicago White Sox -117</div>
       <div className="loser">
         09/06/22 - Chicago Cubs / Cincinnati Reds U 8 -115
@@ -39,15 +56,12 @@ export default function Picks() {
         09/11/22 - Julio Jones - Over 38.5 yards receiving
       </div>
       <div className="winner">
-        09/11/22 - Julio Jones - Over 38.5 yards receiving
-      </div>
-      <div className="winner">
         09/12/22 - Rashad Penny - Under 69.5 yards rushing
       </div>
       <div className="winner">
         09/12/22 - Jerry Jeudy - Over 60.5 yards receiving
       </div>
-      <div className="loser">09/12/22 - Denver Broncos - -6.5 receiving</div>
+      <div className="loser">09/12/22 - Denver Broncos - -6.5</div>
       <div className="loser">09/13/22 - Los Angeles Angels ML +117</div>
       <div className="winner">09/14/22 - Orioles -1.5 RL +134</div>
       <div className="winner">09/14/22 - Seattle Mariners -1.5 RL +152</div>
@@ -66,7 +80,7 @@ export default function Picks() {
         09/15/22 - Mike Williams - Over 69.5 receiving yards
       </div>
       <div>09/16/22 - Air Force -15</div>
-      <div>09/16/22 - Air Force / Wyoming O 46</div>
+      <div>09/16/22 - Air Force / Wyoming Over 46</div>
       <div>09/16/22 - Florida State -2.5 </div>
     </div>
   );
