@@ -53,6 +53,9 @@ export default function Picks() {
       <div className="winner">09/14/22 - Seattle Mariners -1.5 RL +152</div>
       <div className="loser">09/14/22 - Tampa Bay Rays -102</div>
       <div>09/15/22 - Chicago White Sox -1.5 RL +132</div>
+      <div>09/15/22 - Minnesota Twins -1.5 RL +120</div>
+      <div>09/15/22 - Philadelphia Phillies ML -120</div>
+      <div>09/15/22 - Chargers 1st Half +3</div>
       <div>09/15/22 - Chiefs v Chargers U 54</div>
       <div>09/15/22 - Travis Kelce - Over 6.5 Receptions</div>
       <div>09/15/22 - Travis Kelce - Over 79.5 yards</div>
