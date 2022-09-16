@@ -7,7 +7,7 @@ export default function Picks() {
   return (
     <div className="center">
       <h2>Picks</h2>
-      <p>Record 15 / 25 (60%)</p>
+      <p>Record 20 / 33 (60.6%)</p>
       <div className="winner">09/05/22 - Chicago White Sox -117</div>
       <div className="loser">
         09/06/22 - Chicago Cubs / Cincinnati Reds U 8 -115
@@ -52,14 +52,19 @@ export default function Picks() {
       <div className="winner">09/14/22 - Orioles -1.5 RL +134</div>
       <div className="winner">09/14/22 - Seattle Mariners -1.5 RL +152</div>
       <div className="loser">09/14/22 - Tampa Bay Rays -102</div>
-      <div>09/15/22 - Chicago White Sox -1.5 RL +132</div>
-      <div>09/15/22 - Minnesota Twins -1.5 RL +120</div>
-      <div>09/15/22 - Philadelphia Phillies ML -120</div>
-      <div>09/15/22 - Chargers 1st Half +3</div>
-      <div>09/15/22 - Chiefs v Chargers U 54</div>
-      <div>09/15/22 - Travis Kelce - Over 6.5 Receptions</div>
-      <div>09/15/22 - Travis Kelce - Over 79.5 yards</div>
-      <div>09/15/22 - Austin Ekeler - Over 37.5 receiving yards</div>
+      <div className="winner">09/15/22 - Chicago White Sox -1.5 RL +132</div>
+      <div className="loser">09/15/22 - Minnesota Twins -1.5 RL +120</div>
+      <div className="loser">09/15/22 - Philadelphia Phillies ML -120</div>
+      <div className="winner">09/15/22 - Chargers 1st Half +3</div>
+      <div className="winner">09/15/22 - Chiefs v Chargers U 54</div>
+      <div className="loser">09/15/22 - Travis Kelce - Over 6.5 Receptions</div>
+      <div className="loser">09/15/22 - Travis Kelce - Over 79.5 yards</div>
+      <div className="winner">
+        09/15/22 - Austin Ekeler - Over 37.5 receiving yards
+      </div>
+      <div className="winner">
+        09/15/22 - Mike Williams - Over 69.5 receiving yards
+      </div>
     </div>
   );
 }
