@@ -65,6 +65,9 @@ export default function Picks() {
       <div className="winner">
         09/15/22 - Mike Williams - Over 69.5 receiving yards
       </div>
+      <div>09/16/22 - Air Force -15</div>
+      <div>09/16/22 - Air Force / Wyoming O 46</div>
+      <div>09/16/22 - Florida State -2.5 </div>
     </div>
   );
 }
