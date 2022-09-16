@@ -92,7 +92,7 @@ export default function Nav() {
           <Link href="/blog">Blog</Link>
         </li>
         <li className={router.pathname.startsWith("/picks") ? "active" : ""}>
-          <Link href="/picks">picks</Link>
+          <Link href="/picks">Picks</Link>
         </li>
       </ul>
     </NavStyles>

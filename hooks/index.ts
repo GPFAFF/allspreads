@@ -23,6 +23,15 @@ export const fetchScores = async (key: string | undefined) => {
   return res.json();
 };
 
+export const fetchAllPicks = async () => {
+  const res = await fetch(`${server}/api/picks`);
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
+  const data = await res.json();
+  return data;
+};
+
 export const fetchAllSports = async () => {
   const res = await fetch(`${server}/api/sports`);
   if (!res.ok) {

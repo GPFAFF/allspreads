@@ -140,6 +140,16 @@ const GlobalStyles = createGlobalStyle`
     color: #c72534;
     padding: 2px;
   }
+
+  .show {
+    display: block;
+    transition: 0.5s;
+    margin-top: 20px;
+  }
+  .hide {
+    display: none;
+    transition: 0.5s;
+  }
 `;
 
 export default GlobalStyles;
