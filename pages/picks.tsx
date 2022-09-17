@@ -44,12 +44,12 @@ export default function Picks(props) {
       {isLoading ? (
         <Loader />
       ) : (
-        <Row>
+        <>
           {data?.map((item: any, i) => {
             const { picks } = item;
 
             return (
-              <>
+              <Row>
                 <h3 onClick={handleClick}>{item.month}</h3>
                 <div className={rowShown ? "show" : "hide"} key={i}>
                   <>
@@ -65,7 +65,7 @@ export default function Picks(props) {
               </>
             );
           })}
-        </Row>
+        </>
       )}
     </div>
   );
