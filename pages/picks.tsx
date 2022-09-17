@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Layout from "../components/layout";
 import { fetchAllPicks } from "../hooks/index";
 import Loader from "../components/loader";
+import { fieldByIndex } from "../helpers/index";
 
 const Row = styled.div`
   padding: 20px;
@@ -15,27 +16,22 @@ const Row = styled.div`
   margin: 20px;
 `;
 export default function Picks(props) {
-  const [winners, setWinners] = useState(0);
-  const [losers, setLosers] = useState(0);
   const [rowShown, setRowShown] = useState(false);
 
   const { data, isLoading, isError } = useQuery<[]>(["picks"], () =>
     fetchAllPicks()
   );
 
+  const getAllWinners = fieldByIndex(data, "winner");
+  const getAllLosers = fieldByIndex(data, "loser");
+  const [winners, _setWinners] = useState(getAllWinners);
+  const [losers, _setLosers] = useState(getAllLosers);
+
   const formatPercent = (winners: number, losers: number) => {
     return `Record ${winners} / ${losers + winners} - ${Number(
       winners / (losers + winners)
     ).toFixed(3)}%`;
   };
-
-  useEffect(() => {
-    const winners = document.querySelectorAll(".winner").length;
-    const losers = document.querySelectorAll(".loser").length;
-
-    setWinners(winners);
-    setLosers(losers);
-  }, []);
 
   const handleClick = () => {
     setRowShown(!rowShown);
@@ -68,19 +64,6 @@ export default function Picks(props) {
                 </div>
               </>
             );
-
-            // return (
-            //   <>
-            //     <h3>{item.month}</h3>
-            //     <div key={i}>
-            //       {picks.map((pick, i) => (
-            //         <div key={i} className={pick.result ? pick.result : ""}>
-            //           {pick.date} - {pick.team} {pick.odds}
-            //         </div>
-            //       ))}
-            //     </div>
-            //   </>
-            // );
           })}
         </Row>
       )}

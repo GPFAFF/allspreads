@@ -115,6 +115,14 @@ export const isLeague = (str) => {
   }
 };
 
+export const fieldByIndex = (months, field) => {
+  return months
+    .reduce((acc, curr) => {
+      return [...acc, ...curr.picks];
+    }, [])
+    .filter((item) => item.result === field).length;
+};
+
 export const formatSEOTitle = (str: string) => {
   if (str && str.includes("-")) {
     return str
