@@ -278,6 +278,24 @@ export const data = [
         odds: "-110",
         result: null,
       },
+      {
+        date: "09/17/22",
+        team: "Arkansas St / Memphis - 1H Under 33.5",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "09/17/22",
+        team: "Georgia - 1H -14",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "09/17/22",
+        team: "Indiana / Western Kentucky - Under 61",
+        odds: "-110",
+        result: null,
+      },
     ],
   },
 ];
