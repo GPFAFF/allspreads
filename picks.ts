@@ -222,7 +222,7 @@ export const data = [
         date: "09/16/22",
         team: "Florida State -2.5",
         odds: "-110",
-        result: null,
+        result: "winner",
       },
       {
         date: "09/16/22",
@@ -262,7 +262,7 @@ export const data = [
       },
       {
         date: "09/17/22",
-        team: "Nebraska / Oklahoma - Under 65",
+        team: "Nebraska / Oklahoma - Over 65",
         odds: "-110",
         result: null,
       },
@@ -274,15 +274,9 @@ export const data = [
       },
       {
         date: "09/17/22",
-        team: "Wyoming 2H +8",
+        team: "Arkansas St / Memphis - 1H Under 33.5",
         odds: "-110",
-        result: "winner",
-      },
-      {
-        date: "09/17/22",
-        team: "Wyoming 2H +8",
-        odds: "-110",
-        result: "winner",
+        result: null,
       },
     ],
   },
