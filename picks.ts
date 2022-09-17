@@ -220,7 +220,7 @@ export const data = [
       },
       {
         date: "09/16/22",
-        team: "Louisville +3",
+        team: "Florida State -2.5",
         odds: "-110",
         result: null,
       },
