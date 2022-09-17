@@ -49,11 +49,11 @@ export default function Picks(props) {
             const { picks } = item;
 
             return (
-              <Row>
+              <>
                 <h3 onClick={handleClick}>{item.month}</h3>
                 <div className={rowShown ? "show" : "hide"} key={i}>
                   <>
-                    <div>
+                    <div key={i}>
                       {picks.map((pick, i) => (
                         <div key={i} className={pick.result ? pick.result : ""}>
                           {pick.date} - {pick.team} {pick.odds}
