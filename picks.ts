@@ -234,13 +234,13 @@ export const data = [
         date: "09/17/22",
         team: "Notre Dame -10.5",
         odds: "-110",
-        result: null,
+        result: "loser",
       },
       {
         date: "09/17/22",
         team: "App St / Troy - Under 52.5",
         odds: "-110",
-        result: null,
+        result: "loser",
       },
       {
         date: "09/17/22",
@@ -264,7 +264,7 @@ export const data = [
         date: "09/17/22",
         team: "Nebraska / Oklahoma - Over 65",
         odds: "-110",
-        result: null,
+        result: "loser",
       },
       {
         date: "09/17/22",
@@ -280,21 +280,15 @@ export const data = [
       },
       {
         date: "09/17/22",
-        team: "Arkansas St / Memphis - 1H Under 33.5",
-        odds: "-110",
-        result: null,
-      },
-      {
-        date: "09/17/22",
         team: "Georgia - 1H -14",
         odds: "-110",
-        result: null,
+        result: "winner",
       },
       {
         date: "09/17/22",
         team: "Indiana / Western Kentucky - Under 61",
         odds: "-110",
-        result: null,
+        result: "loser",
       },
     ],
   },
