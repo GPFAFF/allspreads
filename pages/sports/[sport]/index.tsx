@@ -6,7 +6,7 @@ import Image from "next/image";
 import styled from "styled-components";
 
 import Layout from "../../../components/layout";
-import { fetchSingleSport } from "../../../hooks";
+import { fetchAllSports, fetchSingleSport } from "../../../hooks";
 import { toBase64, shimmer, formatSEOTitle } from "../../../helpers";
 import Loader from "../../../components/loader";
 
@@ -68,9 +68,10 @@ const CardNav = styled.span`
   }
 `;
 
-export default function SingleSport({ sport }) {
+export default function SingleSport() {
+  const router = useRouter();
   const { data, isLoading, isError } = useQuery(["singleSport"], () =>
-    fetchSingleSport(sport)
+    fetchSingleSport(router.query.sport)
   );
 
   const [imageError, setImageError] = useState(false);
@@ -133,11 +134,28 @@ export default function SingleSport({ sport }) {
   );
 }
 
-export async function getServerSideProps(ctx) {
-  const { sport } = ctx.query;
+export async function getStaticPaths() {
+  const sports = await fetchAllSports();
+
+  const paths = sports.map((sport) => ({
+    params: { sport: sport.slug },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps() {
+  const res = await fetchAllSports();
+
+  if (!res) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
-      sport,
+      data: res,
     },
   };
 }
