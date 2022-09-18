@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NextComponentType } from "next";
 import { dehydrate, QueryClient, useQuery } from "react-query";
 import styled from "styled-components";
-
+import { FaArrowCircleDown, FaArrowCircleUp } from "react-icons/fa";
 import Layout from "../components/layout";
 import { fetchAllPicks } from "../hooks/index";
 import Loader from "../components/loader";
@@ -49,8 +49,32 @@ export default function Picks(props) {
             const { picks } = item;
 
             return (
-              <>
-                <h3 onClick={handleClick}>{item.month}</h3>
+              <Row key={i}>
+                <h3
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                  onClick={handleClick}
+                >
+                  {item.month}
+                  <span>
+                    {rowShown ? (
+                      <FaArrowCircleDown
+                        fill="#39b54a"
+                        style={{ display: "flex", paddingLeft: "10px" }}
+                        size={25}
+                      />
+                    ) : (
+                      <FaArrowCircleUp
+                        fill="#39b54a"
+                        style={{ display: "flex", paddingLeft: "10px" }}
+                        size={25}
+                      />
+                    )}
+                  </span>
+                </h3>
+
                 <div className={rowShown ? "show" : "hide"} key={i}>
                   <>
                     <div key={i}>
@@ -62,7 +86,7 @@ export default function Picks(props) {
                     </div>
                   </>
                 </div>
-              </>
+              </Row>
             );
           })}
         </>
