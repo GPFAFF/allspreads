@@ -338,6 +338,18 @@ export const data = [
         odds: "-110",
         result: null,
       },
+      {
+        date: "09/18/22",
+        team: "Tampa Bay vs. Saints - Under 43.5",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "09/18/22",
+        team: "Cleveland vs New York - Under 39.5",
+        odds: "-110",
+        result: null,
+      },
     ],
   },
 ];
