@@ -68,10 +68,9 @@ const CardNav = styled.span`
   }
 `;
 
-export default function SingleSport() {
-  const router = useRouter();
+export default function SingleSport({ sport }) {
   const { data, isLoading, isError } = useQuery(["singleSport"], () =>
-    fetchSingleSport(router.query.sport)
+    fetchSingleSport(sport)
   );
 
   const [imageError, setImageError] = useState(false);
@@ -132,6 +131,15 @@ export default function SingleSport() {
       </SportStyles>
     </>
   );
+}
+
+export async function getServerSideProps(ctx) {
+  const { sport } = ctx.query;
+  return {
+    props: {
+      sport,
+    },
+  };
 }
 
 SingleSport.getLayout = function getLayout(page: any) {

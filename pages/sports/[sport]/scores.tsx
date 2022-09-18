@@ -58,10 +58,9 @@ const StyledInput = styled(DebounceInput)`
   margin-top: 20px;
   align-self: end;
 `;
-export default function Scores() {
-  const router = useRouter();
-  const key = getPath(router.query.sport);
-  const slug = router.query.sport;
+export default function Scores({ sport }) {
+  const key = getPath(sport);
+  const slug = sport;
 
   const [filters, setFilters] = useState("");
   const { data, isLoading, isError } = useFetchScores(key, filters);
@@ -82,11 +81,11 @@ export default function Scores() {
         <ScoresTitle>
           <TeamLogo
             style={{ paddingRight: "8px" }}
-            alt={getSport(slug)}
+            alt={getSport(sport)}
             height={50}
             width={50}
             objectFit="contain"
-            team={getSport(slug).toLowerCase()}
+            team={getSport(sport).toLowerCase()}
             slug={""}
           />
           {getSport(slug)} Spreads
@@ -109,7 +108,7 @@ export default function Scores() {
             <ScoresContainer>
               {data?.map((item, i) => {
                 const sortedScores = item?.scores
-                  ? item?.scores.sort((a, b) => a.score - b.score)
+                  ? item?.scores.sort((a, b) => b.score - a.score)
                   : [];
                 return (
                   <ScoresCard key={item.id} item={item} scores={sortedScores} />
@@ -121,6 +120,15 @@ export default function Scores() {
       </div>
     </>
   );
+}
+
+export async function getServerSideProps(ctx) {
+  const { sport } = ctx.query;
+  return {
+    props: {
+      sport,
+    },
+  };
 }
 
 Scores.getLayout = function getLayout(page: any) {

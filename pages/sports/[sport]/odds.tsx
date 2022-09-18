@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { NextComponentType } from "next";
 import { DebounceInput } from "react-debounce-input";
 import styled from "styled-components";
 
@@ -50,7 +49,7 @@ const StyledInput = styled(DebounceInput)`
   align-self: end;
 `;
 
-export default function SingleOdds() {
+export default function SingleOdds({ sport }) {
   const router = useRouter();
   const key = getPath(router.query.sport);
   const slug = router.query.sport;
@@ -106,6 +105,15 @@ export default function SingleOdds() {
       </div>
     </>
   );
+}
+
+export async function getServerSideProps(ctx) {
+  const { sport } = ctx.query;
+  return {
+    props: {
+      sport,
+    },
+  };
 }
 
 SingleOdds.getLayout = function getLayout(page: any) {
