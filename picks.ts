@@ -303,6 +303,18 @@ export const data = [
         result: null,
       },
       {
+        date: "09/18/22",
+        team: "Jaguars +3",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "09/18/22",
+        team: "Panthers +2",
+        odds: "-110",
+        result: null,
+      },
+      {
         date: "09/17/22",
         team: "Los Angeles Rams / Atlanta Falcons - Over 46.5",
         odds: "-110",
