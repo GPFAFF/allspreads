@@ -164,7 +164,8 @@ export async function getStaticProps(ctx) {
 SingleSport.getLayout = function getLayout(page: any) {
   const title = formatSEOTitle(page?.props.title?.query?.sport);
 
-  const formatString = title && !undefined ? `${title}` : "Sport";
+  const formatString =
+    title && !undefined ? `${title} | Odds & Scores` : "Sport";
 
   return (
     <>
