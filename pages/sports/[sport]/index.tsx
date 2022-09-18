@@ -144,8 +144,9 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export async function getStaticProps() {
-  const res = await fetchAllSports();
+export async function getStaticProps(ctx) {
+  const { sport } = ctx.params;
+  const res = await fetchSingleSport(sport);
 
   if (!res) {
     return {
@@ -162,7 +163,8 @@ export async function getStaticProps() {
 
 SingleSport.getLayout = function getLayout(page: any) {
   const title = formatSEOTitle(page?.props.title?.query?.sport);
-  const formatString = title ? `${title}` : "Sport";
+
+  const formatString = title && !undefined ? `${title}` : "Sport";
 
   return (
     <>
