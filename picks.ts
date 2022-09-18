@@ -316,12 +316,6 @@ export const data = [
       },
       {
         date: "09/18/22",
-        team: "Nick Chubb - Over 83.5 yards rushing",
-        odds: "-110",
-        result: null,
-      },
-      {
-        date: "09/18/22",
         team: "Joe Mixon - Over 70.5 yards rushing",
         odds: "-110",
         result: null,
