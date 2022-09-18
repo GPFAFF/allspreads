@@ -11,7 +11,7 @@ import ScoresCard from "../../../components/scores-card";
 import Loader from "../../../components/loader";
 import Image from "next/image";
 import { formatName } from "../../../helpers/index";
-import { useFetchScores } from "../../../hooks/index";
+import { fetchAllSports, useFetchScores } from "../../../hooks/index";
 import TeamLogo from "../../../components/team-logo";
 
 const ScoresTitle = styled.h2`
@@ -122,15 +122,25 @@ export default function Scores({ sport }) {
   );
 }
 
-export async function getServerSideProps(ctx) {
-  const { sport } = ctx.query;
+export async function getStaticPaths() {
+  const sports = await fetchAllSports();
+
+  const paths = sports.map((sport) => ({
+    params: { sport: sport.slug },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps(ctx) {
+  const { sport } = ctx.params;
+
   return {
     props: {
-      sport,
+      slug: sport,
     },
   };
 }
-
 Scores.getLayout = function getLayout(page: any) {
   const title = formatSEOTitle(page?.props.title?.query?.sport);
   const formatString = title ? `${title} | Scores` : "Sport Scores";

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import { DebounceInput } from "react-debounce-input";
 import styled from "styled-components";
 
 import Layout from "../../../components/layout";
-import { useFetchOdds } from "../../../hooks";
+import { fetchAllSports, useFetchOdds } from "../../../hooks";
 import { formatSEOTitle, getPath, getSport } from "../../../helpers";
 import OddsCard from "../../../components/odds-card";
 import Loader from "../../../components/loader";
@@ -49,10 +48,8 @@ const StyledInput = styled(DebounceInput)`
   align-self: end;
 `;
 
-export default function SingleOdds({ sport }) {
-  const router = useRouter();
-  const key = getPath(router.query.sport);
-  const slug = router.query.sport;
+export default function SingleOdds({ slug }) {
+  const key = getPath(slug);
 
   const [filters, setFilters] = useState("");
   const { data, isLoading, isError } = useFetchOdds(key, filters);
@@ -107,11 +104,22 @@ export default function SingleOdds({ sport }) {
   );
 }
 
-export async function getServerSideProps(ctx) {
-  const { sport } = ctx.query;
+export async function getStaticPaths() {
+  const sports = await fetchAllSports();
+
+  const paths = sports.map((sport) => ({
+    params: { sport: sport.slug },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps(ctx) {
+  const { sport } = ctx.params;
+
   return {
     props: {
-      sport,
+      slug: sport,
     },
   };
 }
