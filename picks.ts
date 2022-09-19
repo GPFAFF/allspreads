@@ -318,7 +318,7 @@ export const data = [
         date: "09/17/22",
         team: "Los Angeles Rams / Atlanta Falcons - Over 46.5",
         odds: "-110",
-        result: null,
+        result: "winner",
       },
       {
         date: "09/18/22",
@@ -330,7 +330,7 @@ export const data = [
         date: "09/18/22",
         team: "Joe Mixon - Over 70.5 yards rushing",
         odds: "-110",
-        result: null,
+        result: "loser",
       },
       {
         date: "09/18/22",
