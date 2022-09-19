@@ -350,6 +350,12 @@ export const data = [
         odds: "-110",
         result: "loser",
       },
+      {
+        date: "09/18/22",
+        team: "Aaron Jones - Anytime TD",
+        odds: "+100",
+        result: "winner",
+      },
     ],
   },
 ];
