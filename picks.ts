@@ -390,7 +390,7 @@ export const data = [
         date: "09/20/22",
         team: "Atlanta Braves RL -1.5",
         odds: "-155",
-        result: "winner",
+        result: "loser",
       },
       {
         date: "09/20/22",
@@ -414,7 +414,7 @@ export const data = [
         date: "09/20/22",
         team: "Dylan Cease - Over 6 K's",
         odds: "-135",
-        result: null,
+        result: "loser",
       },
     ],
   },

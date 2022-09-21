@@ -180,8 +180,10 @@ export default function OddsCard({ item, active }) {
                     <Pill>
                       {point ? (
                         <>
-                          {positiveOrNegativeSpread(point)}
-                          &nbsp;
+                          {active !== "totals"
+                            ? positiveOrNegativeSpread(point)
+                            : point}
+                          &nbsp; &nbsp;
                           {formatOdds(price)}
                         </>
                       ) : (
@@ -211,7 +213,9 @@ export default function OddsCard({ item, active }) {
                     <Pill>
                       {point ? (
                         <>
-                          {positiveOrNegativeSpread(point)}
+                          {active !== "totals"
+                            ? positiveOrNegativeSpread(point)
+                            : point}
                           &nbsp;
                           {formatOdds(price)}
                         </>
