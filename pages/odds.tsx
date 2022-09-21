@@ -24,7 +24,7 @@ export default function Odds() {
       <div className="center">
         <h2 style={{ paddingBottom: "40px" }}>Odds</h2>
       </div>
-      <List sportsList={data} />
+      <List url="odds" sportsList={data} />
     </>
   );
 }

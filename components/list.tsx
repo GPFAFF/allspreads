@@ -12,16 +12,17 @@ const ListStyles = styled.div`
 `;
 
 type Props = {
+  url: string;
   sportsList: Sport[] | undefined;
 };
 
 export default function List(props: Props) {
-  const { sportsList } = props;
+  const { sportsList, url } = props;
 
   return (
     <ListStyles>
       {sportsList?.map((item: Sport) => (
-        <Card key={item.id} item={item} />
+        <Card url={url} key={item.id} item={item} />
       ))}
     </ListStyles>
   );

@@ -76,8 +76,8 @@ export default function Nav() {
         <li className={router.pathname == "/" ? "active" : ""}>
           <Link href="/">Home</Link>
         </li>
-        <li className={router.pathname.startsWith("/sports") ? "active" : ""}>
-          <Link href="/sports">Sports</Link>
+        <li className={router.pathname.startsWith("/scores") ? "active" : ""}>
+          <Link href="/scores">Scores</Link>
         </li>
         <li className={router.pathname.startsWith("/odds") ? "active" : ""}>
           <Link href="/odds">Odds</Link>
@@ -85,8 +85,8 @@ export default function Nav() {
         <li>
           <Logo />
         </li>
-        <li className={router.pathname == "/news" ? "active" : ""}>
-          <Link href="/news">News</Link>
+        <li className={router.pathname == "/tools" ? "active" : ""}>
+          <Link href="/tools">Tools</Link>
         </li>
         <li className={router.pathname.startsWith("/blog") ? "active" : ""}>
           <Link href="/blog">Blog</Link>

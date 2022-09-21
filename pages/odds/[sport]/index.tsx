@@ -1,20 +1,16 @@
 import React, { useState } from "react";
-import { useRouter } from "next/router";
-import styled from "styled-components";
 import Link from "next/link";
-import { NextComponentType } from "next";
 import { DebounceInput } from "react-debounce-input";
+import styled from "styled-components";
 
 import Layout from "../../../components/layout";
+import { fetchAllSports, useFetchOdds } from "../../../hooks";
 import { formatSEOTitle, getPath, getSport } from "../../../helpers";
-import ScoresCard from "../../../components/scores-card";
+import OddsCard from "../../../components/odds-card";
 import Loader from "../../../components/loader";
-import Image from "next/image";
-import { formatName } from "../../../helpers/index";
-import { fetchAllSports, useFetchScores } from "../../../hooks/index";
 import TeamLogo from "../../../components/team-logo";
 
-const ScoresTitle = styled.h2`
+const OddsTitle = styled.h2`
   display: grid;
   justify-content: center;
 `;
@@ -30,13 +26,6 @@ const Center = styled.div`
   > a {
     padding-top: 20px;
   }
-`;
-
-const ScoresContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  justify-content: center;
 `;
 
 const SearchBar = styled.div`
@@ -57,39 +46,89 @@ const StyledInput = styled(DebounceInput)`
   width: auto;
   margin-top: 20px;
   align-self: end;
+  grid-column-start: 2;
 `;
-export default function Scores({ sport }) {
-  const key = getPath(sport);
-  const slug = sport;
 
+const Tab = styled.button<{ active: boolean }>`
+  font-size: 20px;
+  padding: 10px 60px;
+  cursor: pointer;
+  opacity: 0.6;
+  background: var(--green);
+  border: 0;
+  outline: 0;
+  flex: 1;
+  border-radius: 4px;
+  margin: 0 4px;
+
+  ${({ active }) =>
+    active &&
+    `
+    flex: 1;
+    border: 2px solid black;
+    opacity: 1;
+  `}
+`;
+
+const ButtonGroup = styled.div`
+  display: flex;
+`;
+
+export default function SingleOdds({ slug }) {
+  const key = getPath(slug);
+
+  const tabs = ["spreads", "h2h", "totals"];
   const [filters, setFilters] = useState("");
-  const { data, isLoading, isError } = useFetchScores(key, filters);
+  const [active, setActive] = useState(tabs[0]);
+  const { data, isLoading, isError, isFetching } = useFetchOdds(
+    key,
+    active,
+    filters
+  );
 
   const onChange = (event) => {
     setFilters(event?.target.value);
   };
 
-  if (isLoading) return <Loader />;
+  if (isLoading || isFetching) return <Loader />;
 
   if (isError) {
     return <h3 className="center">Something went wrong. Please try again</h3>;
   }
 
+  const formattedType = (type) => {
+    return type === "h2h"
+      ? "MONEYLINE"
+      : type === "totals"
+      ? "TOTALS"
+      : "SPREADS";
+  };
+
   return (
     <>
       <SearchBar>
-        <ScoresTitle>
+        <OddsTitle>
           <TeamLogo
-            style={{ paddingRight: "8px" }}
-            alt={getSport(sport)}
+            alt={getSport(slug)}
             height={50}
             width={50}
             objectFit="contain"
-            team={getSport(sport).toLowerCase()}
+            team={getSport(slug)?.toLowerCase()}
             slug={""}
           />
-          {getSport(slug)} Spreads
-        </ScoresTitle>
+          {getSport(slug)} {formattedType(active)}
+        </OddsTitle>
+        <ButtonGroup>
+          {tabs.map((type) => (
+            <Tab
+              key={type}
+              active={active === type}
+              onClick={() => setActive(type)}
+            >
+              {formattedType(type)}
+            </Tab>
+          ))}
+        </ButtonGroup>
         <StyledInput
           placeholder="Search by team"
           minLength={2}
@@ -101,20 +140,13 @@ export default function Scores({ sport }) {
         {data.length === 0 ? (
           <Center>
             <NotFound>No odds found</NotFound>
-            <Link href={`/sports/${key}`}>Back</Link>
+            <Link href={`/odds/`}>Back</Link>
           </Center>
         ) : (
           <>
-            <ScoresContainer>
-              {data?.map((item, i) => {
-                const sortedScores = item?.scores
-                  ? item?.scores.sort((a, b) => b.score - a.score)
-                  : [];
-                return (
-                  <ScoresCard key={item.id} item={item} scores={sortedScores} />
-                );
-              })}
-            </ScoresContainer>
+            {data?.map((item, i) => (
+              <OddsCard active={formattedType(active)} key={i} item={item} />
+            ))}
           </>
         )}
       </div>
@@ -141,11 +173,10 @@ export async function getStaticProps(ctx) {
     },
   };
 }
-Scores.getLayout = function getLayout(page: any) {
-  const title = formatSEOTitle(page?.props.title?.query?.sport);
 
-  const formatString =
-    title && !undefined ? `${title} | Scores` : "Sport Scores";
+SingleOdds.getLayout = function getLayout(page: any) {
+  const title = formatSEOTitle(page?.props.title?.query?.sport);
+  const formatString = title && !undefined ? `${title} | Odds` : "Odds";
 
   return (
     <>

@@ -19,16 +19,18 @@ const CardStyles = styled.div`
 `;
 
 export default function Card(item: {
+  url: string;
   key?: string;
   item: { name: string; slug: string; src: string };
 }) {
+  const { url } = item;
   const { name, slug, src } = item.item;
   const [imageError, setImageError] = useState(false);
 
   return (
     <CardStyles>
       <h2>{name}</h2>
-      <Link href={`/sports/${slug}`}>
+      <Link href={`/${url}/${slug}`}>
         <Image
           objectFit="cover"
           alt={name}

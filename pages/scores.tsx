@@ -3,15 +3,15 @@ import { NextComponentType } from "next";
 
 import List from "../components/list";
 import Layout from "../components/layout";
-import { fetchAllSports } from "../hooks";
+import { fetchAllSports } from "../hooks/index";
 
 export default function Sports({ data }) {
   return (
     <>
       <div className="center">
-        <h2 style={{ paddingBottom: "40px" }}>Sports</h2>
+        <h2 style={{ paddingBottom: "40px" }}>Scores</h2>
       </div>
-      <List sportsList={data} />
+      <List url="scores" sportsList={data} />
     </>
   );
 }
@@ -35,7 +35,7 @@ export async function getStaticProps() {
 Sports.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout title="Sports">{page}</Layout>
+      <Layout title="Scores">{page}</Layout>
     </>
   );
 };
