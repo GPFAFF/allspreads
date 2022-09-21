@@ -91,7 +91,7 @@ const filteredData = (data: any[], filters: string) => {
 };
 
 export const useFetchOdds = (key: string, active, filters: string) => {
-  return useQuery(["odds"], () => fetchOdds(key, active), {
+  return useQuery(["odds", active], () => fetchOdds(key, active), {
     select: useCallback(
       (odds) => {
         return !filters.length
