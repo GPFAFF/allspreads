@@ -416,6 +416,24 @@ export const data = [
         odds: "-135",
         result: "loser",
       },
+      {
+        date: "09/21/22",
+        team: "Orioles vs. Tiger - Over 8",
+        odds: "-120",
+        result: null,
+      },
+      {
+        date: "09/21/22",
+        team: "Reds vs Red Sox - Over 10.5",
+        odds: "-135",
+        result: null,
+      },
+      {
+        date: "09/21/22",
+        team: "Yankees -1.5 RL",
+        odds: "-135",
+        result: null,
+      },
     ],
   },
 ];
