@@ -150,6 +150,32 @@ const GlobalStyles = createGlobalStyle`
     display: none;
     transition: 0.5s;
   }
+
+.book-anchor {
+  position: relative;
+}
+
+.book-anchor > .visuallyhidden {
+    visibility: hidden;
+    opacity:  0;
+    position: absolute;
+    bottom: -40px;
+    left: -25px;
+    z-index: 10;
+    text-align: center;
+    padding: 5px;
+    width: 90px;
+    height: auto;
+    background: var(--black);
+    color: var(--white);
+    font-size: 16px;
+}
+
+.book-anchor:hover .visuallyhidden {
+    visibility: visible;
+    opacity: 1;
+}
+
 `;
 
 export default GlobalStyles;

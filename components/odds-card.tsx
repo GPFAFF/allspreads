@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import styled from "styled-components";
 
-import { createBookmakerURL, positiveOrNegativeSpread } from "../helpers";
+import {
+  createBookmakerURL,
+  formatOdds,
+  positiveOrNegativeSpread,
+} from "../helpers";
 import TeamLogo from "./team-logo";
 import Spreads from "./spreads";
 import Totals from "./totals";
@@ -22,56 +25,29 @@ const OddsTitle = styled.h3`
 
 const OddsContainer = styled.div`
   display: grid;
-  grid-template-rows: repeat(auto-fit, minmax(60px, 1fr));
-  width: 100%;
+  grid-template-columns: 300px 1fr;
+  align-items: center;
+  padding-bottom: 8px;
 `;
 
-const OddsCardStyles = styled.ul`
+const BookRow = styled.div`
   display: grid;
-  list-style-type: none;
+  grid-template-columns: repeat(auto-fit, minmax(0, 105px));
+  gap: 10px;
+  align-items: center;
+
+  > span {
+    margin: 0 12px !important;
+  }
+`;
+
+const Pill = styled.p`
   background-color: var(--grey);
-  border: 4px solid var(--green);
   border-radius: 8px;
+  padding: 10px;
   text-align: center;
-  padding: 14px 0;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  transform: scale(1);
-  transition: 0.5s;
-
-  > h3 {
-    margin-bottom: 20px;
-  }
-
-  > li {
-    font-family: monospace;
-  }
-
-  > a {
-    margin: 16px 0;
-  }
-
-  &:hover {
-    transition: 0.5s;
-    transform: scale(1.01);
-    cursor: pointer;
-  }
-`;
-
-const BookmakersStyles = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  overflow-x: scroll;
-`;
-
-const OddsGrid = styled.div`
-  display: grid;
-  gap: 12px;
-
-  > li {
-    font-family: monospace;
-  }
+  border: 2px solid var(--green);
+  margin: 0 0 4px 0;
 `;
 
 const ScoreCardRow = styled.div`
@@ -81,15 +57,46 @@ const ScoreCardRow = styled.div`
   gap: 10px;
 `;
 
-export default function OddsCard({ item }) {
+const OddsWrapper = styled.div`
+  overflow-x: scroll;
+  margin-bottom: 20px;
+  border: 4px solid var(--green);
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+`;
+
+const OddsRow = styled.div`
+  display: grid;
+  grid-template-rows: repeat(3, 70px);
+  align-items: center;
+`;
+
+export default function OddsCard({ item, active }) {
   const router = useRouter();
+
+  const bookRef = useRef(null);
+  const homeSpreadRef = useRef(null);
+  const awaySpreadRef = useRef(null);
+
+  const [bookWidth, setBookWidth] = useState(1400);
+  const [homeSpreadWidth, setHomeSpreadWidth] = useState(1400);
+  const [awaySpreadWidth, setAwaySpreadWidth] = useState(1400);
+
+  useEffect(() => {
+    setBookWidth(bookRef.current.childNodes.length * 115);
+    setHomeSpreadWidth(homeSpreadRef.current.childNodes.length * 115);
+    setAwaySpreadWidth(awaySpreadRef.current.childNodes.length * 115);
+  }, [bookWidth, homeSpreadWidth, awaySpreadWidth]);
+
+  const { bookmakers } = item;
 
   return (
     <div>
       <OddsTitle>
         <ScoreCardRow>
           <TeamLogo
-            style={{ paddingRight: "8px" }}
             alt={item.away_team}
             height={50}
             width={50}
@@ -99,7 +106,7 @@ export default function OddsCard({ item }) {
           />
           {item.away_team}
         </ScoreCardRow>
-        <ScoreCardRow>@ </ScoreCardRow>
+        <ScoreCardRow>@</ScoreCardRow>
         <ScoreCardRow>
           <TeamLogo
             alt={item.home_team}
@@ -112,200 +119,113 @@ export default function OddsCard({ item }) {
           {item.home_team}
         </ScoreCardRow>
       </OddsTitle>
-      <p>{new Date(item.commence_time).toLocaleDateString()}</p>
-      <p>Time: {new Date(item.commence_time).toLocaleTimeString()}</p>
-      <OddsContainer key={item.id}>
-        <div>
-          {item.away_team}
-          <BookmakersStyles>
-            {item.bookmakers.map(
-              (bookmaker: { title: any; key?: any; markets?: any }) => {
+      <p>
+        {new Date(item.commence_time).toLocaleDateString()} - Time:{" "}
+        {new Date(item.commence_time).toLocaleTimeString()}
+      </p>
+      <OddsWrapper>
+        <OddsRow>
+          <OddsContainer>
+            <h3>{active}</h3>
+            <BookRow style={{ width: bookWidth }} ref={bookRef}>
+              {bookmakers.map((bookmaker, i) => {
                 return (
-                  <OddsCardStyles key={bookmaker.title}>
-                    <>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                    key={i}
+                  >
+                    <a
+                      className="book-anchor"
+                      target="_blank"
+                      style={{ padding: "8px" }}
+                      href={`${createBookmakerURL(
+                        bookmaker.title.toLowerCase()
+                      )}`}
+                      rel="noreferrer"
+                    >
+                      <span className="visuallyhidden">{bookmaker.title}</span>
                       <TeamLogo
+                        style={{ padding: "0 12px" }}
                         alt={bookmaker.title}
-                        height={25}
-                        width={25}
+                        height={50}
+                        width={50}
                         objectFit="contain"
                         team={bookmaker.key}
                         slug="books"
                       />
-                      <a
-                        target="_blank"
-                        style={{ margin: "8px", paddingTop: "8px" }}
-                        href={`${createBookmakerURL(
-                          bookmaker.title.toLowerCase()
-                        )}`}
-                        rel="noreferrer"
-                      >
-                        {bookmaker.title}
-                      </a>
-                      <OddsGrid>
-                        <li>
-                          H2H{" "}
-                          {bookmaker.markets.map(
-                            (market: {
-                              key: any;
-                              outcomes?: [
-                                { point: string; price: string | number }
-                              ];
-                            }) => {
-                              if (market.key === "h2h") {
-                                return (
-                                  <H2H
-                                    key={market.key}
-                                    bookmaker={bookmaker}
-                                    market={market}
-                                  />
-                                );
-                              }
-                            }
-                          )}
-                        </li>
-                        <li>
-                          {bookmaker.markets.map(
-                            (market: {
-                              key: any;
-                              outcomes?: [
-                                { point: string; price: string | number }
-                              ];
-                            }) => {
-                              if (market.key === "spreads") {
-                                return (
-                                  <Spreads
-                                    key={market.key}
-                                    bookmaker={bookmaker}
-                                    market={market}
-                                  />
-                                );
-                              }
-                            }
-                          )}
-                        </li>
-                        <li>
-                          {bookmaker.markets.map(
-                            (market: {
-                              key: any;
-                              outcomes?: [
-                                { point: string; price: string | number }
-                              ];
-                            }) => {
-                              if (market.key === "totals") {
-                                return (
-                                  <Totals
-                                    key={market.key}
-                                    bookmaker={bookmaker}
-                                    market={market}
-                                  />
-                                );
-                              }
-                            }
-                          )}
-                        </li>
-                      </OddsGrid>
-                    </>
-                  </OddsCardStyles>
+                    </a>
+                  </div>
                 );
-              }
-            )}
-          </BookmakersStyles>
-        </div>
-        <div>
-          {item.home_team}
-          <BookmakersStyles>
-            {item.bookmakers.map(
-              (bookmaker: { title: any; key?: any; markets?: any }) => {
+              })}
+            </BookRow>
+          </OddsContainer>
+          <OddsContainer>
+            <p>{item.away_team}</p>
+            <BookRow style={{ width: awaySpreadWidth }} ref={awaySpreadRef}>
+              {bookmakers.map((bookmaker, i) => {
+                const { outcomes } = bookmaker.markets[0];
+
+                const { price, point } = outcomes[0];
+
                 return (
-                  <OddsCardStyles key={bookmaker.title}>
-                    <>
-                      <TeamLogo
-                        alt={bookmaker.title}
-                        height={25}
-                        width={25}
-                        objectFit="contain"
-                        team={bookmaker.key}
-                        slug="books"
-                      />
-                      <a
-                        target="_blank"
-                        style={{ margin: "8px", paddingTop: "8px" }}
-                        href={`${createBookmakerURL(
-                          bookmaker.title.toLowerCase()
-                        )}`}
-                        rel="noreferrer"
-                      >
-                        {bookmaker.title}
-                      </a>
-                      <OddsGrid>
-                        <li>
-                          H2H{" "}
-                          {bookmaker.markets.map(
-                            (market: {
-                              key: string;
-                              outcomes?: [{ price: string | number }];
-                            }) => {
-                              if (market.key === "h2h") {
-                                return (
-                                  <H2H
-                                    key={market.key}
-                                    bookmaker={bookmaker}
-                                    market={market}
-                                  />
-                                );
-                              }
-                            }
-                          )}
-                        </li>
-                        <li>
-                          {bookmaker.markets.map(
-                            (market: {
-                              key: any;
-                              outcomes?: [
-                                { point: string; price: string | number }
-                              ];
-                            }) => {
-                              if (market.key === "spreads") {
-                                return (
-                                  <Spreads
-                                    key={market.key}
-                                    bookmaker={bookmaker}
-                                    market={market}
-                                  />
-                                );
-                              }
-                            }
-                          )}
-                        </li>
-                        <li>
-                          {bookmaker.markets.map(
-                            (market: {
-                              key: string;
-                              outcomes?: [
-                                { point: string; price: string | number }
-                              ];
-                            }) => {
-                              if (market.key === "totals") {
-                                return (
-                                  <Totals
-                                    key={market.key}
-                                    bookmaker={bookmaker}
-                                    market={market}
-                                  />
-                                );
-                              }
-                            }
-                          )}
-                        </li>
-                      </OddsGrid>
-                    </>
-                  </OddsCardStyles>
+                  <div
+                    style={{
+                      textAlign: "center",
+                    }}
+                    key={i}
+                  >
+                    <Pill>
+                      {point ? (
+                        <>
+                          {positiveOrNegativeSpread(point)}
+                          &nbsp;
+                          {formatOdds(price)}
+                        </>
+                      ) : (
+                        <>{formatOdds(price)}</>
+                      )}
+                    </Pill>
+                  </div>
                 );
-              }
-            )}
-          </BookmakersStyles>
-        </div>
-      </OddsContainer>
+              })}
+            </BookRow>
+          </OddsContainer>
+          <OddsContainer>
+            <p>{item.home_team}</p>
+            <BookRow style={{ width: homeSpreadWidth }} ref={homeSpreadRef}>
+              {bookmakers.map((bookmaker, i) => {
+                const { outcomes } = bookmaker.markets[0];
+
+                const { price, point } = outcomes[1];
+
+                return (
+                  <div
+                    style={{
+                      textAlign: "center",
+                    }}
+                    key={i}
+                  >
+                    <Pill>
+                      {point ? (
+                        <>
+                          {positiveOrNegativeSpread(point)}
+                          &nbsp;
+                          {formatOdds(price)}
+                        </>
+                      ) : (
+                        <>{formatOdds(price)}</>
+                      )}
+                    </Pill>
+                  </div>
+                );
+              })}
+            </BookRow>
+          </OddsContainer>
+        </OddsRow>
+      </OddsWrapper>
     </div>
   );
 }

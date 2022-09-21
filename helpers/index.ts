@@ -138,6 +138,10 @@ export const formatSEOTitle = (str: string) => {
   return `${str?.charAt(0).toUpperCase()}${str?.slice(1)}`;
 };
 
+export const formatOdds = (price) => {
+  return Number(price) > 0 ? `+${price}` : `${price}`;
+};
+
 export const findFallback = (slug) => {
   switch (slug) {
     case "college-football" || "ncaa":

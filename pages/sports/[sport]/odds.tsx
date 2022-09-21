@@ -46,30 +46,69 @@ const StyledInput = styled(DebounceInput)`
   width: auto;
   margin-top: 20px;
   align-self: end;
+  grid-column-start: 2;
+`;
+
+const Tab = styled.button<{ active: boolean }>`
+  font-size: 20px;
+  padding: 10px 60px;
+  cursor: pointer;
+  opacity: 0.6;
+  background: var(--green);
+  border: 0;
+  outline: 0;
+  flex: 1;
+  border-radius: 4px;
+  margin: 0 4px;
+
+  ${({ active }) =>
+    active &&
+    `
+    flex: 1;
+    border: 2px solid black;
+    opacity: 1;
+  `}
+`;
+
+const ButtonGroup = styled.div`
+  display: flex;
 `;
 
 export default function SingleOdds({ slug }) {
   const key = getPath(slug);
 
+  const tabs = ["spreads", "h2h", "totals"];
   const [filters, setFilters] = useState("");
-  const { data, isLoading, isError } = useFetchOdds(key, filters);
+  const [active, setActive] = useState(tabs[0]);
+  const { data, isLoading, isError, isFetching } = useFetchOdds(
+    key,
+    active,
+    filters
+  );
 
   const onChange = (event) => {
     setFilters(event?.target.value);
   };
 
-  if (isLoading) return <Loader />;
+  if (isLoading || isFetching) return <Loader />;
 
   if (isError) {
     return <h3 className="center">Something went wrong. Please try again</h3>;
   }
+
+  const formattedType = (type) => {
+    return type === "h2h"
+      ? "MONEYLINE"
+      : type === "totals"
+      ? "TOTALS"
+      : "SPREADS";
+  };
 
   return (
     <>
       <SearchBar>
         <OddsTitle>
           <TeamLogo
-            style={{ paddingRight: "8px" }}
             alt={getSport(slug)}
             height={50}
             width={50}
@@ -77,8 +116,19 @@ export default function SingleOdds({ slug }) {
             team={getSport(slug)?.toLowerCase()}
             slug={""}
           />
-          {getSport(slug)} Spreads
+          {getSport(slug)} {formattedType(active)}
         </OddsTitle>
+        <ButtonGroup>
+          {tabs.map((type) => (
+            <Tab
+              key={type}
+              active={active === type}
+              onClick={() => setActive(type)}
+            >
+              {formattedType(type)}
+            </Tab>
+          ))}
+        </ButtonGroup>
         <StyledInput
           placeholder="Search by team"
           minLength={2}
@@ -95,7 +145,7 @@ export default function SingleOdds({ slug }) {
         ) : (
           <>
             {data?.map((item, i) => (
-              <OddsCard key={i} item={item} />
+              <OddsCard active={formattedType(active)} key={i} item={item} />
             ))}
           </>
         )}

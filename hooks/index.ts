@@ -3,9 +3,12 @@ import { useQuery } from "react-query";
 import { isBefore, addDays } from "date-fns";
 import { useCallback } from "react";
 
-export const fetchOdds = async (key: string | undefined) => {
+export const fetchOdds = async (
+  key: string | undefined,
+  markets: string | undefined
+) => {
   const res = await fetch(
-    `https://api.the-odds-api.com/v4/sports/${key}/odds/?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&regions=us&markets=h2h,spreads,totals&oddsFormat=american`
+    `https://api.the-odds-api.com/v4/sports/${key}/odds/?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&regions=us,eu&markets=${markets}&oddsFormat=american`
   );
   if (!res.ok) {
     throw new Error("Network response was not ok");
@@ -87,8 +90,8 @@ const filteredData = (data: any[], filters: string) => {
     );
 };
 
-export const useFetchOdds = (key: string, filters: string) => {
-  return useQuery(["odds"], () => fetchOdds(key), {
+export const useFetchOdds = (key: string, active, filters: string) => {
+  return useQuery(["odds"], () => fetchOdds(key, active), {
     select: useCallback(
       (odds) => {
         return !filters.length

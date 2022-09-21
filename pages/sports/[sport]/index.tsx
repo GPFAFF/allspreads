@@ -62,6 +62,7 @@ const StyledLink = styled.h2`
 
 const CardNav = styled.span`
   display: block;
+  margin-bottom: 20px;
 
   > h2 {
     margin-bottom: 20px;
@@ -84,6 +85,10 @@ export default function SingleSport() {
 
   return (
     <>
+      <CardNav>
+        <h2>{data?.name}</h2>
+        <Link href="/sports">Back</Link>
+      </CardNav>
       <SportStyles>
         <Image
           objectFit="cover"
@@ -117,10 +122,6 @@ export default function SingleSport() {
           </div>
         ) : (
           <div>
-            <CardNav>
-              <h2>{data?.name}</h2>
-              <Link href="/sports">Back</Link>
-            </CardNav>
             <Link href={`/sports/${data?.slug}/scores`}>
               <StyledLink>Scores</StyledLink>
             </Link>
