@@ -166,9 +166,23 @@ const GlobalStyles = createGlobalStyle`
     padding: 5px;
     width: 90px;
     height: auto;
+    background: var(--grey);
+    color: var(--black);
+    font-size: 16px;
+    position: absolute;
+    bottom: -34px;
+    left: -22px;
+    z-index: 10;
+    text-align: center;
+    padding: 10px;
+    width: 90px;
+    height: auto;
     background: var(--black);
     color: var(--white);
     font-size: 16px;
+    border-radius: 8px;
+    text-decoration: underline;
+    outline: 2px solid var(--black);
 }
 
 .book-anchor:hover .visuallyhidden {

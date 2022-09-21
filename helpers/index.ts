@@ -59,6 +59,16 @@ export function createBookmakerURL(path) {
       return "https://www.circasports.com/";
     case "intertops":
       return "https://www.onlinesportsbookchief.com/games/intertops/";
+    case "pinnacle":
+      return "https://www.pinnacle/en/";
+    case "superbook":
+      return "https://www.superbook.com/";
+    case "1xbet":
+      return "https://www.1xbet.com/";
+    case "sport888":
+      return "https://www.888sport.com/";
+    case "matchbook":
+      return "https://www.matchbook.com/";
     default:
       break;
   }

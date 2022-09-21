@@ -48,6 +48,7 @@ const Pill = styled.p`
   text-align: center;
   border: 2px solid var(--green);
   margin: 0 0 4px 0;
+  font-size: 18px;
 `;
 
 const ScoreCardRow = styled.div`
@@ -183,7 +184,7 @@ export default function OddsCard({ item, active }) {
                           {active !== "totals"
                             ? positiveOrNegativeSpread(point)
                             : point}
-                          &nbsp; &nbsp;
+                          &nbsp;
                           {formatOdds(price)}
                         </>
                       ) : (
