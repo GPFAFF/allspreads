@@ -28,6 +28,7 @@ export default function SEO({ description, title }) {
         property="twitter:image:src"
         content="https://allspreads.com/logo.png"
       />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="shortcut icon" href="/favicon.ico" />
       <link
         rel="preload"
