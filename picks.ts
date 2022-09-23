@@ -448,6 +448,25 @@ export const data = [
       },
       {
         date: "09/22/22",
+        team: "Mariners ML",
+        odds: "-110",
+        result: "win",
+      },
+      {
+        date: "09/22/22",
+        team: "Padres ML",
+        odds: "-110",
+        result: "loser",
+      },
+      {
+        date: "09/22/22",
+        team: "Orioles vs Astros - Over 7",
+        odds: "-110",
+        result: "loser",
+      },
+
+      {
+        date: "09/22/22",
         team: "Browns vs. Steelers - Under 40.5",
         odds: "-110",
         result: null,
@@ -467,6 +486,30 @@ export const data = [
       {
         date: "09/22/22",
         team: "Mitch Trubisky - Over 0.5 INT's",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "09/22/22",
+        team: "Kareem Hunt - Over 16.5 receving yards",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "09/22/22",
+        team: "Najee Harris - Over 14.5 carries",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "09/22/22",
+        team: "Amari Cooper - Over 48.5 receiving yards",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "09/22/22",
+        team: "Dodgers vs Diamondbacks - Over 7",
         odds: "-110",
         result: null,
       },
