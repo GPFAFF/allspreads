@@ -450,7 +450,7 @@ export const data = [
         date: "09/22/22",
         team: "Mariners ML",
         odds: "-110",
-        result: "win",
+        result: "winner",
       },
       {
         date: "09/22/22",
@@ -505,7 +505,7 @@ export const data = [
         date: "09/22/22",
         team: "Amari Cooper - Over 48.5 receiving yards",
         odds: "-110",
-        result: "win",
+        result: "winner",
       },
       {
         date: "09/22/22",
