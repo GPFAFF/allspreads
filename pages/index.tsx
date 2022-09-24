@@ -103,9 +103,7 @@ export default function HomePage() {
                     return (
                       <SingleCard key={i}>
                         <a target="_blank" href={item.link} rel="noreferrer">
-                          <h3 style={{ paddingBottom: "40px" }}>
-                            {item.title}
-                          </h3>
+                          <h4>{item.title}</h4>
                         </a>
                         {item && (
                           <Image
