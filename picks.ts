@@ -587,8 +587,20 @@ export const data = [
       },
       {
         date: "09/24/22",
-        team: "Buffalo vs. Easter Michigan - Under 59",
+        team: "Buffalo vs. Eastern Michigan - Under 59",
         odds: "-110",
+        result: null,
+      },
+      {
+        date: "09/24/22",
+        team: "Maryland -17",
+        odds: "-110",
+        result: null,
+      },
+       {
+        date: "09/24/22",
+        team: "Wyoming TT Under 13.5",
+        odds: "+120",
         result: null,
       },
     ],
