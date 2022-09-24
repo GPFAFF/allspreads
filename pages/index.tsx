@@ -127,8 +127,6 @@ export default function HomePage() {
             ))}
           </>
         )}
-        {inView && <Loader />}
-
         <div className="center" ref={ref}>
           {inView && <Loader />}
         </div>
