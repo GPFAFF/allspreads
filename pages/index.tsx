@@ -152,7 +152,9 @@ export default function HomePage() {
 HomePage.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout title="Home">{page}</Layout>
+      <Layout title="AllSpreads shows a comparison amongst the largest books in the US and Offshore">
+        {page}
+      </Layout>
     </>
   );
 };

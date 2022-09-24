@@ -1,7 +1,7 @@
 {
   "name": "spreads",
   "version": "1.0.0",
-  "description": "",
+  "description": "AllSpreads shows a comparison amongst the largest books in the US and Offshore",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
