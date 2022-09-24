@@ -579,6 +579,18 @@ export const data = [
         odds: "-110",
         result: null,
       },
+      {
+        date: "09/24/22",
+        team: "Kansas -7",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "09/24/22",
+        team: "Buffalo vs. Easter Michigan - Under 59",
+        odds: "-110",
+        result: null,
+      },
     ],
   },
 ];
