@@ -51,11 +51,8 @@ export default function HomePage() {
     isError,
     isFetching,
     isFetchingNextPage,
-    isFetchingPreviousPage,
     fetchNextPage,
-    fetchPreviousPage,
     hasNextPage,
-    hasPreviousPage,
   } = useInfiniteQuery(
     ["news"],
     async ({ pageParam = 1 }) => {
@@ -130,20 +127,7 @@ export default function HomePage() {
             ))}
           </>
         )}
-
-        <div>
-          <button
-            ref={ref}
-            onClick={() => fetchNextPage()}
-            disabled={!hasNextPage || isFetchingNextPage}
-          >
-            {isFetchingNextPage
-              ? "Loading more..."
-              : hasNextPage
-              ? "Load Newer"
-              : "Nothing more to load"}
-          </button>
-        </div>
+        {inView && <Loader />}
       </div>
     </>
   );
