@@ -513,6 +513,24 @@ export const data = [
         odds: "-110",
         result: "loser",
       },
+      {
+        date: "09/23/22",
+        team: "Red Sox TT - Over 2.5",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "09/23/22",
+        team: "Air Force -24",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "09/23/22",
+        team: "Boise State -3.5 1Q",
+        odds: "-110",
+        result: null,
+      },
     ],
   },
 ];
