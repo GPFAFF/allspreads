@@ -649,6 +649,18 @@ export const data = [
         date: "09/25/22",
         team: "Falcons TT O 20.5",
         odds: "-110",
+        result: "winner",
+      },
+      {
+        date: "09/25/22",
+        team: "49ers v Broncos - Under 44.5",
+        odds: "-110",
+        result: "winner",
+      },
+      {
+        date: "09/26/22",
+        team: "Cowboys +1",
+        odds: "-110",
         result: null,
       },
     ],
