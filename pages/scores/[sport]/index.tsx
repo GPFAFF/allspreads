@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import { DebounceInput } from "react-debounce-input";
 
 import Layout from "../../../components/layout";
 import { formatSEOTitle, getPath, getSport } from "../../../helpers/index";
@@ -10,6 +9,11 @@ import Loader from "../../../components/loader";
 
 import { fetchAllSports, useFetchScores } from "../../../hooks/index";
 import TeamLogo from "../../../components/team-logo";
+import {
+  SearchBar,
+  StyledInput,
+  StyledInputContainer,
+} from "../../../styles/components";
 
 const ScoresTitle = styled.h2`
   display: grid;
@@ -36,25 +40,6 @@ const ScoresContainer = styled.div`
   justify-content: center;
 `;
 
-const SearchBar = styled.div`
-  display: grid;
-  justify-content: space-between;
-  grid-template-columns: 1fr 1fr;
-  margin-bottom: 40px;
-  align-items: center;
-
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const StyledInput = styled(DebounceInput)`
-  border-radius: 4px;
-  padding: 20px;
-  width: auto;
-  margin-top: 20px;
-  align-self: end;
-`;
 export default function Scores({ slug }) {
   const key = getPath(slug);
 
@@ -86,12 +71,14 @@ export default function Scores({ slug }) {
           />
           {getSport(slug)} Spreads
         </ScoresTitle>
-        <StyledInput
-          placeholder="Search by team"
-          minLength={2}
-          debounceTimeout={300}
-          onChange={onChange}
-        />
+        <StyledInputContainer>
+          <StyledInput
+            placeholder="Search by team"
+            minLength={2}
+            debounceTimeout={300}
+            onChange={onChange}
+          />
+        </StyledInputContainer>
       </SearchBar>
       <div>
         {data.length === 0 ? (

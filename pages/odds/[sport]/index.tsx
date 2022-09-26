@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { DebounceInput } from "react-debounce-input";
 import styled from "styled-components";
 
 import Layout from "../../../components/layout";
@@ -9,6 +8,12 @@ import { formatSEOTitle, getPath, getSport } from "../../../helpers";
 import OddsCard from "../../../components/odds-card";
 import Loader from "../../../components/loader";
 import TeamLogo from "../../../components/team-logo";
+
+import {
+  SearchBar,
+  StyledInput,
+  StyledInputContainer,
+} from "../../../styles/components";
 
 const OddsTitle = styled.h2`
   display: grid;
@@ -26,27 +31,6 @@ const Center = styled.div`
   > a {
     padding-top: 20px;
   }
-`;
-
-const SearchBar = styled.div`
-  display: grid;
-  justify-content: space-between;
-  grid-template-columns: 1fr 1fr;
-  margin-bottom: 40px;
-  align-items: center;
-
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const StyledInput = styled(DebounceInput)`
-  border-radius: 4px;
-  padding: 20px;
-  width: auto;
-  margin-top: 20px;
-  align-self: end;
-  grid-column-start: 2;
 `;
 
 const Tab = styled.button<{ active: boolean }>`
@@ -68,10 +52,20 @@ const Tab = styled.button<{ active: boolean }>`
     border: 2px solid black;
     opacity: 1;
   `}
+
+  @media (max-width: 600px) {
+    text-align: center;
+    margin: 10px 0;
+  }
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    margin: 20px 0 0 0;
+  }
 `;
 
 export default function SingleOdds({ slug }) {
@@ -129,12 +123,14 @@ export default function SingleOdds({ slug }) {
             </Tab>
           ))}
         </ButtonGroup>
-        <StyledInput
-          placeholder="Search by team"
-          minLength={2}
-          debounceTimeout={300}
-          onChange={onChange}
-        />
+        <StyledInputContainer>
+          <StyledInput
+            placeholder="Search by team"
+            minLength={2}
+            debounceTimeout={300}
+            onChange={onChange}
+          />
+        </StyledInputContainer>
       </SearchBar>
       <div>
         {data.length === 0 ? (
