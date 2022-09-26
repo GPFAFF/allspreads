@@ -25,6 +25,8 @@ const StyledInput = styled(DebounceInput)`
 const StyledInputContainer = styled.div`
   display: flex;
   width: 100%;
+  align-self: end;
+  grid-column-start: 2;
 `;
 
 export { SearchBar, StyledInput, StyledInputContainer };
