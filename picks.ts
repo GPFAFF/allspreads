@@ -679,6 +679,12 @@ export const data = [
         date: "09/27/22",
         team: "Tampa Bay Rays ML",
         odds: "+134",
+        result: "winner",
+      },
+      {
+        date: "09/27/22",
+        team: "Reds vs. Pirates - Over 7.5",
+        odds: "-118",
         result: null,
       },
     ],
