@@ -190,6 +190,34 @@ const GlobalStyles = createGlobalStyle`
     opacity: 1;
 }
 
+.ReactModal__Overlay {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 500ms ease-in-out;
+  z-index: 10;
+}
+
+.ReactModal__Body--open  {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 500ms ease-in-out;
+}
+
+.ReactModalPortal {
+  transition: all 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 500ms ease-in-out;
+}
+
 `;
 
 export default GlobalStyles;
