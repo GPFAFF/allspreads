@@ -265,3 +265,40 @@ export function getAllPageSlugs() {
 export function positiveOrNegativeSpread(item) {
   return Number(item) > 0 ? `+${item}` : `${item}`;
 }
+
+export function calculateProbability(odds) {
+  const number = Number(odds);
+
+  if (Math.sign(number) === -1) {
+    return (number / (number - 100)) * 100;
+  }
+
+  return (100 / (number + 100)) * 100;
+}
+
+export function calculateVigPercentage(favorite, underdog) {
+  const total = favorite + underdog;
+  const f = removeVig(favorite, total);
+  const u = removeVig(underdog, total);
+  return {
+    favorite: convertDecimalToAmericanOdds(f).toFixed(2),
+    underdog: convertDecimalToAmericanOdds(u).toFixed(2),
+    impliedWinPercentFavorite: f,
+    impliedWinPercentUnderdog: u,
+    vig: (favorite + underdog - 100).toFixed(2),
+  };
+}
+
+function removeVig(odds, total) {
+  return odds / total;
+}
+
+function convertDecimalToAmericanOdds(number) {
+  const decimalOdds = 1 / number;
+
+  if (decimalOdds >= 2.0) {
+    return (decimalOdds - 1) * 100;
+  }
+
+  return -100 / (decimalOdds - 1);
+}

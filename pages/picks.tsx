@@ -1,23 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NextComponentType } from "next";
 import { dehydrate, QueryClient, useQuery } from "react-query";
-import styled from "styled-components";
-import { FaArrowCircleDown, FaArrowCircleUp } from "react-icons/fa";
 import Layout from "../components/layout";
-import { fetchAllPicks } from "../hooks/index";
+import { fetchAllPicks, fetchTrends } from "../hooks/index";
 import Loader from "../components/loader";
 import { fieldByIndex } from "../helpers/index";
+import PicksMonth from "./picksMonth";
 
-const Row = styled.div`
-  padding: 20px;
-  background: var(--gray);
-  border-radius: 4px;
-  border: 8px solid var(--green);
-  margin: 20px;
-`;
 export default function Picks(props) {
-  const [rowShown, setRowShown] = useState(false);
-
   const { data, isLoading, isError } = useQuery<[]>(["picks"], () =>
     fetchAllPicks()
   );
@@ -33,9 +23,9 @@ export default function Picks(props) {
     ).toFixed(3)}%`;
   };
 
-  const handleClick = () => {
-    setRowShown(!rowShown);
-  };
+  if (isError) {
+    return <h3 className="center">Something went wrong. Please try again</h3>;
+  }
 
   return (
     <div className="center">
@@ -46,48 +36,7 @@ export default function Picks(props) {
       ) : (
         <>
           {data?.map((item: any, i) => {
-            const { picks } = item;
-
-            return (
-              <Row key={i}>
-                <h3
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                  onClick={handleClick}
-                >
-                  {item.month}
-                  <span>
-                    {rowShown ? (
-                      <FaArrowCircleDown
-                        fill="#39b54a"
-                        style={{ display: "flex", paddingLeft: "10px" }}
-                        size={25}
-                      />
-                    ) : (
-                      <FaArrowCircleUp
-                        fill="#39b54a"
-                        style={{ display: "flex", paddingLeft: "10px" }}
-                        size={25}
-                      />
-                    )}
-                  </span>
-                </h3>
-
-                <div className={rowShown ? "show" : "hide"} key={i}>
-                  <>
-                    <div key={i}>
-                      {picks.map((pick, i) => (
-                        <div key={i} className={pick.result ? pick.result : ""}>
-                          {pick.date} - {pick.team} {pick.odds}
-                        </div>
-                      ))}
-                    </div>
-                  </>
-                </div>
-              </Row>
-            );
+            return <PicksMonth key={i} index={i} item={item} />;
           })}
         </>
       )}
@@ -100,8 +49,17 @@ export async function getStaticProps() {
 
   await queryClient.prefetchQuery("picks", fetchAllPicks);
 
+  const res = await fetchTrends();
+
+  if (!res) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
+      data: res,
       dehydratedState: dehydrate(queryClient),
     },
   };

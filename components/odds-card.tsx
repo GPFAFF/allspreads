@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { FaWindowClose } from "react-icons/fa";
 
 import {
+  calculateProbability,
+  calculateVigPercentage,
   createBookmakerURL,
   formatOdds,
   positiveOrNegativeSpread,
@@ -118,6 +120,13 @@ export default function OddsCard({ item, active }) {
   const initialState = {
     bookName: "",
     time: "",
+    data: {
+      favorite: "",
+      underdog: "",
+      impliedWinPercentFavorite: 0,
+      impliedWinPercentUnderdog: 0,
+      vig: "",
+    },
     outcomes: [
       {
         name: "",
@@ -137,7 +146,11 @@ export default function OddsCard({ item, active }) {
   const [awayModalInfo, setAwayModalInfo] = useState(initialState);
 
   const homeHandleOpen = ({ bookName, time, outcomes }) => {
-    setHomeModalInfo({ bookName, time, outcomes });
+    const favorite = calculateProbability(outcomes[0].price);
+    const underdog = calculateProbability(outcomes[1].price);
+    const data = calculateVigPercentage(favorite, underdog);
+
+    setHomeModalInfo({ bookName, time, outcomes, data });
     setHomeIsOpen(true);
   };
 
@@ -147,7 +160,11 @@ export default function OddsCard({ item, active }) {
   };
 
   const awayHandleOpen = ({ bookName, time, outcomes }) => {
-    setAwayModalInfo({ bookName, time, outcomes });
+    const favorite = calculateProbability(outcomes[0].price);
+    const underdog = calculateProbability(outcomes[1].price);
+    const data = calculateVigPercentage(favorite, underdog);
+
+    setAwayModalInfo({ bookName, time, outcomes, data });
     setAwayIsOpen(true);
   };
 
@@ -155,8 +172,6 @@ export default function OddsCard({ item, active }) {
     setAwayIsOpen(false);
     setHomeModalInfo(initialState);
   };
-
-  console.log("awayModalInfo", awayModalInfo);
 
   return (
     <div>
@@ -229,17 +244,19 @@ export default function OddsCard({ item, active }) {
           </OddsContainer>
           <div>
             {item.lines.map((line, i) => {
-              const [homeSpread, awaySpread] = line.spread[0].line;
+              const [homeSpread, awaySpread] =
+                line.books[0].markets[0].outcomes;
+
 
               return (
                 <OddsContainer key={i}>
                   <>
                     <div>
-                      {awayTeam}{" "}
-                      {awaySpread && key !== "totals"
-                        ? positiveOrNegativeSpread(awaySpread)
+                      {awayTeam}
+                      {awaySpread.point && key !== "totals"
+                        ? positiveOrNegativeSpread(awaySpread.point)
                         : key === "totals"
-                        ? awaySpread
+                        ? awaySpread.point
                         : ""}
                     </div>
                     <BookRow
@@ -248,8 +265,6 @@ export default function OddsCard({ item, active }) {
                     >
                       {bookmakers.map((bookmaker, i) => {
                         const { outcomes } = bookmaker.markets[0];
-
-                        console.log(outcomes);
 
                         const { price, point } = outcomes[0];
 
@@ -284,10 +299,10 @@ export default function OddsCard({ item, active }) {
                   <>
                     <div>
                       {homeTeam}{" "}
-                      {homeSpread && key !== "totals"
-                        ? positiveOrNegativeSpread(homeSpread)
+                      {homeSpread.point && key !== "totals"
+                        ? positiveOrNegativeSpread(homeSpread.point)
                         : key === "totals"
-                        ? homeSpread
+                        ? homeSpread.point
                         : ""}
                     </div>
                     <BookRow
@@ -358,6 +373,9 @@ export default function OddsCard({ item, active }) {
             <div>Market</div>
             <div>Odds</div>
             {homeModalInfo.outcomes[0].point && <div>Spread</div>}
+            <div>No-Vig Odds</div>
+            <div>Implied Win %</div>
+            <div>Bookmaker Vig</div>
           </ModalRow>
           <ModalRow>
             <div>
@@ -372,6 +390,14 @@ export default function OddsCard({ item, active }) {
                 {positiveOrNegativeSpread(homeModalInfo.outcomes[0].point)}
               </div>
             )}
+            <div>{positiveOrNegativeSpread(homeModalInfo?.data?.favorite)}</div>
+            <div>
+              {(homeModalInfo?.data?.impliedWinPercentFavorite * 100).toFixed(
+                2
+              )}
+              %
+            </div>
+            <div>{homeModalInfo?.data?.vig}</div>
           </ModalRow>
         </ModalRowContainer>
       </SpreadsModal>
@@ -400,10 +426,13 @@ export default function OddsCard({ item, active }) {
             <div>Book</div>
             <div>Odds</div>
             {awayModalInfo.outcomes[1].point && <div>Spread</div>}
+            <div>No-Vig Odds</div>
+            <div>Implied Win %</div>
+            <div>Bookmaker Vig</div>
           </ModalRow>
           <ModalRow>
             <div>
-              {new Date(awayModalInfo.time).toLocaleDateString()} -
+              {new Date(awayModalInfo.time).toLocaleDateString()} -{" "}
               {new Date(awayModalInfo.time).toLocaleTimeString()}
             </div>
             <div>{awayModalInfo.outcomes[1].name}</div>
@@ -414,6 +443,14 @@ export default function OddsCard({ item, active }) {
               </div>
             )}
             <div>{formatOdds(awayModalInfo.outcomes[1].price)}</div>
+            <div>{positiveOrNegativeSpread(awayModalInfo?.data?.underdog)}</div>
+            <div>
+              {(awayModalInfo?.data?.impliedWinPercentUnderdog * 100).toFixed(
+                2
+              )}
+              %
+            </div>
+            <div>{awayModalInfo?.data?.vig}</div>
           </ModalRow>
         </ModalRowContainer>
       </SpreadsModal>
