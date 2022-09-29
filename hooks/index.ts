@@ -44,6 +44,16 @@ export const fetchAllSports = async () => {
   return data;
 };
 
+export const fetchTrends = async () => {
+  const res = await fetch(`${server}/api/trends`);
+  console.log("res", res);
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
+  const data = await res.json();
+  return data;
+};
+
 export const fetchSingleSport = async (key: string | string[] | undefined) => {
   const res = await fetch(`${server}/api/sports/${key}`);
   if (!res.ok) {
@@ -148,17 +158,39 @@ export const transformOdds = (data) => {
   });
 };
 
+export const initialFilteredOdds = (data: any[]) => {
+  return (
+    data?.length > 0 &&
+    data.filter((item: { time: string | number | Date }) =>
+      isBefore(new Date(item.time), addDays(new Date(data[0]?.time), 6))
+    )
+  );
+};
+
+export const filteredOdds = (data: any[], filters: string) => {
+  return data
+    .filter((item: { time: string | number | Date }) =>
+      isBefore(new Date(item.time), addDays(new Date(data[0]?.time), 6))
+    )
+    .filter((odd) => {
+      const [awayTeam, homeTeam] = odd?.teams;
+      return (
+        awayTeam.toLowerCase().includes(filters.toLowerCase()) ||
+        homeTeam.toLowerCase().includes(filters.toLowerCase())
+      );
+    });
+};
+
 export const useFetchOdds = (key: string, active, filters: string) => {
   return useQuery(["odds", active], () => fetchOdds(key, active), {
-    select: useMemo(() => transformOdds, []),
-    // select: useCallback(
-    //   (odds) => {
-    //     return !filters.length
-    //       ? initialSortedData(odds)
-    //       : filteredData(transformOdds(odds), filters);
-    //   },
-    //   [filters]
-    // ),
+    select: useCallback(
+      (odds) => {
+        return !filters.length
+          ? initialFilteredOdds(transformOdds(odds))
+          : filteredOdds(transformOdds(odds), filters);
+      },
+      [filters]
+    ),
   });
 };
 
