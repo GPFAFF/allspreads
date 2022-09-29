@@ -244,19 +244,25 @@ export default function OddsCard({ item, active }) {
           </OddsContainer>
           <div>
             {item.lines.map((line, i) => {
-              const [homeSpread, awaySpread] =
-                line.books[0].markets[0].outcomes;
+              const homeTeamPrice =
+                line.books[0].markets[0].outcomes[0].name === homeTeam
+                  ? line.books[0].markets[0].outcomes[0].point
+                  : line.books[0].markets[0].outcomes[1].point;
 
+              const awayTeamPrice =
+                line.books[0].markets[0].outcomes[0].name === awayTeam
+                  ? line.books[0].markets[0].outcomes[0].point
+                  : line.books[0].markets[0].outcomes[1].point;
 
               return (
                 <OddsContainer key={i}>
                   <>
                     <div>
-                      {awayTeam}
-                      {awaySpread.point && key !== "totals"
-                        ? positiveOrNegativeSpread(awaySpread.point)
+                      {awayTeam}{" "}
+                      {awayTeamPrice && key !== "totals"
+                        ? positiveOrNegativeSpread(awayTeamPrice)
                         : key === "totals"
-                        ? awaySpread.point
+                        ? awayTeamPrice
                         : ""}
                     </div>
                     <BookRow
@@ -266,7 +272,10 @@ export default function OddsCard({ item, active }) {
                       {bookmakers.map((bookmaker, i) => {
                         const { outcomes } = bookmaker.markets[0];
 
-                        const { price, point } = outcomes[0];
+                        const isAwayTeamPrice =
+                          outcomes[0].name === awayTeam
+                            ? outcomes[0].price
+                            : outcomes[1].price;
 
                         const containsBook = line.books.includes(bookmaker);
 
@@ -287,7 +296,7 @@ export default function OddsCard({ item, active }) {
                             key={i}
                           >
                             {containsBook ? (
-                              <Pill border>{formatOdds(price)}</Pill>
+                              <Pill border>{formatOdds(isAwayTeamPrice)}</Pill>
                             ) : (
                               <Pill border={false}>&nbsp;</Pill>
                             )}
@@ -299,10 +308,10 @@ export default function OddsCard({ item, active }) {
                   <>
                     <div>
                       {homeTeam}{" "}
-                      {homeSpread.point && key !== "totals"
-                        ? positiveOrNegativeSpread(homeSpread.point)
+                      {homeTeamPrice && key !== "totals"
+                        ? positiveOrNegativeSpread(homeTeamPrice)
                         : key === "totals"
-                        ? homeSpread.point
+                        ? homeTeamPrice
                         : ""}
                     </div>
                     <BookRow
@@ -312,7 +321,10 @@ export default function OddsCard({ item, active }) {
                       {bookmakers.map((bookmaker, i) => {
                         const { outcomes } = bookmaker.markets[0];
 
-                        const { price, point } = outcomes[1];
+                        const homeTeamPrice =
+                          outcomes[0].name === homeTeam
+                            ? outcomes[0].price
+                            : outcomes[1].price;
 
                         const containsBook = line.books.includes(bookmaker);
 
@@ -333,7 +345,7 @@ export default function OddsCard({ item, active }) {
                             key={i}
                           >
                             {containsBook ? (
-                              <Pill border>{formatOdds(price)}</Pill>
+                              <Pill border>{formatOdds(homeTeamPrice)}</Pill>
                             ) : (
                               <Pill border={false}>&nbsp;</Pill>
                             )}

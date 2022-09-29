@@ -1,7 +1,7 @@
 import { server } from "../config";
 import { useQuery } from "react-query";
 import { isBefore, addDays } from "date-fns";
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 
 export const fetchOdds = async (
   key: string | undefined,
@@ -92,16 +92,73 @@ const filteredData = (data: any[], filters: string) => {
     );
 };
 
+export const transformOdds = (data) => {
+  return data.map((item) => {
+    let mapped = {};
+    const { bookmakers } = item;
+
+    return {
+      id: item.id,
+      teams: [item.away_team, item.home_team],
+      time: item.commence_time,
+      bookmakers: bookmakers.sort((a, b) => {
+        if (a.key < b.key) {
+          return -1;
+        }
+        if (a.key > b.key) {
+          return 1;
+        }
+        return 0;
+      }),
+      lines: [
+        ...bookmakers
+          .reduce(function (arr, obj) {
+            let current =
+              mapped[obj.markets[0].outcomes.map((item) => item.point)];
+            if (!current) {
+              current = {
+                spread: [
+                  { line: obj.markets[0].outcomes.map((item) => item.point) },
+                ],
+                books: [],
+              };
+
+              mapped[obj.markets[0].outcomes.map((item) => item.point)] =
+                current;
+
+              arr.push(current);
+            }
+            current.books.push(obj);
+
+            return arr;
+          }, [])
+          .sort((a, b) => {
+            const spreadTwo = b.spread[0].line[0];
+            const spreadOne = a.spread[0].line[0];
+            if (spreadTwo < spreadOne) {
+              return -1;
+            }
+            if (spreadTwo > spreadOne) {
+              return 1;
+            }
+            return 0;
+          }),
+      ],
+    };
+  });
+};
+
 export const useFetchOdds = (key: string, active, filters: string) => {
   return useQuery(["odds", active], () => fetchOdds(key, active), {
-    select: useCallback(
-      (odds) => {
-        return !filters.length
-          ? initialSortedData(odds)
-          : filteredData(odds, filters);
-      },
-      [filters]
-    ),
+    select: useMemo(() => transformOdds, []),
+    // select: useCallback(
+    //   (odds) => {
+    //     return !filters.length
+    //       ? initialSortedData(odds)
+    //       : filteredData(transformOdds(odds), filters);
+    //   },
+    //   [filters]
+    // ),
   });
 };
 
