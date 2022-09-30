@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import { fetchAllPicks, fetchTrends } from "../hooks/index";
 import Loader from "../components/loader";
 import { fieldByIndex } from "../helpers/index";
-import PicksMonth from "./picksMonth";
+import PicksMonth from "../components/picksMonth";
 
 export default function Picks(props) {
   const { data, isLoading, isError } = useQuery<[]>(["picks"], () =>
