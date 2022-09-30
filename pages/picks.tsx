@@ -49,17 +49,8 @@ export async function getStaticProps() {
 
   await queryClient.prefetchQuery("picks", fetchAllPicks);
 
-  const res = await fetchTrends();
-
-  if (!res) {
-    return {
-      notFound: true,
-    };
-  }
-
   return {
     props: {
-      data: res,
       dehydratedState: dehydrate(queryClient),
     },
   };
