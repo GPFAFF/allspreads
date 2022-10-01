@@ -11,7 +11,7 @@ const StyledLink = styled.a`
   font-size: 20px;
   padding: 10px 60px;
   cursor: pointer;
-  background: var(--green);
+  background: var(--grey);
   border: 0;
   outline: 0;
   flex: 1;
@@ -20,6 +20,9 @@ const StyledLink = styled.a`
   height: 40px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  color: var(--black);
+  border: 2px solid var(--green);
 `;
 
 const ToolsContainer = styled.div`
