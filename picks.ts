@@ -866,6 +866,42 @@ export const data = [
         odds: "-110",
         result: null,
       },
+      {
+        date: "10/01/22",
+        team: "Oregon State vs Utah - Over 54.5",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "10/01/22",
+        team: "South Alabama vs. ULL - Over 47.5",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "10/01/22",
+        team: "Troy vs. Western Kentucky - Over 54.5",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "10/01/22",
+        team: "Texas State +22",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "10/01/22",
+        team: "Purdue vs. Minnesota - 1H Over 27",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "10/01/22",
+        team: "USC -25",
+        odds: "-110",
+        result: null,
+      },
     ],
   },
 ];
