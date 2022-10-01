@@ -17,7 +17,7 @@ const SiteBorderStyles = styled.div`
 `;
 
 const ContentStyles = styled.div`
-  padding: 2rem;
+  padding: 1rem;
   background-color: white;
 `;
 

@@ -29,4 +29,8 @@ const StyledInputContainer = styled.div`
   grid-column-start: 2;
 `;
 
-export { SearchBar, StyledInput, StyledInputContainer };
+const CenterTitle = styled.h2`
+  text-align: center;
+`;
+
+export { SearchBar, StyledInput, StyledInputContainer, CenterTitle };

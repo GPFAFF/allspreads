@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FaArrowCircleDown, FaArrowCircleUp } from "react-icons/fa";
+import { fieldByIndex } from "../helpers/index";
 
 type Props = {
   item: any;
@@ -21,6 +22,23 @@ export default function PicksMonth(props: Props) {
 
   const [rowShown, setRowShown] = useState(false);
 
+  const getAllWinners = item.picks.filter(
+    (item) => item.result === "winner"
+  ).length;
+  const getAllLosers = item.picks.filter(
+    (item) => item.result === "loser"
+  ).length;
+
+  const [winners, _setWinners] = useState(getAllWinners);
+  const [losers, _setLosers] = useState(getAllLosers);
+
+  const formatPercent = (winners: number, losers: number) => {
+    if (winners === 0 && losers === 0) return "Record 0%";
+    return `Record ${winners} / ${losers + winners} - ${Number(
+      winners / (losers + winners)
+    ).toFixed(3)}%`;
+  };
+
   const handleClick = () => {
     setRowShown(!rowShown);
   };
@@ -33,7 +51,7 @@ export default function PicksMonth(props: Props) {
           justifyContent: "center",
         }}
       >
-        {item.month}
+        {item.month} - {formatPercent(winners, losers)}
         <span>
           {rowShown ? (
             <FaArrowCircleDown

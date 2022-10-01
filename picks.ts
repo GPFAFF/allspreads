@@ -793,13 +793,37 @@ export const data = [
         date: "09/30/22",
         team: "Boise State vs. San Diego State - Over 38",
         odds: "-110",
-        result: null,
+        result: "winner",
+      },
+      {
+        date: "09/30/22",
+        team: "UCLA +3",
+        odds: "-110",
+        result: "winner",
+      },
+      {
+        date: "09/30/22",
+        team: "UTSA -4",
+        odds: "-110",
+        result: "winner",
+      },
+      {
+        date: "09/30/22",
+        team: "Houston vs Tulane - Under 54.5",
+        odds: "-110",
+        result: "winner",
       },
     ],
   },
   {
     month: "October",
     picks: [
+      {
+        date: "10/01/22",
+        team: "Mississippi St 1H -2.5",
+        odds: "-110",
+        result: null,
+      },
       {
         date: "10/01/22",
         team: "Michigan -9.5",
