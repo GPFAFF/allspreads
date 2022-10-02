@@ -126,18 +126,11 @@ export default function OddsCard({ item, active }) {
       impliedWinPercentUnderdog: 0,
       vig: "",
     },
-    outcomes: [
-      {
-        name: "",
-        price: 0,
-        point: 0,
-      },
-      {
-        name: "",
-        price: 0,
-        point: 0,
-      },
-    ],
+    outcomes: {
+      name: "",
+      price: 0,
+      point: 0,
+    },
   };
   const [isHomeOpen, setHomeIsOpen] = useState(false);
   const [isAwayOpen, setAwayIsOpen] = useState(false);
@@ -145,11 +138,11 @@ export default function OddsCard({ item, active }) {
   const [awayModalInfo, setAwayModalInfo] = useState(initialState);
 
   const homeHandleOpen = ({ bookName, time, outcomes }) => {
-    const favorite = calculateProbability(outcomes[0].price);
-    const underdog = calculateProbability(outcomes[1].price);
+    const favorite = calculateProbability(outcomes.home.price);
+    const underdog = calculateProbability(outcomes.away.price);
     const data = calculateVigPercentage(favorite, underdog);
 
-    setHomeModalInfo({ bookName, time, outcomes, data });
+    setHomeModalInfo({ bookName, time, outcomes: outcomes.home, data });
     setHomeIsOpen(true);
   };
 
@@ -159,11 +152,11 @@ export default function OddsCard({ item, active }) {
   };
 
   const awayHandleOpen = ({ bookName, time, outcomes }) => {
-    const favorite = calculateProbability(outcomes[0].price);
-    const underdog = calculateProbability(outcomes[1].price);
+    const favorite = calculateProbability(outcomes.away.price);
+    const underdog = calculateProbability(outcomes.home.price);
     const data = calculateVigPercentage(favorite, underdog);
 
-    setAwayModalInfo({ bookName, time, outcomes, data });
+    setAwayModalInfo({ bookName, time, outcomes: outcomes.away, data });
     setAwayIsOpen(true);
   };
 
@@ -271,10 +264,16 @@ export default function OddsCard({ item, active }) {
                       {bookmakers.map((bookmaker, i) => {
                         const { outcomes } = bookmaker.markets[0];
 
-                        const isAwayTeamPrice =
+                        const isAwayTeamOutcomes =
                           outcomes[0].name === awayTeam
-                            ? outcomes[0].price
-                            : outcomes[1].price;
+                            ? {
+                                home: outcomes[1],
+                                away: outcomes[0],
+                              }
+                            : {
+                                home: outcomes[0],
+                                away: outcomes[1],
+                              };
 
                         const containsBook = line.books.includes(bookmaker);
 
@@ -285,7 +284,7 @@ export default function OddsCard({ item, active }) {
                                 ? awayHandleOpen({
                                     bookName: bookmaker.title,
                                     time: bookmaker.last_update,
-                                    outcomes,
+                                    outcomes: isAwayTeamOutcomes,
                                   })
                                 : ""
                             }
@@ -295,7 +294,9 @@ export default function OddsCard({ item, active }) {
                             key={i}
                           >
                             {containsBook ? (
-                              <Pill border>{formatOdds(isAwayTeamPrice)}</Pill>
+                              <Pill border>
+                                {formatOdds(isAwayTeamOutcomes.away.price)}
+                              </Pill>
                             ) : (
                               <Pill border={false}>&nbsp;</Pill>
                             )}
@@ -320,10 +321,10 @@ export default function OddsCard({ item, active }) {
                       {bookmakers.map((bookmaker, i) => {
                         const { outcomes } = bookmaker.markets[0];
 
-                        const homeTeamPrice =
+                        const homeTeamOutcomes =
                           outcomes[0].name === homeTeam
-                            ? outcomes[0].price
-                            : outcomes[1].price;
+                            ? { home: outcomes[0], away: outcomes[1] }
+                            : { home: outcomes[1], away: outcomes[0] };
 
                         const containsBook = line.books.includes(bookmaker);
 
@@ -334,7 +335,7 @@ export default function OddsCard({ item, active }) {
                                 ? homeHandleOpen({
                                     bookName: bookmaker.title,
                                     time: bookmaker.last_update,
-                                    outcomes,
+                                    outcomes: homeTeamOutcomes,
                                   })
                                 : ""
                             }
@@ -344,7 +345,9 @@ export default function OddsCard({ item, active }) {
                             key={i}
                           >
                             {containsBook ? (
-                              <Pill border>{formatOdds(homeTeamPrice)}</Pill>
+                              <Pill border>
+                                {formatOdds(homeTeamOutcomes.home.price)}
+                              </Pill>
                             ) : (
                               <Pill border={false}>&nbsp;</Pill>
                             )}
@@ -383,7 +386,7 @@ export default function OddsCard({ item, active }) {
             <div>Bet</div>
             <div>Market</div>
             <div>Odds</div>
-            {homeModalInfo.outcomes[0].point && <div>Spread</div>}
+            {homeModalInfo.outcomes.point && <div>Spread</div>}
             <div>No-Vig Odds</div>
             <div>Implied Win %</div>
             <div>Bookmaker Vig</div>
@@ -393,12 +396,12 @@ export default function OddsCard({ item, active }) {
               {new Date(homeModalInfo.time).toLocaleDateString()} -
               {new Date(homeModalInfo.time).toLocaleTimeString()}
             </div>
-            <div>{homeModalInfo.outcomes[0].name}</div>
+            <div>{homeModalInfo.outcomes.name}</div>
             <div>{homeModalInfo.bookName}</div>
-            <div>{formatOdds(homeModalInfo.outcomes[0].price)}</div>
-            {homeModalInfo.outcomes[0].point && (
+            <div>{formatOdds(homeModalInfo.outcomes.price)}</div>
+            {homeModalInfo.outcomes.point && (
               <div>
-                {positiveOrNegativeSpread(homeModalInfo.outcomes[0].point)}
+                {positiveOrNegativeSpread(homeModalInfo.outcomes.point)}
               </div>
             )}
             <div>{positiveOrNegativeSpread(homeModalInfo?.data?.favorite)}</div>
@@ -436,7 +439,7 @@ export default function OddsCard({ item, active }) {
             <div>Bet</div>
             <div>Book</div>
             <div>Odds</div>
-            {awayModalInfo.outcomes[1].point && <div>Spread</div>}
+            {awayModalInfo.outcomes.point && <div>Spread</div>}
             <div>No-Vig Odds</div>
             <div>Implied Win %</div>
             <div>Bookmaker Vig</div>
@@ -446,14 +449,14 @@ export default function OddsCard({ item, active }) {
               {new Date(awayModalInfo.time).toLocaleDateString()} -{" "}
               {new Date(awayModalInfo.time).toLocaleTimeString()}
             </div>
-            <div>{awayModalInfo.outcomes[1].name}</div>
+            <div>{awayModalInfo.outcomes.name}</div>
             <div>{awayModalInfo.bookName}</div>
-            {awayModalInfo.outcomes[1].point && (
+            {awayModalInfo.outcomes.point && (
               <div>
-                {positiveOrNegativeSpread(awayModalInfo.outcomes[1].point)}
+                {positiveOrNegativeSpread(awayModalInfo.outcomes.point)}
               </div>
             )}
-            <div>{formatOdds(awayModalInfo.outcomes[1].price)}</div>
+            <div>{formatOdds(awayModalInfo.outcomes.price)}</div>
             <div>{positiveOrNegativeSpread(awayModalInfo?.data?.underdog)}</div>
             <div>
               {(awayModalInfo?.data?.impliedWinPercentUnderdog * 100).toFixed(
