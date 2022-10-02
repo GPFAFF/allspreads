@@ -218,6 +218,14 @@ const GlobalStyles = createGlobalStyle`
   transition: all 500ms ease-in-out;
 }
 
+.sticky {
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  padding: 24px 0 24px 10px;
+  background-color: var(--white);
+}
+
 `;
 
 export default GlobalStyles;

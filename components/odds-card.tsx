@@ -28,7 +28,7 @@ const OddsContainer = styled.div`
   display: grid;
   grid-template-columns: 300px 1fr;
   align-items: center;
-  padding-bottom: 16px;
+  z-index: 1;
 
   @media (max-width: 600px) {
     gap: 10px;
@@ -70,7 +70,6 @@ const OddsWrapper = styled.div`
   margin-bottom: 20px;
   border: 4px solid var(--green);
   border-radius: 8px;
-  padding: 14px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 `;
@@ -207,7 +206,7 @@ export default function OddsCard({ item, active }) {
       <OddsWrapper>
         <OddsRow>
           <OddsContainer>
-            <h3>{active}</h3>
+            <h3 className="sticky">{active}</h3>
             <BookRow style={{ width: bookWidth }} ref={bookRef}>
               {bookmakers.map((bookmaker, i) => {
                 return (
@@ -257,7 +256,7 @@ export default function OddsCard({ item, active }) {
               return (
                 <OddsContainer key={i}>
                   <>
-                    <div>
+                    <div className="sticky">
                       {awayTeam}{" "}
                       {awayTeamPrice && key !== "totals"
                         ? positiveOrNegativeSpread(awayTeamPrice)
@@ -306,7 +305,7 @@ export default function OddsCard({ item, active }) {
                     </BookRow>
                   </>
                   <>
-                    <div>
+                    <div className="sticky">
                       {homeTeam}{" "}
                       {homeTeamPrice && key !== "totals"
                         ? positiveOrNegativeSpread(homeTeamPrice)
