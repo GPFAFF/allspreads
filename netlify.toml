@@ -1,0 +1,11 @@
+# Paste content of your `netlify.toml` file here
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+[[plugins]]
+package = "@sentry/netlify-build-plugin"
+
+  [plugins.inputs]
+    sentryOrg = "allspreads"
+    sentryProject = "javascript-nextjs"
+    sentryRepository = "GPFAFF/allspreads"
+    deployPreviews = false
