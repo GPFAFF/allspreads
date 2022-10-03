@@ -3,165 +3,119 @@
 		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-  <loc>https://allspreads.com</loc>
-  <lastmod>2022-08-27T16:45:58+00:00</lastmod>
+  <loc>https://allspreads.com/</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://allspreads.com/scores</loc>
-  <lastmod>2022-08-27T16:45:58+00:00</lastmod>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://allspreads.com/odds</loc>
-  <lastmod>2022-08-27T16:45:58+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/picks</loc>
-  <lastmod>2022-08-27T16:45:58+00:00</lastmod>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://allspreads.com/tools</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/scores/football</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/odds/football</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/scores/college-football</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/odds/college-football</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/scores/baseball</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/odds/baseball</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/scores/college-basketball</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/odds/college-basketball</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/scores/hockey</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/odds/hockey</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/scores/soccer</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/odds/soccer</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/scores/basketball</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/odds/basketball</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/scores/golf</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://allspreads.com/odds/golf</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://allspreads.com/blog</loc>
-  <lastmod>2022-09-21T18:20:59+00:00</lastmod>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+<url>
+  <loc>https://allspreads.com/picks</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://allspreads.com/blog/college-football-week-three-recap</loc>
-	<lastmod>2022-09-21T21:29:56+01:00</lastmod>
-	<priority>0.1</priority>
+  <loc>https://allspreads.com/tools/no-vig-calculator</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://allspreads.com/blog/nfl-week-two-recap</loc>
-	<lastmod>2022-09-21T21:29:56+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://allspreads.com/blog/college-football-week-five-preview</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://allspreads.com/blog/college-football-week-three-preview</loc>
-	<lastmod>2022-09-21T21:29:56+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://allspreads.com/blog/nfl-week-four-preview</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://allspreads.com/blog/nfl-week-two-preview</loc>
-	<lastmod>2022-09-21T21:29:56+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://allspreads.com/blog/college-football-week-four-recap</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://allspreads.com/blog/nfl-week-one-recap</loc>
-	<lastmod>2022-09-21T21:29:56+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://allspreads.com/blog/nfl-week-three-recap</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://allspreads.com/blog/college-football-week-two-recap</loc>
-	<lastmod>2022-09-21T21:29:56+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://allspreads.com/blog/college-football-week-four-preview</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://allspreads.com/blog/college-football-week-two-preview</loc>
-	<lastmod>2022-09-21T21:29:56+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://allspreads.com/blog/nfl-week-three-preview</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://allspreads.com/blog/nfl-week-one</loc>
-	<lastmod>2022-09-21T21:29:56+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://allspreads.com/blog/college-football-week-three-recap</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://allspreads.com/blog/buffalo-bills-at-los-angeles-rams</loc>
-	<lastmod>2022-09-21T21:29:56+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://allspreads.com/blog/nfl-week-two-recap</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://allspreads.com/blog/college-football-week-one</loc>
-	<lastmod>2022-09-21T21:29:56+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://allspreads.com/blog/college-football-week-three-preview</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://allspreads.com/blog/nfl-week-two-preview</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://allspreads.com/blog/nfl-week-one-recap</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://allspreads.com/blog/college-football-week-two-recap</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://allspreads.com/blog/college-football-week-two-preview</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://allspreads.com/blog/nfl-week-one</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://allspreads.com/blog/buffalo-bills-at-los-angeles-rams</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://allspreads.com/blog/college-football-week-one</loc>
+  <lastmod>2022-10-03T14:45:30+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 </urlset>
