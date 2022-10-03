@@ -39,6 +39,9 @@ export default function News() {
         <StyledLink href="/tools/no-vig-calculator">
           No Vig Calculator
         </StyledLink>
+        <StyledLink href="/tools/parlay-calculator">
+          Parlay Calculator
+        </StyledLink>
       </ToolsContainer>
     </div>
   );
