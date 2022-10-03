@@ -980,6 +980,24 @@ export const data = [
         odds: "-110",
         result: null,
       },
+      {
+        date: "10/03/22",
+        team: "49ers ML",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "10/03/22",
+        team: "Deebo Samuel - Over 28.5 rushing yards",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "10/03/22",
+        team: "Matthew Stafford - Over passing 34.5 attempts",
+        odds: "-110",
+        result: null,
+      },
     ],
   },
 ];

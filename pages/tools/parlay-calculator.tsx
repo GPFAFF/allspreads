@@ -19,13 +19,12 @@ const CalculatorContainer = styled.div`
   background-color: var(--grey);
   border: 2px solid var(--green);
   margin: 20px 0;
-  padding: 20px
   border-radius: 4px;
   gap: 20px;
   justify-content: center;
   align-items: center;
 
-   @media (max-width: 600px) {
+  @media (max-width: 600px) {
     order: 1;
   }
 `;
