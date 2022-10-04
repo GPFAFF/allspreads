@@ -50,7 +50,12 @@ export default function News() {
 News.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout title="News">{page}</Layout>
+      <Layout
+        description="Tools and Calculators for sports betting"
+        title="Tools and Calculators for sports betting"
+      >
+        {page}
+      </Layout>
     </>
   );
 };

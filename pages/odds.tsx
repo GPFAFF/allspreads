@@ -32,7 +32,9 @@ export default function Odds() {
 Odds.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout title="Odds">{page}</Layout>
+      <Layout description="Odds" title="Odds">
+        {page}
+      </Layout>
     </>
   );
 };

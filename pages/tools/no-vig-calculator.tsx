@@ -261,7 +261,10 @@ export default function NoVigCalculator(props: Props) {
 NoVigCalculator.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout title="No-Vig / Vig-Free odds calculator for fair odds sports betting">
+      <Layout
+        description="No-Vig / Vig-Free odds calculator for fair odds sports betting"
+        title="No-Vig / Vig-Free odds calculator for fair odds sports betting"
+      >
         {page}
       </Layout>
     </>

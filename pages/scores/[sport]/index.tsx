@@ -132,7 +132,9 @@ Scores.getLayout = function getLayout(page: any) {
 
   return (
     <>
-      <Layout title={formatString}>{page}</Layout>
+      <Layout description={formatString} title={formatString}>
+        {page}
+      </Layout>
     </>
   );
 };

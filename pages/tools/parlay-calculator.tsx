@@ -254,7 +254,12 @@ export default function ParlayCalculator(props: Props) {
 ParlayCalculator.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout title="Parlay odds calculator for sports betting">{page}</Layout>
+      <Layout
+        description="Parlay odds calculator for sports betting"
+        title="Parlay odds calculator for sports betting"
+      >
+        {page}
+      </Layout>
     </>
   );
 };

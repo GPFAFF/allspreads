@@ -136,7 +136,10 @@ export default function HomePage() {
 HomePage.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout title="AllSpreads shows a comparison amongst the largest books in the US and Offshore">
+      <Layout
+        description="AllSpreads shows a comparison amongst the largest books in the US and Offshore"
+        title="AllSpreads shows a comparison amongst the largest books in the US and Offshore"
+      >
         {page}
       </Layout>
     </>

@@ -21,12 +21,13 @@ const ContentStyles = styled.div`
   background-color: white;
 `;
 
-export default function Layout({ children, title }) {
+export default function Layout({ children, title, description }) {
   return (
     <>
       <SEO
         description={
           children?.props?.source?.scope.summary ||
+          description ||
           "All Spreads. All the Time. Your daily source for bets, betting, spreads and sports news"
         }
         title={title}

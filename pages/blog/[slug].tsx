@@ -98,7 +98,12 @@ export const getStaticPaths = async () => {
 BlogPost.getLayout = function getLayout(page: any) {
   return (
     <>
-      <Layout title={page.props.source.scope.title}>{page}</Layout>
+      <Layout
+        description={page.props.source.scope.title}
+        title={page.props.source.scope.title}
+      >
+        {page}
+      </Layout>
     </>
   );
 };

@@ -59,7 +59,9 @@ export async function getStaticProps() {
 Picks.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout title="Picks">{page}</Layout>
+      <Layout description="Picks" title="Picks">
+        {page}
+      </Layout>
     </>
   );
 };

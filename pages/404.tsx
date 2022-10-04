@@ -15,7 +15,9 @@ export default function Custom404() {
 Custom404.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout title="404 Page">{page}</Layout>
+      <Layout description="404 Page" title="404 Page">
+        {page}
+      </Layout>
     </>
   );
 };

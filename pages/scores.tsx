@@ -35,7 +35,9 @@ export async function getStaticProps() {
 Sports.getLayout = function getLayout(page: NextComponentType) {
   return (
     <>
-      <Layout title="Scores">{page}</Layout>
+      <Layout description="Scores" title="Scores">
+        {page}
+      </Layout>
     </>
   );
 };
