@@ -21,7 +21,7 @@ const BlogPost = styled.div`
   transform: scale(1);
   transition: 0.5s;
   gap: 20px;
-  align-items: center;
+  align-items: start;
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
