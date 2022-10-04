@@ -980,7 +980,6 @@ export const data = [
         odds: "-110",
         result: "winner",
       },
-     c
       {
         date: "10/03/22",
         team: "Deebo Samuel - Over 28.5 rushing yards",
