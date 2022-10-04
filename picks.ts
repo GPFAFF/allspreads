@@ -998,6 +998,12 @@ export const data = [
         odds: "+135",
         result: "winner",
       },
+      {
+        date: "10/04/22",
+        team: "Texas Rangers ML",
+        odds: "+115",
+        result: "winner",
+      },
     ],
   },
 ];
