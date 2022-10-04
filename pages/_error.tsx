@@ -39,7 +39,9 @@ CustomErrorComponent.getInitialProps = async (contextData) => {
 CustomErrorComponent.getLayout = function getLayout(page) {
   return (
     <>
-      <Layout title="Error Page">{page}</Layout>
+      <Layout description="Error Page" title="Error Page">
+        {page}
+      </Layout>
     </>
   );
 };
