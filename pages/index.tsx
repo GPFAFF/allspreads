@@ -77,7 +77,7 @@ export default function HomePage() {
     <>
       <div>
         <h2 className="center">All Spreads. All the time</h2>
-        <h3 style={{ padding: "40px 0", textAlign: "center" }}>News Feed</h3>
+        <h3 style={{ padding: "40px 0", textAlign: "center" }}>Latest Feed</h3>
 
         {isError && !isLoading && (
           <h3 className="center">Something went wrong. Please try again</h3>
@@ -103,7 +103,7 @@ export default function HomePage() {
                     return (
                       <SingleCard key={i}>
                         <a target="_blank" href={item.link} rel="noreferrer">
-                          <h4>{item.title}</h4>
+                          <h3 style={{ padding: "20px" }}>{item.title}</h3>
                         </a>
                         {item && (
                           <Image

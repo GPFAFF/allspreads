@@ -67,7 +67,7 @@ let mapped = {};
 
 export const fetchSportsNews = async (page) => {
   const res = await fetch(
-    `https://newsdata.io/api/1/news?apikey=${process.env.NEXT_PUBLIC_SPORTS_NEWS_API_KEY}&country=us&category=sports&language=en&domain=theringer,si,profootballtalk&page=${page}`
+    `https://newsdata.io/api/1/news?apikey=${process.env.NEXT_PUBLIC_SPORTS_NEWS_API_KEY}&country=us&category=sports&language=en&domain=espn,si,profootballtalk&page=${page}`
   );
   if (!res.ok) {
     throw new Error("Network response was not ok");

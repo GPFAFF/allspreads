@@ -10,7 +10,7 @@ export const SEOData = {
     summary: "Put me down for a 1000",
   },
   description:
-    "All Spreads. All the Time. Your daily source for bets, betting, spreads and sports news.",
+    "AllSpreads. All the Time. Your daily source for bets, betting, spreads and sports news.",
   social: {
     twitter: "@allspreads",
     instagram: "@allspreads",
