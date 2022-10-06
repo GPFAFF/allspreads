@@ -233,9 +233,8 @@ const GlobalStyles = createGlobalStyle`
   z-index: 10;
   padding: 24px 10px 24px 10px;
   background-color: var(--white);
-  margin-right: 10px;
 
-    &:before {
+  &:before {
     content: "";
     display: block;
     width: 30px;

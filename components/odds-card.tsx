@@ -33,8 +33,8 @@ const OddsContainer = styled.div`
   gap: 0 10px;
 
   @media (max-width: 600px) {
-    gap: 10px;
-    grid-template-columns: 200px 1fr;
+    gap: 0 10px;
+    grid-template-columns: 230px 1fr;
   }
 `;
 
@@ -102,13 +102,20 @@ const StickyPill = styled(Pill)`
   background-color: var(--grey) !important;
   border: 2px solid var(--green);
   text-align: left;
-  padding: 10px !important;
+  padding: 10px;
   border-radius: 0 4px 4px 0;
   display: grid;
   position: sticky;
   grid-template-columns: 1fr 30px 30px 30px;
   gap: 20px;
   left: 20px;
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+    align-items: center;
+    grid-template-columns: 80px 20px 20px 20px;
+    padding: 5px;
+  }
 
   &:before {
     content: "";
@@ -131,6 +138,11 @@ const TitleContainer = styled.div`
   gap: 20px;
   left: 20px;
   padding-right: 20px;
+
+  @media (max-width: 600px) {
+    gap: 10px;
+    padding-right: 0;
+  }
 `;
 
 export default function OddsCard({ item, active }) {
