@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { FaWindowClose } from "react-icons/fa";
 
 import {
+  calculateEvPercentage,
   calculateProbability,
   calculateVigPercentage,
   createBookmakerURL,
@@ -26,9 +27,10 @@ const OddsTitle = styled.h3`
 
 const OddsContainer = styled.div`
   display: grid;
-  grid-template-columns: 300px 1fr;
-  align-items: center;
+  grid-template-columns: 450px 1fr;
+  align-items: start;
   z-index: 1;
+  gap: 0 10px;
 
   @media (max-width: 600px) {
     gap: 10px;
@@ -48,13 +50,13 @@ const BookRow = styled.div`
   }
 `;
 
-const Pill = styled.p<{ border: boolean }>`
+const Pill = styled.div<{ border: boolean }>`
   background-color: var(--grey);
   border-radius: 8px;
   padding: 10px;
   text-align: center;
   border: ${({ border }) => (border ? "2px solid var(--green)" : "none")};
-  margin: 0 0 4px 0;
+  margin: 0;
   font-size: 18px;
 `;
 
@@ -77,6 +79,9 @@ const OddsWrapper = styled.div`
 const OddsRow = styled.div`
   display: grid;
   align-items: center;
+  padding: 30px 15px;
+  background-color: white;
+  z-index: 10;
 `;
 
 const ModalRow = styled.div`
@@ -90,6 +95,42 @@ const ModalRowContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+`;
+
+const StickyPill = styled(Pill)`
+  margin: 0 8px 0 0;
+  background-color: var(--grey) !important;
+  border: 2px solid var(--green);
+  text-align: left;
+  padding: 10px !important;
+  border-radius: 0 4px 4px 0;
+  display: grid;
+  position: sticky;
+  grid-template-columns: 1fr 30px 30px 30px;
+  gap: 20px;
+  left: 20px;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 200px;
+    background: var(--white);
+    position: absolute;
+    left: -30px;
+    top: -120px;
+  }
+`;
+
+const TitleContainer = styled.div`
+  align-items: center;
+  justify-content: center;
+  justify-items: start;
+  display: grid;
+  grid-template-columns: 1fr 30px 30px;
+  gap: 20px;
+  left: 20px;
+  padding-right: 20px;
 `;
 
 export default function OddsCard({ item, active }) {
@@ -120,11 +161,12 @@ export default function OddsCard({ item, active }) {
     bookName: "",
     time: "",
     data: {
-      favorite: "",
-      underdog: "",
-      impliedWinPercentFavorite: 0,
-      impliedWinPercentUnderdog: 0,
+      home: "",
+      away: "",
+      impliedWinPercentHome: 0,
+      impliedWinPercentAway: 0,
       vig: "",
+      evPercent: "",
     },
     outcomes: {
       name: "",
@@ -138,11 +180,21 @@ export default function OddsCard({ item, active }) {
   const [awayModalInfo, setAwayModalInfo] = useState(initialState);
 
   const homeHandleOpen = ({ bookName, time, outcomes }) => {
-    const favorite = calculateProbability(outcomes.home.price);
-    const underdog = calculateProbability(outcomes.away.price);
-    const data = calculateVigPercentage(favorite, underdog);
+    const home = calculateProbability(outcomes.home.price);
+    const away = calculateProbability(outcomes.away.price);
+    const data = calculateVigPercentage(home, away);
 
-    setHomeModalInfo({ bookName, time, outcomes: outcomes.home, data });
+    const evPercent = calculateEvPercentage(
+      outcomes.home.price,
+      data.impliedWinPercentHome
+    );
+
+    setHomeModalInfo({
+      bookName,
+      time,
+      outcomes: outcomes.home,
+      data: { ...data, evPercent },
+    });
     setHomeIsOpen(true);
   };
 
@@ -152,11 +204,21 @@ export default function OddsCard({ item, active }) {
   };
 
   const awayHandleOpen = ({ bookName, time, outcomes }) => {
-    const favorite = calculateProbability(outcomes.away.price);
-    const underdog = calculateProbability(outcomes.home.price);
-    const data = calculateVigPercentage(favorite, underdog);
+    const home = calculateProbability(outcomes.home.price);
+    const away = calculateProbability(outcomes.away.price);
+    const data = calculateVigPercentage(home, away);
 
-    setAwayModalInfo({ bookName, time, outcomes: outcomes.away, data });
+    const evPercent = calculateEvPercentage(
+      outcomes.away.price,
+      data.impliedWinPercentAway
+    );
+
+    setAwayModalInfo({
+      bookName,
+      time,
+      outcomes: outcomes.away,
+      data: { ...data, evPercent },
+    });
     setAwayIsOpen(true);
   };
 
@@ -199,7 +261,11 @@ export default function OddsCard({ item, active }) {
       <OddsWrapper>
         <OddsRow>
           <OddsContainer>
-            <h3 className="sticky">{active}</h3>
+            <TitleContainer className="sticky">
+              <h3>{active}</h3>
+              <span style={{ fontSize: "14px" }}>Avg Odds</span>
+              <span style={{ fontSize: "14px" }}>Best Odds</span>
+            </TitleContainer>
             <BookRow style={{ width: bookWidth }} ref={bookRef}>
               {bookmakers.map((bookmaker, i) => {
                 return (
@@ -236,27 +302,153 @@ export default function OddsCard({ item, active }) {
           </OddsContainer>
           <div>
             {item.lines.map((line, i) => {
-              const homeTeamPrice =
+              const homeTeamObj =
                 line.books[0].markets[0].outcomes[0].name === homeTeam
-                  ? line.books[0].markets[0].outcomes[0].point
-                  : line.books[0].markets[0].outcomes[1].point;
+                  ? line.books[0].markets[0].outcomes[0]
+                  : line.books[0].markets[0].outcomes[1];
 
-              const awayTeamPrice =
+              const awayTeamObj =
                 line.books[0].markets[0].outcomes[0].name === awayTeam
-                  ? line.books[0].markets[0].outcomes[0].point
-                  : line.books[0].markets[0].outcomes[1].point;
+                  ? line.books[0].markets[0].outcomes[0]
+                  : line.books[0].markets[0].outcomes[1];
+
+              const homeTeamBestOdds = line.books.reduce((r, c) => {
+                if (homeTeamObj.name === homeTeam) {
+                  const markets = c.markets[0].outcomes.filter(
+                    (item) => item.name === homeTeam
+                  );
+
+                  r[0] =
+                    r[0] === undefined || markets[0].price < r[0]
+                      ? markets[0].price
+                      : r[0];
+                  r[1] =
+                    r[1] === undefined || markets[0].price > r[1]
+                      ? markets[0].price
+                      : r[1];
+
+                  return r;
+                }
+              }, []);
+
+              const awayTeamBestOdds = line.books.reduce((r, c) => {
+                if (awayTeamObj.name === awayTeam) {
+                  const markets = c.markets[0].outcomes.filter(
+                    (item) => item.name === awayTeam
+                  );
+
+                  r[0] =
+                    r[0] === undefined || markets[0].price < r[0]
+                      ? markets[0].price
+                      : r[0];
+                  r[1] =
+                    r[1] === undefined || markets[0].price > r[1]
+                      ? markets[0].price
+                      : r[1];
+
+                  return r;
+                }
+              }, []);
+
+              const awayAverageOdds = line.books.reduce(
+                (acc, value) => {
+                  if (awayTeamObj.name === awayTeam) {
+                    const markets = value.markets[0].outcomes.filter(
+                      (item) => item.name === awayTeam
+                    );
+
+                    console.log("mark", markets);
+
+                    let [positive, negative, total, positiveOrNegative] = acc;
+                    if (markets[0].price > 0) {
+                      positive++;
+                    }
+                    if (markets[0].price < 0) {
+                      negative++;
+                    }
+
+                    if (markets[0].price) {
+                      total = total + Math.abs(markets[0].price);
+                    }
+
+                    if (positive > negative) {
+                      positiveOrNegative = true;
+                    } else {
+                      positiveOrNegative = false;
+                    }
+
+                    return [positive, negative, total, positiveOrNegative];
+                  }
+                },
+                [0, 0, 0, false]
+              );
+
+              const homeAverageOdds = line.books.reduce(
+                (acc, value) => {
+                  if (homeTeamObj.name === homeTeam) {
+                    const markets = value.markets[0].outcomes.filter(
+                      (item) => item.name === homeTeam
+                    );
+
+                    let [positive, negative, total, positiveOrNegative] = acc;
+                    if (markets[0].price > 0) {
+                      positive++;
+                    }
+                    if (markets[0].price < 0) {
+                      negative++;
+                    }
+
+                    if (markets[0].price) {
+                      total = total + Math.abs(markets[0].price);
+                    }
+
+                    if (positive > negative) {
+                      positiveOrNegative = true;
+                    } else {
+                      positiveOrNegative = false;
+                    }
+
+                    console.log(positiveOrNegative, total);
+
+                    return [positive, negative, total, positiveOrNegative];
+                  }
+                },
+                [0, 0, 0, false]
+              );
+
+              const [_positive, _negative, homeTotal, homePos] =
+                homeAverageOdds;
+              const [_p, _n, awayTotal, awayPos] = awayAverageOdds;
+
+              console.log(homeAverageOdds);
 
               return (
                 <OddsContainer key={i}>
                   <>
-                    <div className="sticky">
-                      {awayTeam}{" "}
-                      {awayTeamPrice && key !== "totals"
-                        ? positiveOrNegativeSpread(awayTeamPrice)
-                        : key === "totals"
-                        ? awayTeamPrice
-                        : ""}
-                    </div>
+                    <StickyPill border>
+                      <span>{awayTeam}</span>
+                      <span>
+                        {awayTeamObj.point && key !== "totals"
+                          ? positiveOrNegativeSpread(
+                              awayTeamObj.point.toFixed(1)
+                            )
+                          : key === "totals"
+                          ? awayTeamObj.point.toFixed(1)
+                          : ""}
+                      </span>
+                      <span>
+                        {" "}
+                        {awayPos
+                          ? `+${Math.round(awayTotal / line.books.length)}`
+                          : `-${Math.round(awayTotal / line.books.length)}`}
+                      </span>
+                      <span>
+                        {" "}
+                        {awayTeamBestOdds
+                          ? positiveOrNegativeSpread(awayTeamBestOdds[1])
+                          : ""}
+                      </span>
+                    </StickyPill>
                     <BookRow
                       style={{ width: awaySpreadWidth }}
                       ref={awaySpreadRef}
@@ -306,14 +498,28 @@ export default function OddsCard({ item, active }) {
                     </BookRow>
                   </>
                   <>
-                    <div className="sticky">
-                      {homeTeam}{" "}
-                      {homeTeamPrice && key !== "totals"
-                        ? positiveOrNegativeSpread(homeTeamPrice)
-                        : key === "totals"
-                        ? homeTeamPrice
-                        : ""}
-                    </div>
+                    <StickyPill border>
+                      <span>{homeTeam}</span>
+                      <span>
+                        {homeTeamObj.point && key !== "totals"
+                          ? positiveOrNegativeSpread(
+                              homeTeamObj.point.toFixed(1)
+                            )
+                          : key === "totals"
+                          ? homeTeamObj.point.toFixed(1)
+                          : ""}
+                      </span>
+                      <span>
+                        {homePos
+                          ? `+${Math.round(homeTotal / line.books.length)}`
+                          : `-${Math.round(homeTotal / line.books.length)}`}
+                      </span>
+                      <span>
+                        {homeTeamBestOdds
+                          ? positiveOrNegativeSpread(homeTeamBestOdds[1])
+                          : ""}
+                      </span>
+                    </StickyPill>
                     <BookRow
                       style={{ width: homeSpreadWidth }}
                       ref={homeSpreadRef}
@@ -382,13 +588,14 @@ export default function OddsCard({ item, active }) {
         </div>
         <ModalRowContainer>
           <ModalRow>
-            <div>Date</div>
+            <div>Odds Last Updated</div>
             <div>Bet</div>
             <div>Market</div>
             <div>Odds</div>
             {homeModalInfo.outcomes.point && <div>Spread</div>}
             <div>No-Vig Odds</div>
             <div>Implied Win %</div>
+            <div>EV %</div>
             <div>Bookmaker Vig</div>
           </ModalRow>
           <ModalRow>
@@ -404,14 +611,12 @@ export default function OddsCard({ item, active }) {
                 {positiveOrNegativeSpread(homeModalInfo.outcomes.point)}
               </div>
             )}
-            <div>{positiveOrNegativeSpread(homeModalInfo?.data?.favorite)}</div>
             <div>
-              {(homeModalInfo?.data?.impliedWinPercentFavorite * 100).toFixed(
-                2
-              )}
-              %
+              <div>{positiveOrNegativeSpread(homeModalInfo?.data?.home)}</div>
             </div>
-            <div>{homeModalInfo?.data?.vig}</div>
+            <div>{homeModalInfo?.data?.impliedWinPercentHome.toFixed(2)}%</div>
+            <div>{homeModalInfo?.data?.evPercent}%</div>
+            <div>{homeModalInfo?.data?.vig}%</div>
           </ModalRow>
         </ModalRowContainer>
       </SpreadsModal>
@@ -435,13 +640,14 @@ export default function OddsCard({ item, active }) {
         </div>
         <ModalRowContainer>
           <ModalRow>
-            <div>Date</div>
+            <div>Odds Last Updated</div>
             <div>Bet</div>
             <div>Book</div>
             <div>Odds</div>
             {awayModalInfo.outcomes.point && <div>Spread</div>}
             <div>No-Vig Odds</div>
             <div>Implied Win %</div>
+            <div>EV %</div>
             <div>Bookmaker Vig</div>
           </ModalRow>
           <ModalRow>
@@ -457,14 +663,10 @@ export default function OddsCard({ item, active }) {
               </div>
             )}
             <div>{formatOdds(awayModalInfo.outcomes.price)}</div>
-            <div>{positiveOrNegativeSpread(awayModalInfo?.data?.underdog)}</div>
-            <div>
-              {(awayModalInfo?.data?.impliedWinPercentUnderdog * 100).toFixed(
-                2
-              )}
-              %
-            </div>
-            <div>{awayModalInfo?.data?.vig}</div>
+            <div>{positiveOrNegativeSpread(awayModalInfo?.data?.away)}</div>
+            <div>{awayModalInfo?.data?.impliedWinPercentAway.toFixed(2)}%</div>
+            <div>{awayModalInfo?.data?.evPercent}%</div>
+            <div>{awayModalInfo?.data?.vig}%</div>
           </ModalRow>
         </ModalRowContainer>
       </SpreadsModal>
