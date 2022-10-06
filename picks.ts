@@ -1004,6 +1004,18 @@ export const data = [
         odds: "+115",
         result: "loser",
       },
+      {
+        date: "10/04/22",
+        team: "Diamondback F5 -0.5",
+        odds: "+117",
+        result: "loser",
+      },
+      {
+        date: "10/05/22",
+        team: "UCF -3",
+        odds: "-110",
+        result: "winner",
+      },
     ],
   },
 ];

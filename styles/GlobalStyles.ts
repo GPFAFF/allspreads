@@ -190,40 +190,61 @@ const GlobalStyles = createGlobalStyle`
     opacity: 1;
 }
 
-.ReactModal__Overlay {
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: all 500ms ease-in-out;
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
   z-index: 10;
 }
 
-.ReactModal__Body--open  {
-      overflow: hidden;
-      height: 100vh;
-    }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
 
 .ReactModal__Overlay--after-open {
   opacity: 1;
-  transform: translateX(0px);
-  transition: all 500ms ease-in-out;
-}
-
-.ReactModalPortal {
-  transition: all 500ms ease-in-out;
 }
 
 .ReactModal__Overlay--before-close {
   opacity: 0;
-  transform: translateX(-100px);
-  transition: all 500ms ease-in-out;
 }
 
 .sticky {
   position: sticky;
-  left: 0;
+  left: 20px;
   z-index: 10;
-  padding: 24px 0 24px 10px;
+  padding: 24px 10px 24px 10px;
   background-color: var(--white);
+  margin-right: 10px;
+
+    &:before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 200px;
+    background: var(--white);
+    position: absolute;
+    left: -30px;
+    top: -120px;
+  }
 }
 
 `;

@@ -276,18 +276,38 @@ export function calculateProbability(odds) {
   return (100 / (number + 100)) * 100;
 }
 
-export function calculateVigPercentage(favorite, underdog) {
-  const total = favorite + underdog;
-  const f = removeVig(favorite, total);
-  const u = removeVig(underdog, total);
+export function calculateVigPercentage(home, away) {
+  const total = home + away;
+  const homeTeam = removeVig(home, total);
+  const awayTeam = removeVig(away, total);
   return {
-    favorite: convertDecimalToAmericanOdds(f).toFixed(2),
-    underdog: convertDecimalToAmericanOdds(u).toFixed(2),
-    impliedWinPercentFavorite: f,
-    impliedWinPercentUnderdog: u,
-    vig: (favorite + underdog - 100).toFixed(2),
+    home: convertDecimalToAmericanOdds(homeTeam).toFixed(2),
+    away: convertDecimalToAmericanOdds(awayTeam).toFixed(2),
+    impliedWinPercentHome: homeTeam * 100,
+    impliedWinPercentAway: awayTeam * 100,
+    vig: (home + away - 100).toFixed(2),
   };
 }
+
+export const calculateEvPercentage = (bet, winPercentage) => {
+  const winPercent = +winPercentage.toFixed(2);
+  const wager = Math.abs(bet);
+  if (Math.sign(bet) === -1) {
+    // do this calc if favorite
+
+    // const evBet =
+    //   (winPercent * 100) / 100 - (Math.abs(bet) * (100 - winPercent)) / 100;
+
+    const evBet =
+      (winPercentage * 100) / 100 - (wager * (100 - winPercentage)) / 100;
+
+    return ((evBet / wager) * 100).toFixed(2);
+  }
+
+  const evBet = (winPercent * wager) / 100 - (100 * (100 - winPercent)) / 100;
+
+  return ((evBet / wager) * 100).toFixed(2);
+};
 
 function removeVig(odds, total) {
   return odds / total;

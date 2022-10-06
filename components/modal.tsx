@@ -20,15 +20,17 @@ export default function SpreadsModal(props: Props) {
     },
   };
 
-  // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
-
-  // Modal.setAppElement(document.getElementById("root"));
-
   Modal.setAppElement("#__next");
 
   return (
     <div>
-      <Modal isOpen={isOpen} onRequestClose={handleClose} style={customStyles}>
+      <Modal
+        className="modal"
+        overlayClassName="overlay"
+        isOpen={isOpen}
+        onRequestClose={handleClose}
+        closeTimeoutMS={200}
+      >
         {children}
       </Modal>
     </div>
