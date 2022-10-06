@@ -357,8 +357,6 @@ export default function OddsCard({ item, active }) {
                       (item) => item.name === awayTeam
                     );
 
-                    console.log("mark", markets);
-
                     let [positive, negative, total, positiveOrNegative] = acc;
                     if (markets[0].price > 0) {
                       positive++;
@@ -408,8 +406,6 @@ export default function OddsCard({ item, active }) {
                       positiveOrNegative = false;
                     }
 
-                    console.log(positiveOrNegative, total);
-
                     return [positive, negative, total, positiveOrNegative];
                   }
                 },
@@ -419,8 +415,6 @@ export default function OddsCard({ item, active }) {
               const [_positive, _negative, homeTotal, homePos] =
                 homeAverageOdds;
               const [_p, _n, awayTotal, awayPos] = awayAverageOdds;
-
-              console.log(homeAverageOdds);
 
               return (
                 <OddsContainer key={i}>
