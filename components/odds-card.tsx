@@ -137,11 +137,12 @@ const TitleContainer = styled.div`
   grid-template-columns: 1fr 30px 30px;
   gap: 20px;
   left: 20px;
-  padding-right: 20px;
+  padding-right: 15px;
 
   @media (max-width: 600px) {
+    padding-left: 5px;
+    padding-right: 10px;
     gap: 10px;
-    padding-right: 0;
   }
 `;
 
