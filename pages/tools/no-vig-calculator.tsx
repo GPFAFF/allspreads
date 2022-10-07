@@ -133,8 +133,8 @@ export default function NoVigCalculator(props: Props) {
         oddsTeamTwo: calculatorState.oddsTeamTwo,
         noVigOddsTeamOne: data.home,
         noVigOddsTeamTwo: data.away,
-        impliedWinPercentageTeamOne: data.impliedWinPercentHome * 100,
-        impliedWinPercentageTeamTwo: data.impliedWinPercentAway * 100,
+        impliedWinPercentageTeamOne: data.impliedWinPercentHome,
+        impliedWinPercentageTeamTwo: data.impliedWinPercentAway,
       });
     } else {
       const favorite = calculateProbability(0);
@@ -146,8 +146,8 @@ export default function NoVigCalculator(props: Props) {
         oddsTeamTwo: calculatorState.oddsTeamTwo,
         noVigOddsTeamOne: data.home,
         noVigOddsTeamTwo: data.away,
-        impliedWinPercentageTeamOne: data.impliedWinPercentHome * 100,
-        impliedWinPercentageTeamTwo: data.impliedWinPercentAway * 100,
+        impliedWinPercentageTeamOne: data.impliedWinPercentHome,
+        impliedWinPercentageTeamTwo: data.impliedWinPercentAway,
       });
     }
   }, [calculatorState.oddsTeamOne, calculatorState.oddsTeamTwo]);
