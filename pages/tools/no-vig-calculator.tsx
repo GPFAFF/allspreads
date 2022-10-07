@@ -131,10 +131,10 @@ export default function NoVigCalculator(props: Props) {
       setCalculatorState({
         oddsTeamOne: calculatorState.oddsTeamOne,
         oddsTeamTwo: calculatorState.oddsTeamTwo,
-        noVigOddsTeamOne: data.favorite,
-        noVigOddsTeamTwo: data.underdog,
-        impliedWinPercentageTeamOne: data.impliedWinPercentFavorite * 100,
-        impliedWinPercentageTeamTwo: data.impliedWinPercentUnderdog * 100,
+        noVigOddsTeamOne: data.home,
+        noVigOddsTeamTwo: data.away,
+        impliedWinPercentageTeamOne: data.impliedWinPercentHome * 100,
+        impliedWinPercentageTeamTwo: data.impliedWinPercentAway * 100,
       });
     } else {
       const favorite = calculateProbability(0);
@@ -144,16 +144,15 @@ export default function NoVigCalculator(props: Props) {
       setCalculatorState({
         oddsTeamOne: calculatorState.oddsTeamOne,
         oddsTeamTwo: calculatorState.oddsTeamTwo,
-        noVigOddsTeamOne: data.favorite,
-        noVigOddsTeamTwo: data.underdog,
-        impliedWinPercentageTeamOne: data.impliedWinPercentFavorite * 100,
-        impliedWinPercentageTeamTwo: data.impliedWinPercentUnderdog * 100,
+        noVigOddsTeamOne: data.home,
+        noVigOddsTeamTwo: data.away,
+        impliedWinPercentageTeamOne: data.impliedWinPercentHome * 100,
+        impliedWinPercentageTeamTwo: data.impliedWinPercentAway * 100,
       });
     }
   }, [calculatorState.oddsTeamOne, calculatorState.oddsTeamTwo]);
 
   const handleChange = (event) => {
-    console.log("event", event.currentTarget.name);
     const { name, value } = event.currentTarget;
 
     setCalculatorState({ ...calculatorState, [name]: value });
