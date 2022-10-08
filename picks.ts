@@ -1136,6 +1136,48 @@ export const data = [
         odds: "-110",
         result: null,
       },
+      {
+        date: "10/09/22",
+        team: "Alabama -24",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "10/09/22",
+        team: "Oregon vs. Arizona - Under 70.5",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "10/09/22",
+        team: "Kent State vs. Miami Ohio - Under 57.5",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "10/09/22",
+        team: "Georgia Southern -2.5",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "10/09/22",
+        team: "Georgia Southern vs. Georgia State - Over 65",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "10/09/22",
+        team: "UCLA +5",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "10/09/22",
+        team: "UCONN -5.5",
+        odds: "-110",
+        result: null,
+      },
     ],
   },
 ];
