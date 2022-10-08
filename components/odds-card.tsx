@@ -167,8 +167,8 @@ export default function OddsCard({ item, active }) {
   const { time } = item;
 
   const { bookmakers } = item;
-  const { markets } = bookmakers[0];
-  const { key } = markets[0];
+  const { markets } = bookmakers[0] || [];
+  const { key } = markets[0] || "";
 
   const initialState = {
     bookName: "",
