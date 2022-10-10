@@ -326,6 +326,22 @@ export default function OddsCard({ item, active }) {
                   : line.books[0].markets[0].outcomes[1];
 
               const homeTeamBestOdds = line.books.reduce((r, c) => {
+                if (key === "totals") {
+                  const markets = c.markets[0].outcomes.filter(
+                    (item) => item.name === "Over"
+                  );
+
+                  r[0] =
+                    r[0] === undefined || markets[0].price < r[0]
+                      ? markets[0].price
+                      : r[0];
+                  r[1] =
+                    r[1] === undefined || markets[0].price > r[1]
+                      ? markets[0].price
+                      : r[1];
+
+                  return r;
+                }
                 if (homeTeamObj.name === homeTeam) {
                   const markets = c.markets[0].outcomes.filter(
                     (item) => item.name === homeTeam
@@ -345,6 +361,22 @@ export default function OddsCard({ item, active }) {
               }, []);
 
               const awayTeamBestOdds = line.books.reduce((r, c) => {
+                if (key === "totals") {
+                  const markets = c.markets[0].outcomes.filter(
+                    (item) => item.name === "Under"
+                  );
+
+                  r[0] =
+                    r[0] === undefined || markets[0].price < r[0]
+                      ? markets[0].price
+                      : r[0];
+                  r[1] =
+                    r[1] === undefined || markets[0].price > r[1]
+                      ? markets[0].price
+                      : r[1];
+
+                  return r;
+                }
                 if (awayTeamObj.name === awayTeam) {
                   const markets = c.markets[0].outcomes.filter(
                     (item) => item.name === awayTeam
@@ -365,6 +397,32 @@ export default function OddsCard({ item, active }) {
 
               const awayAverageOdds = line.books.reduce(
                 (acc, value) => {
+                  if (key === "totals") {
+                    const markets = value.markets[0].outcomes.filter(
+                      (item) => item.name === "Under"
+                    );
+
+                    let [positive, negative, total, positiveOrNegative] = acc;
+                    if (markets[0].price > 0) {
+                      positive++;
+                    }
+                    if (markets[0].price < 0) {
+                      negative++;
+                    }
+
+                    if (markets[0].price) {
+                      total = total + Math.abs(markets[0].price);
+                    }
+
+                    if (positive > negative) {
+                      positiveOrNegative = true;
+                    } else {
+                      positiveOrNegative = false;
+                    }
+
+                    return [positive, negative, total, positiveOrNegative];
+                  }
+
                   if (awayTeamObj.name === awayTeam) {
                     const markets = value.markets[0].outcomes.filter(
                       (item) => item.name === awayTeam
@@ -396,6 +454,31 @@ export default function OddsCard({ item, active }) {
 
               const homeAverageOdds = line.books.reduce(
                 (acc, value) => {
+                  if (key === "totals") {
+                    const markets = value.markets[0].outcomes.filter(
+                      (item) => item.name === "Over"
+                    );
+
+                    let [positive, negative, total, positiveOrNegative] = acc;
+                    if (markets[0].price > 0) {
+                      positive++;
+                    }
+                    if (markets[0].price < 0) {
+                      negative++;
+                    }
+
+                    if (markets[0].price) {
+                      total = total + Math.abs(markets[0].price);
+                    }
+
+                    if (positive > negative) {
+                      positiveOrNegative = true;
+                    } else {
+                      positiveOrNegative = false;
+                    }
+
+                    return [positive, negative, total, positiveOrNegative];
+                  }
                   if (homeTeamObj.name === homeTeam) {
                     const markets = value.markets[0].outcomes.filter(
                       (item) => item.name === homeTeam
@@ -474,7 +557,9 @@ export default function OddsCard({ item, active }) {
                                 away: outcomes[1],
                               };
 
-                        const containsBook = line.books.includes(bookmaker);
+                        const containsBook = line.books.some(
+                          (item) => item.key === bookmaker.key
+                        );
 
                         return (
                           <div
@@ -539,7 +624,9 @@ export default function OddsCard({ item, active }) {
                             ? { home: outcomes[0], away: outcomes[1] }
                             : { home: outcomes[1], away: outcomes[0] };
 
-                        const containsBook = line.books.includes(bookmaker);
+                        const containsBook = line.books.some(
+                          (item) => item.key === bookmaker.key
+                        );
 
                         return (
                           <div
