@@ -1226,6 +1226,24 @@ export const data = [
         odds: "-110",
         result: "winner",
       },
+      {
+        date: "10/11/22",
+        team: "Raiders vs. Chiefs - Over 51",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "10/11/22",
+        team: "David Carr - Under 39.5 passing attempts",
+        odds: "-110",
+        result: null,
+      },
+      {
+        date: "10/11/22",
+        team: "Travis Kelce - Over 76.5 receiving yards",
+        odds: "-110",
+        result: null,
+      },
     ],
   },
 ];
