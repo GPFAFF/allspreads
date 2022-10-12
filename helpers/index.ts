@@ -84,6 +84,10 @@ export function getFilePrefix(string) {
       return "books";
     case "college-football" || "college-basketball":
       return "ncaa";
+    case "hockey":
+      return "nhl";
+    case "basketball":
+      return "nba";
     default:
       break;
   }
