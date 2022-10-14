@@ -1308,12 +1308,42 @@ export const data = [
         date: "10/13/22",
         team: "Phillies vs. Braves - Under 7",
         odds: "+109",
-        result: null,
+        result: "winner",
+      },
+      {
+        date: "10/13/22",
+        team: "Dodgers vs. Padres - Under 7.5",
+        odds: "+109",
+        result: "loser",
       },
       {
         date: "10/13/22",
         team: "Padres ML",
         odds: "+170",
+        result: "winner",
+      },
+      {
+        date: "10/13/22",
+        team: "Seattle Kraken ML",
+        odds: "+105",
+        result: "loser",
+      },
+      {
+        date: "10/13/22",
+        team: "Boston Bruins ML",
+        odds: "+125",
+        result: "winner",
+      },
+      {
+        date: "10/13/22",
+        team: "Carolina Hurricanes PL -1.5",
+        odds: "-105",
+        result: "winner",
+      },
+      {
+        date: "10/14/22",
+        team: "Guardians ML",
+        odds: "+125",
         result: null,
       },
       {

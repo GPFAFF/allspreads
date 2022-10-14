@@ -402,6 +402,9 @@ export default function OddsCard({ item, active }) {
                       (item) => item.name === "Under"
                     );
 
+                    const isPriceNormal =
+                      markets[0].price < 10000 && markets[0].price > -10000;
+
                     let [positive, negative, total, positiveOrNegative] = acc;
                     if (markets[0].price > 0) {
                       positive++;
@@ -410,7 +413,7 @@ export default function OddsCard({ item, active }) {
                       negative++;
                     }
 
-                    if (markets[0].price) {
+                    if (isPriceNormal) {
                       total = total + Math.abs(markets[0].price);
                     }
 
@@ -428,6 +431,9 @@ export default function OddsCard({ item, active }) {
                       (item) => item.name === awayTeam
                     );
 
+                    const isPriceNormal =
+                      markets[0].price < 10000 && markets[0].price > -10000;
+
                     let [positive, negative, total, positiveOrNegative] = acc;
                     if (markets[0].price > 0) {
                       positive++;
@@ -436,7 +442,7 @@ export default function OddsCard({ item, active }) {
                       negative++;
                     }
 
-                    if (markets[0].price) {
+                    if (isPriceNormal) {
                       total = total + Math.abs(markets[0].price);
                     }
 
@@ -459,6 +465,9 @@ export default function OddsCard({ item, active }) {
                       (item) => item.name === "Over"
                     );
 
+                    const isPriceNormal =
+                      markets[0].price < 10000 && markets[0].price > -10000;
+
                     let [positive, negative, total, positiveOrNegative] = acc;
                     if (markets[0].price > 0) {
                       positive++;
@@ -467,7 +476,7 @@ export default function OddsCard({ item, active }) {
                       negative++;
                     }
 
-                    if (markets[0].price) {
+                    if (isPriceNormal) {
                       total = total + Math.abs(markets[0].price);
                     }
 
@@ -484,6 +493,9 @@ export default function OddsCard({ item, active }) {
                       (item) => item.name === homeTeam
                     );
 
+                    const isPriceNormal =
+                      markets[0].price < 10000 && markets[0].price > -10000;
+
                     let [positive, negative, total, positiveOrNegative] = acc;
                     if (markets[0].price > 0) {
                       positive++;
@@ -492,7 +504,7 @@ export default function OddsCard({ item, active }) {
                       negative++;
                     }
 
-                    if (markets[0].price) {
+                    if (isPriceNormal) {
                       total = total + Math.abs(markets[0].price);
                     }
 
@@ -512,6 +524,11 @@ export default function OddsCard({ item, active }) {
                 homeAverageOdds;
               const [_p, _n, awayTotal, awayPos] = awayAverageOdds;
 
+              const homeSmallText =
+                homeTeamBestOdds[1].toString().length > 6 ? "small" : "";
+              const awaySmallText =
+                awayTeamBestOdds[1].toString().length > 6 ? "small" : "";
+
               return (
                 <OddsContainer key={i}>
                   <>
@@ -528,11 +545,11 @@ export default function OddsCard({ item, active }) {
                       </span>
                       <span>
                         {" "}
-                        {awayPos
+                        {awayPos && awayTotal === 0
                           ? `+${Math.round(awayTotal / line.books.length)}`
                           : `-${Math.round(awayTotal / line.books.length)}`}
                       </span>
-                      <span>
+                      <span className={awaySmallText}>
                         {" "}
                         {awayTeamBestOdds
                           ? positiveOrNegativeSpread(awayTeamBestOdds[1])
@@ -602,11 +619,11 @@ export default function OddsCard({ item, active }) {
                           : ""}
                       </span>
                       <span>
-                        {homePos
+                        {homePos || homeTotal === 0
                           ? `+${Math.round(homeTotal / line.books.length)}`
                           : `-${Math.round(homeTotal / line.books.length)}`}
                       </span>
-                      <span>
+                      <span className={homeSmallText}>
                         {homeTeamBestOdds
                           ? positiveOrNegativeSpread(homeTeamBestOdds[1])
                           : ""}

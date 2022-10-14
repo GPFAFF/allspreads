@@ -246,6 +246,13 @@ const GlobalStyles = createGlobalStyle`
   }
 }
 
+.small {
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  padding: 4px 0;
+}
+
 `;
 
 export default GlobalStyles;

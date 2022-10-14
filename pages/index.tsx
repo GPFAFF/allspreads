@@ -28,7 +28,7 @@ const SingleCard = styled.div`
   border: 4px solid var(--green);
   border-radius: 8px;
   text-align: center;
-  padding: 14px 0;
+  padding: 14px 0 40px 0;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   transform: scale(1);
@@ -45,15 +45,7 @@ const SingleCard = styled.div`
 export default function HomePage() {
   const { ref, inView } = useInView();
 
-  const {
-    data,
-    isLoading,
-    isError,
-    isFetching,
-    isFetchingNextPage,
-    fetchNextPage,
-    hasNextPage,
-  } = useInfiniteQuery(
+  const { data, isLoading, isError, fetchNextPage } = useInfiniteQuery(
     ["news"],
     async ({ pageParam = 1 }) => {
       const res = await fetchSportsNews(pageParam);
@@ -114,7 +106,7 @@ export default function HomePage() {
                             }
                             width={350}
                             height={300}
-                            objectFit="contain"
+                            objectFit="cover"
                           />
                         )}
                       </SingleCard>
