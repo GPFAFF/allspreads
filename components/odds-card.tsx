@@ -110,6 +110,11 @@ const StickyPill = styled(Pill)`
   gap: 20px;
   left: 20px;
 
+  > span {
+    display: flex;
+    jusitfy-content: center;
+  }
+
   @media (max-width: 600px) {
     font-size: 14px;
     align-items: center;
