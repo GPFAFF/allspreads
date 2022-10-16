@@ -1372,23 +1372,29 @@ export const data = [
       },
       {
         date: "10/14/22",
+        team: "Red Wings ML",
+        odds: "-167",
+        result: "winner",
+      },
+      {
+        date: "10/14/22",
         team: "UTSA -33.5",
         odds: "-110",
         result: null,
       },
-       {
+      {
         date: "10/15/22",
         team: "Alabama -7",
         odds: "-110",
         result: null,
       },
-       {
+      {
         date: "10/15/22",
         team: "Eastern Michigan -1.5",
         odds: "-110",
         result: null,
       },
-       {
+      {
         date: "10/15/22",
         team: "Michigan -7",
         odds: "-110",
@@ -1400,7 +1406,7 @@ export const data = [
         odds: "-110",
         result: null,
       },
-       {
+      {
         date: "10/15/22",
         team: "Southern Missouri vs. Arkansas State - Over 55",
         odds: "-110",
@@ -1418,7 +1424,7 @@ export const data = [
         odds: "-110",
         result: null,
       },
-       {
+      {
         date: "10/15/22",
         team: "Utah -3",
         odds: "-110",
@@ -1426,7 +1432,7 @@ export const data = [
       },
       {
         date: "10/15/22",
-        team: "LSU -3",
+        team: "LSU +2.5",
         odds: "-110",
         result: null,
       },
