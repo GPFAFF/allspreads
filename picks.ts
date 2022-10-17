@@ -1476,7 +1476,7 @@ export const data = [
         date: "10/16/22",
         team: "Rhamondre Stevenson - Rushing yards over 82.5",
         odds: "-110",
-        result: null,
+        result: "loser",
       },
       {
         date: "10/16/22",
