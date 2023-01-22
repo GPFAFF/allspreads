@@ -47,7 +47,7 @@ export default function HomePage() {
 
   const { data, isLoading, isError, fetchNextPage } = useInfiniteQuery(
     ["news"],
-    async ({ pageParam = 1 }) => {
+    async ({ pageParam }) => {
       const res = await fetchSportsNews(pageParam);
       return res;
     },
@@ -75,11 +75,11 @@ export default function HomePage() {
           <h3 className="center">Something went wrong. Please try again</h3>
         )}
 
-        {isLoading ? (
+        {isLoading && !isError ? (
           <Loader />
         ) : (
           <>
-            {data.pages.map((page, i) => (
+            {data?.pages.map((page, i) => (
               <Card key={i}>
                 {page?.results?.map(
                   (
@@ -118,7 +118,7 @@ export default function HomePage() {
           </>
         )}
         <div className="center" ref={ref}>
-          {inView && <Loader />}
+          {inView && !isError && !isLoading && <Loader />}
         </div>
       </div>
     </>
